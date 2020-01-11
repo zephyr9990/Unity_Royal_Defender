@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (movement.magnitude != 0)
         {
             Quaternion newRotation = Quaternion.LookRotation(movement);
-            playerRigidbody.MoveRotation(newRotation);
+            transform.rotation = newRotation;
         }
     }
 }
