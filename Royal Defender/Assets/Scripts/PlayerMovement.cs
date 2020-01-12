@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     private float sprintSpeed;
     private Vector3 movement;
     private CharacterController playerController;
+    private Animator animator;
 
     private void Awake()
     {
         playerController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
         sprintSpeed = speed + 3;
     }
 
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
+        bIsSprinting = Input.GetButton("Sprint");
         Move(horizontal, vertical);
     }
 
@@ -29,7 +32,10 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.Set(horizontal, 0.0f, vertical);
 
-        if (Input.GetButton("Sprint"))
+        animator.SetFloat("Speed", movement.magnitude);
+        animator.SetBool("IsSprinting", bIsSprinting);
+
+        if (bIsSprinting)
         {
             movement = movement.normalized * sprintSpeed * Time.fixedDeltaTime;
         }
