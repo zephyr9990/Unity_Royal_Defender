@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 6f;
 
     private Vector3 movement;
-    private Rigidbody playerRigidbody;
+    private CharacterController playerController;
 
     private void Awake()
     {
-        playerRigidbody = GetComponent<Rigidbody>();
+        playerController = GetComponent<CharacterController>();
     }
 
     private void FixedUpdate()
@@ -27,7 +27,10 @@ public class PlayerMovement : MonoBehaviour
         movement.Set(horizontal, 0.0f, vertical);
         movement = movement.normalized * speed * Time.fixedDeltaTime;
 
-        playerRigidbody.MovePosition(transform.position + movement);
+        playerController.Move(movement);
+
+        // Gives player gravity acceleration
+        playerController.Move(Physics.gravity);
 
         // Keeps rotation of last movement direction
         if (movement.magnitude != 0)
