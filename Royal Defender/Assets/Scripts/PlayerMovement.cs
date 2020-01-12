@@ -6,12 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 6f;
 
+    private bool bIsSprinting;
+    private float sprintSpeed;
     private Vector3 movement;
     private CharacterController playerController;
 
     private void Awake()
     {
         playerController = GetComponent<CharacterController>();
+        sprintSpeed = speed + 3;
     }
 
     private void FixedUpdate()
@@ -25,7 +28,15 @@ public class PlayerMovement : MonoBehaviour
     private void Move(float horizontal, float vertical)
     {
         movement.Set(horizontal, 0.0f, vertical);
-        movement = movement.normalized * speed * Time.fixedDeltaTime;
+
+        if (Input.GetButton("Sprint"))
+        {
+            movement = movement.normalized * sprintSpeed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            movement = movement.normalized * speed * Time.fixedDeltaTime;
+        }
 
         playerController.Move(movement);
 
