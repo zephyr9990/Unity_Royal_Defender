@@ -412,6 +412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SciFiWarriorPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 1725876786759936, guid: 4de534fd36773e04db77497c7cb89e55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4461509016300196, guid: 4de534fd36773e04db77497c7cb89e55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4235,6 +4239,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.492178, y: 5.1071534, z: 8.599999}
   m_Center: {x: 0, y: 6.110667e-14, z: 4.2999997}
+--- !u!4 &1847755864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4752124052192574, guid: 4de534fd36773e04db77497c7cb89e55,
+    type: 3}
+  m_PrefabInstance: {fileID: 139649249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1848329791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4683,3 +4693,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dffdc461d114602489a611ab777ba3c8, type: 3}
+--- !u!1 &5043537223546847595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5125878167716700633}
+  m_Layer: 0
+  m_Name: GunPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5125878167716700633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043537223546847595}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0.68, y: 0.002, z: -0.091}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1847755864}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
