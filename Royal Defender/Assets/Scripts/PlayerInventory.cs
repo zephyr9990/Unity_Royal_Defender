@@ -19,6 +19,8 @@ public class PlayerInventory : MonoBehaviour
     private int currentMeleeWeaponIndex;
     private GameObject equippedWeapon;
 
+    // inventory
+    public int maxNumberOfRangedWeapons;
     private ArrayList rangedWeapons;
 
     // effects
@@ -61,7 +63,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-        if (timer > spawnEffectsTime)
+        if (spawnEffectsPlaying && timer > spawnEffectsTime)
         {
             StopSpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
         }
@@ -70,7 +72,7 @@ public class PlayerInventory : MonoBehaviour
     public void AddRangedWeapon(WeaponInfo rangedWeapon)
     {
         // limit number of ranged weapons to 5
-        if (rangedWeapons.Count <= 5)
+        if (rangedWeapons.Count < maxNumberOfRangedWeapons)
         {
             rangedWeapons.Add(rangedWeapon);
             Debug.LogWarning("Ranged weapon count:" + rangedWeapons.Count + " - Player Inventory script.");
