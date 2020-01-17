@@ -4,31 +4,49 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject GunSocket;
+    // sockets
+    public GameObject gunSocket;
+    
+    // components
     private Animator animator;
+    private ParticleSystem gunSpawnParticles;
+    private Light gunSpawnLightEffect;
+    
+    // weapons
     private WeaponInfo currentRangedWeapon;
     private int currentRangedWeaponIndex;
     private WeaponInfo currentMeleeWeapon;
     private int currentMeleeWeaponIndex;
     private GameObject equippedWeapon;
+
     private ArrayList rangedWeapons;
-    // TODO delete test value and implement real logic
-    private bool rangedEquipped;
+
+    // effects
+    private float timer;
+    private bool spawnEffectsPlaying;
+    private float spawnEffectsTime;
+    
     // Start is called before the first frame update
     void Start()
     {
+        // components
         animator = GetComponentInChildren<Animator>();
+        gunSpawnParticles = gunSocket.GetComponent<ParticleSystem>();
+        gunSpawnLightEffect = gunSocket.GetComponent<Light>();
 
+        // weapons
         currentRangedWeapon = null;
         currentRangedWeaponIndex = -1;
-
         currentMeleeWeapon = null;
-        currentMeleeWeaponIndex = -1;
-
+        currentMeleeWeaponIndex = -1;        
         equippedWeapon = null;
 
         rangedWeapons = new ArrayList();
-        
+
+        // effects
+        spawnEffectsPlaying = false;
+        spawnEffectsTime = 0.3f;
+
     }
 
     // Update is called once per frame
@@ -40,6 +58,12 @@ public class PlayerInventory : MonoBehaviour
             // to change the weapon index value
             int direction = (int) Input.GetAxis("SwitchRanged");
             SwitchRanged(direction);
+        }
+
+        timer += Time.deltaTime;
+        if (timer > spawnEffectsTime)
+        {
+            StopSpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
         }
     }
 
@@ -56,7 +80,13 @@ public class PlayerInventory : MonoBehaviour
     private void SwitchRanged(int direction)
     {
         int desiredWeaponIndex = currentRangedWeaponIndex + direction;
-        if (desiredWeaponIndex >=0 && desiredWeaponIndex <= rangedWeapons.Count - 1)
+        if (desiredWeaponIndex >= rangedWeapons.Count)
+        {
+            // Don't play effect if there are no more weapons.
+            Debug.LogWarning("Switching to ranged weapon index: " + currentRangedWeaponIndex);
+            return;
+        }
+        else if (desiredWeaponIndex >=0 && desiredWeaponIndex <= rangedWeapons.Count - 1)
         {
             currentRangedWeapon = (WeaponInfo) rangedWeapons[desiredWeaponIndex];
             currentRangedWeaponIndex = desiredWeaponIndex;
@@ -80,6 +110,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (weapon == null)
         {
+            // Don't play effect nor spawn a new weapon.
             animator.SetBool("HasRangedWeapon", false);
             return;
         }
@@ -88,16 +119,33 @@ public class PlayerInventory : MonoBehaviour
         if (weaponType == WeaponType.Ranged)
         {
             animator.SetBool("HasRangedWeapon", true);
-            spawnedWeapon.transform.parent = GunSocket.transform;
+            spawnedWeapon.transform.parent = gunSocket.transform;
             spawnedWeapon.transform.localPosition = Vector3.zero;
             spawnedWeapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
         equippedWeapon = spawnedWeapon;
+        PlaySpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
     }
 
     private void UnequipWeapon()
     {
         Destroy(equippedWeapon);
+    }
+
+    private void PlaySpawnEffects(ParticleSystem particles, Light light)
+    {
+        timer = 0f;
+        spawnEffectsPlaying = true;
+        particles.Stop();
+        particles.Play();
+        light.enabled = true;
+    }
+
+    private void StopSpawnEffects(ParticleSystem particles, Light light)
+    {
+        particles.Stop();
+        light.enabled = false;
+        spawnEffectsPlaying = false;   
     }
 }
