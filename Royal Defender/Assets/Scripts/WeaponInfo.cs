@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponInfo : MonoBehaviour
+public class WeaponInfo
 {
     public string weaponName;
     public int damage;
@@ -10,13 +10,12 @@ public class WeaponInfo : MonoBehaviour
     public GameObject weaponMesh;
     private int currentDurability;
 
-    WeaponInfo()
+    public WeaponInfo(WeaponProperties weaponProperties)
     {
+        weaponName = weaponProperties.weaponName;
+        damage = weaponProperties.damage;
+        maxDurability = weaponProperties.maxDurability;
+        weaponMesh = weaponProperties.weaponMesh;
         currentDurability = maxDurability;
-    }
-
-    public int GetCurrentDurability()
-    {
-        return currentDurability;
     }
 }
