@@ -15,9 +15,15 @@ public class PlayerInventory : MonoBehaviour
     // weapons
     private WeaponInfo currentRangedWeapon;
     private int currentRangedWeaponIndex;
+
+    public int maxAmmo;
+    public int startingAmmo;
+    private int currentAmmo;
+
     private WeaponInfo currentMeleeWeapon;
     private int currentMeleeWeaponIndex;
-    private GameObject equippedWeapon;
+    private GameObject equippedWeaponObject;
+    private WeaponInfo equippedWeaponInfo;
 
     // inventory
     public int maxNumberOfRangedWeapons;
@@ -41,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
         currentRangedWeaponIndex = -1;
         currentMeleeWeapon = null;
         currentMeleeWeaponIndex = -1;        
-        equippedWeapon = null;
+        equippedWeaponObject = null;
 
         rangedWeapons = new ArrayList();
 
@@ -49,6 +55,7 @@ public class PlayerInventory : MonoBehaviour
         spawnEffectsPlaying = false;
         spawnEffectsTime = 0.3f;
 
+        currentAmmo = startingAmmo;
     }
 
     // Update is called once per frame
@@ -75,8 +82,12 @@ public class PlayerInventory : MonoBehaviour
         if (rangedWeapons.Count < maxNumberOfRangedWeapons)
         {
             rangedWeapons.Add(rangedWeapon);
-            Debug.LogWarning("Ranged weapon count:" + rangedWeapons.Count + " - Player Inventory script.");
         }
+    }
+
+    public int getCurrentAmmo() 
+    {
+        return currentAmmo;
     }
 
     private void SwitchRanged(int direction)
@@ -99,26 +110,29 @@ public class PlayerInventory : MonoBehaviour
             currentRangedWeaponIndex = -1;
         }
         
-        EquipWeapon(currentRangedWeapon, WeaponType.Ranged);
+        EquipWeapon(currentRangedWeapon);
         Debug.LogWarning("Switching to ranged weapon index: " + currentRangedWeaponIndex);
     }
 
-    private void EquipWeapon(WeaponInfo weapon, WeaponType weaponType)
+    private void EquipWeapon(WeaponInfo weapon)
     {
-        if (equippedWeapon)
+        // If these is already a weapon being displayed, unequip it before a new object is displayed
+        if (equippedWeaponObject)
         {
             UnequipWeapon();
         }
 
+        // If no weapon is given, player wants to be unarmed
         if (weapon == null)
         {
             // Don't play effect nor spawn a new weapon.
             animator.SetBool("HasRangedWeapon", false);
+            equippedWeaponInfo = weapon;
             return;
         }
 
         GameObject spawnedWeapon = GameObject.Instantiate(weapon.weaponMesh);
-        if (weaponType == WeaponType.Ranged)
+        if (weapon.weaponType == WeaponType.Ranged)
         {
             animator.SetBool("HasRangedWeapon", true);
             spawnedWeapon.transform.parent = gunSocket.transform;
@@ -126,13 +140,19 @@ public class PlayerInventory : MonoBehaviour
             spawnedWeapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
 
-        equippedWeapon = spawnedWeapon;
+        equippedWeaponInfo = weapon;
+        equippedWeaponObject = spawnedWeapon;
         PlaySpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
     }
 
     private void UnequipWeapon()
     {
-        Destroy(equippedWeapon);
+        Destroy(equippedWeaponObject);
+    }
+
+    public WeaponInfo getEquippedWeaponInfo()
+    {
+        return equippedWeaponInfo;
     }
 
     private void PlaySpawnEffects(ParticleSystem particles, Light light)

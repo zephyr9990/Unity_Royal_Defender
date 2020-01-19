@@ -11,7 +11,7 @@ public class ItemCollect_Ranged : MonoBehaviour
             PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
             // stores info into a struct so that information is saved when object is destroyed
-            WeaponInfo weaponInfo = new WeaponInfo(GetComponent<WeaponProperties>());
+            WeaponInfo weaponInfo = new WeaponInfo(GetComponent<WeaponProperties>(), WeaponType.Ranged);
             playerInventory.AddRangedWeapon(weaponInfo);
             Destroy(gameObject);
         }
