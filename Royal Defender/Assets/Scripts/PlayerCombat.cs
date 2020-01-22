@@ -10,10 +10,12 @@ public class PlayerCombat : MonoBehaviour
 
     private int shootableMask;
     private float effectsDisplayTime = .2f;
+    private float timer = 0;
+
     private PlayerInventory playerInventory;
     private Animator animator;
-    private float timer = 0;
     private EquippedWeapon equippedWeapon;
+    private LockOnScript lockOn;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class PlayerCombat : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         playerInventory = GetComponent<PlayerInventory>();
         equippedWeapon = GetComponent<EquippedWeapon>();
+        lockOn = GetComponentInChildren<LockOnScript>();
     }
 
     // Update is called once per frame
@@ -76,7 +79,13 @@ public class PlayerCombat : MonoBehaviour
 
         gunAudio.pitch = Random.Range(1.0f, 1.1f);
         gunAudio.Play();
-        // TODO Spawn shooting projectile. Spawn 3 for single press
+
+        // Damage enemy that is currently locked on.
+        GameObject enemy = lockOn.GetCurrentTarget();
+        if (enemy)
+        {
+            equippedWeapon.Shoot(enemy);
+        }
     }
 
     private void StopShooting()

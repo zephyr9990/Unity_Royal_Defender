@@ -102,6 +102,14 @@ public class EquippedWeapon : MonoBehaviour
         // TODO add melee logic
     }
 
+    public void Shoot(GameObject enemy)
+    {
+        if (enemy)
+        {
+            enemy.GetComponent<EnemyHealth>().TakeDamage(equippedWeapon.damage);
+        }
+    }
+
     private void PlayWeaponSwitchEffects(WeaponInfo weapon)
     {
         timer = 0.0f;

@@ -8,10 +8,10 @@ public class LockOnScript : MonoBehaviour
 
     private PlayerInventory playerInventory;
     private ArrayList enemies;
-    private bool isLockedOn;
     private Animator animator;
     private bool lockOnToggled = false;
     private EquippedWeapon equippedWeapon;
+    private GameObject currentlyLockedOnTarget;
 
     private void Awake()
     {
@@ -77,18 +77,25 @@ public class LockOnScript : MonoBehaviour
         Vector3 toClosestEnemy = Vector3.zero;
         foreach (GameObject enemy in enemies)
         {
-            Vector3 ToEnemy = enemy.transform.position - transform.parent.position;
-            if (!closestEnemy)
+            if (enemy)
             {
-                closestEnemy = enemy;
-                toClosestEnemy = ToEnemy;
-            }
-            else
-            {
-                if (ToEnemy.magnitude < toClosestEnemy.magnitude)
+                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                if (enemyHealth.isAlive())
                 {
-                    closestEnemy = enemy;
-                    toClosestEnemy = ToEnemy;
+                    Vector3 ToEnemy = enemy.transform.position - transform.parent.position;
+                    if (!closestEnemy)
+                    {
+                        closestEnemy = enemy;
+                        toClosestEnemy = ToEnemy;
+                    }
+                    else
+                    {
+                        if (ToEnemy.magnitude < toClosestEnemy.magnitude)
+                        {
+                            closestEnemy = enemy;
+                            toClosestEnemy = ToEnemy;
+                        }
+                    }
                 }
             }
         }
@@ -99,12 +106,25 @@ public class LockOnScript : MonoBehaviour
     private void LockOnto(GameObject target)
     {
         // Make the player always face the target so that they do not have to aim
-        isLockedOn = true;
-        Vector3 toTarget = target.transform.position - transform.parent.position;
-        toTarget.y = 0;
-        Vector3 toTargetRotation = Vector3.RotateTowards(transform.parent.forward, toTarget, Time.deltaTime * lerpSmoothing, 0.0f);
+        if (target)
+        {
+            EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
+            if (targetHealth.isAlive())
+            {
+                Vector3 toTarget = target.transform.position - transform.parent.position;
+                toTarget.y = 0;
+                Vector3 toTargetRotation = Vector3.RotateTowards(transform.parent.forward, toTarget, Time.deltaTime * lerpSmoothing, 0.0f);
 
-        transform.parent.rotation = Quaternion.LookRotation(toTargetRotation);
+                transform.parent.rotation = Quaternion.LookRotation(toTargetRotation);
+
+                currentlyLockedOnTarget = target;
+            }
+        }
+    }
+
+    public GameObject GetCurrentTarget()
+    {
+        return currentlyLockedOnTarget;
     }
 
     public bool GetLockOnToggled()
@@ -116,6 +136,12 @@ public class LockOnScript : MonoBehaviour
     {
         lockOnToggled = false;
         animator.SetBool("LockOnToggled", false);
+        currentlyLockedOnTarget = null;
+    }
+
+    public void RemoveFromLockOnList(GameObject enemy)
+    {
+        enemies.Remove(enemy);
     }
 
     private void OnTriggerEnter(Collider other)
