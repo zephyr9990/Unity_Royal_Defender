@@ -4,58 +4,38 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // sockets
-    public GameObject gunSocket;
-    
     // components
     private Animator animator;
-    private ParticleSystem gunSpawnParticles;
-    private Light gunSpawnLightEffect;
-    
+    private EquippedWeapon equippedWeapon;
+
     // weapons
     private WeaponInfo currentRangedWeapon;
     private int currentRangedWeaponIndex;
+    private WeaponInfo currentMeleeWeapon;
+    private int currentMeleeWeaponIndex;
 
     public int maxAmmo;
     public int startingAmmo;
     private int currentAmmo;
 
-    private WeaponInfo currentMeleeWeapon;
-    private int currentMeleeWeaponIndex;
-    private GameObject equippedWeaponObject;
-    private WeaponInfo equippedWeaponInfo;
-
     // inventory
     public int maxNumberOfRangedWeapons;
     private ArrayList rangedWeapons;
-
-    // effects
-    private float timer;
-    private bool spawnEffectsPlaying;
-    private float spawnEffectsTime;
     
     // Start is called before the first frame update
     void Start()
     {
-        // components
-        animator = GetComponentInChildren<Animator>();
-        gunSpawnParticles = gunSocket.GetComponent<ParticleSystem>();
-        gunSpawnLightEffect = gunSocket.GetComponent<Light>();
+        equippedWeapon = GetComponent<EquippedWeapon>();
 
         // weapons
         currentRangedWeapon = null;
         currentRangedWeaponIndex = -1;
         currentMeleeWeapon = null;
-        currentMeleeWeaponIndex = -1;        
-        equippedWeaponObject = null;
-
-        rangedWeapons = new ArrayList();
-
-        // effects
-        spawnEffectsPlaying = false;
-        spawnEffectsTime = 0.3f;
+        currentMeleeWeaponIndex = -1;
 
         currentAmmo = startingAmmo;
+
+        rangedWeapons = new ArrayList();
     }
 
     // Update is called once per frame
@@ -68,12 +48,6 @@ public class PlayerInventory : MonoBehaviour
             int direction = (int) Input.GetAxis("SwitchRanged");
             SwitchRanged(direction);
         }
-
-        timer += Time.deltaTime;
-        if (spawnEffectsPlaying && timer > spawnEffectsTime)
-        {
-            StopSpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
-        }
     }
 
     public void AddRangedWeapon(WeaponInfo rangedWeapon)
@@ -83,6 +57,8 @@ public class PlayerInventory : MonoBehaviour
         {
             rangedWeapons.Add(rangedWeapon);
         }
+        Debug.LogWarning(rangedWeapons.Count);
+
     }
 
     public int getCurrentAmmo() 
@@ -116,58 +92,14 @@ public class PlayerInventory : MonoBehaviour
 
     private void EquipWeapon(WeaponInfo weapon)
     {
-        // If these is already a weapon being displayed, unequip it before a new object is displayed
-        if (equippedWeaponObject)
-        {
-            UnequipWeapon();
-        }
-
-        // If no weapon is given, player wants to be unarmed
-        if (weapon == null)
-        {
-            // Don't play effect nor spawn a new weapon.
-            animator.SetBool("HasRangedWeapon", false);
-            equippedWeaponInfo = weapon;
-            return;
-        }
-
-        GameObject spawnedWeapon = GameObject.Instantiate(weapon.weaponMesh);
-        if (weapon.weaponType == WeaponType.Ranged)
-        {
-            animator.SetBool("HasRangedWeapon", true);
-            spawnedWeapon.transform.parent = gunSocket.transform;
-            spawnedWeapon.transform.localPosition = Vector3.zero;
-            spawnedWeapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        }
-
-        equippedWeaponInfo = weapon;
-        equippedWeaponObject = spawnedWeapon;
-        PlaySpawnEffects(gunSpawnParticles, gunSpawnLightEffect);
+        equippedWeapon.EquipWeapon(weapon);
     }
 
-    private void UnequipWeapon()
+    private void UnequipWeapon(WeaponType weaponType)
     {
-        Destroy(equippedWeaponObject);
-    }
-
-    public WeaponInfo getEquippedWeaponInfo()
-    {
-        return equippedWeaponInfo;
-    }
-
-    private void PlaySpawnEffects(ParticleSystem particles, Light light)
-    {
-        timer = 0f;
-        spawnEffectsPlaying = true;
-        particles.Stop();
-        particles.Play();
-        light.enabled = true;
-    }
-
-    private void StopSpawnEffects(ParticleSystem particles, Light light)
-    {
-        particles.Stop();
-        light.enabled = false;
-        spawnEffectsPlaying = false;   
+        if (weaponType == WeaponType.Ranged)
+            currentRangedWeaponIndex = -1;
+        else if (weaponType == WeaponType.Melee)
+            currentMeleeWeaponIndex = -1;
     }
 }

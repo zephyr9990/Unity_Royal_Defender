@@ -2714,6 +2714,7 @@ GameObject:
   - component: {fileID: 1057588844}
   - component: {fileID: 1057588845}
   - component: {fileID: 1057588846}
+  - component: {fileID: 1057588847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2781,7 +2782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8f49e9fa1b1e349b44fbb06375d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunSocket: {fileID: 5043537223546847595}
   maxAmmo: 0
   startingAmmo: 0
   maxNumberOfRangedWeapons: 5
@@ -2816,6 +2816,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1057588847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057588840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469835aff97db4643af4e890fd922de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedSocket: {fileID: 5043537223546847595}
+  meleeSocket: {fileID: 0}
 --- !u!1001 &1060184686
 PrefabInstance:
   m_ObjectHideFlags: 0

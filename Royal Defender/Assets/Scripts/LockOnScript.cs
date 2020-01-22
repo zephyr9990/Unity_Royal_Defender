@@ -11,13 +11,14 @@ public class LockOnScript : MonoBehaviour
     private bool isLockedOn;
     private Animator animator;
     private bool lockOnToggled = false;
+    private EquippedWeapon equippedWeapon;
 
     private void Awake()
     {
         playerInventory = transform.parent.GetComponent<PlayerInventory>();
         enemies = new ArrayList();
-        isLockedOn = false;
         animator = transform.parent.GetComponentInChildren<Animator>();
+        equippedWeapon = transform.parent.GetComponent<EquippedWeapon>();
     }
 
     // Start is called before the first frame update
@@ -28,6 +29,13 @@ public class LockOnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Player cannot lockon if there's no weapon equipped.
+        if (equippedWeapon.GetWeaponInfo() == null)
+        {
+            TurnOffLockOn();
+            return;
+        }
+
         if (Input.GetButtonDown("LockOnToggle") 
             && !animator.GetBool("IsSprinting")
             && PlayerHasRangedWeapon())
@@ -46,19 +54,21 @@ public class LockOnScript : MonoBehaviour
                 {
                     LockOnto(closestEnemy);
                 }
+                else
+                {
+                    animator.SetBool("LockOnToggled", false);
+                }
             }
-        }
-        else
-        {
-            isLockedOn = false;
         }
     }
 
     private bool PlayerHasRangedWeapon()
     {
-        if (playerInventory.getEquippedWeaponInfo() != null)
-            return playerInventory.getEquippedWeaponInfo().weaponType == WeaponType.Ranged;
-        return false;
+        if (equippedWeapon.GetWeaponInfo() == null)
+            return false;
+
+        WeaponType equippedWeaponType = equippedWeapon.GetWeaponInfo().type;
+        return equippedWeaponType == WeaponType.Ranged;
     }
 
     private GameObject GetNearestEnemy()
@@ -97,9 +107,15 @@ public class LockOnScript : MonoBehaviour
         transform.parent.rotation = Quaternion.LookRotation(toTargetRotation);
     }
 
-    public bool GetIsLockedOn()
+    public bool GetLockOnToggled()
     {
-        return isLockedOn;
+        return lockOnToggled;
+    }
+
+    public void TurnOffLockOn()
+    {
+        lockOnToggled = false;
+        animator.SetBool("LockOnToggled", false);
     }
 
     private void OnTriggerEnter(Collider other)

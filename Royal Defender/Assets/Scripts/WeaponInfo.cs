@@ -9,7 +9,7 @@ public class WeaponInfo
     public int maxDurability;
     public GameObject weaponMesh;
     private int currentDurability;
-    public WeaponType weaponType;
+    public WeaponType type;
 
     public WeaponInfo(WeaponProperties weaponProperties, WeaponType weaponType)
     {
@@ -18,6 +18,6 @@ public class WeaponInfo
         maxDurability = weaponProperties.maxDurability;
         weaponMesh = weaponProperties.weaponMesh;
         currentDurability = maxDurability;
-        this.weaponType = weaponType;
+        type = weaponType;
     }
 }

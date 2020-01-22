@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     private PlayerInventory playerInventory;
     private Animator animator;
     private float timer = 0;
+    private EquippedWeapon equippedWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -20,46 +21,49 @@ public class PlayerCombat : MonoBehaviour
         shootableMask = LayerMask.GetMask("Shootable");
         animator = GetComponentInChildren<Animator>();
         playerInventory = GetComponent<PlayerInventory>();
+        equippedWeapon = GetComponent<EquippedWeapon>();
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (Input.GetButton("Attack"))
-        {
-            WeaponInfo currentWeapon = playerInventory.getEquippedWeaponInfo();
-            if (currentWeapon == null)
-            {
-                return;
-            }
+        WeaponInfo currentWeapon = equippedWeapon.GetWeaponInfo();
 
-            if (currentWeapon.weaponType == WeaponType.Ranged)
+        if (currentWeapon == null)
+        {
+            StopAttackingAnimations();
+            return;
+        }
+
+        if (currentWeapon.type == WeaponType.Ranged)
+        {
+            if (Input.GetButton("Attack"))
             {
                 if (timer > timeBetweenShots
                     && animator.GetBool("LockOnToggled"))
                 {
                     Shoot();
                 }
+            }
 
-                if (timer >= timeBetweenShots * effectsDisplayTime)
-                {
-                    StopEffects();
-                }
+            if (timer >= timeBetweenShots * effectsDisplayTime)
+            {
+                StopEffects();
+            }
+
+            if (Input.GetButtonUp("Attack"))
+            {
+                StopShooting();
             }
         }
 
-
-        if (Input.GetButtonUp("Attack"))
-        {
-            StopShooting();
-        }
+        
     }
 
     private void Shoot()
     {
         timer = 0.0f;
-        Debug.LogWarning("Firing");
         animator.SetBool("IsShooting", true);
 
         // Player can change weapons, so must be actively called for different weapons
@@ -79,6 +83,11 @@ public class PlayerCombat : MonoBehaviour
     {
         Light muzzleLight = gunSocket.transform.GetChild(0).GetComponentInChildren<Light>();
         muzzleLight.enabled = false;
+        animator.SetBool("IsShooting", false);
+    }
+
+    public void StopAttackingAnimations()
+    {
         animator.SetBool("IsShooting", false);
     }
 

@@ -9,17 +9,22 @@ public class PlayerMovement : MonoBehaviour
     public float lerpSmoothing = 7.0f;
 
     private bool bIsSprinting;
-    private bool lockOnToggled;
+    private LockOnScript lockOn;
     private float sprintSpeed;
     private Vector3 movement;
     private CharacterController playerController;
     private Animator animator;
+    private PlayerCombat playerCombat;
+    private bool isLockedOn;
 
     private void Awake()
     {
+        lockOn = GetComponentInChildren<LockOnScript>();
+        playerCombat = GetComponent<PlayerCombat>();
         playerController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         sprintSpeed = speed + 3;
+        isLockedOn = false;
     }
 
     private void FixedUpdate()
@@ -33,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float horizontal, float vertical)
     {
-        lockOnToggled = animator.GetBool("LockOnToggled");
         movement.Set(horizontal, 0.0f, vertical);
 
         animator.SetFloat("Speed", movement.magnitude);
@@ -48,7 +52,8 @@ public class PlayerMovement : MonoBehaviour
         playerController.Move(Physics.gravity);
 
         // Keeps rotation of last movement direction when not locked on
-        if (movement.magnitude != 0 && !lockOnToggled)
+        isLockedOn = lockOn.GetLockOnToggled();
+        if (movement.magnitude != 0 && !isLockedOn)
         {
             Vector3 toTargetRotation = Vector3.RotateTowards(transform.forward, movement, Time.deltaTime * lerpSmoothing, 0.0f);
             transform.rotation = Quaternion.LookRotation(toTargetRotation);
@@ -59,9 +64,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (bIsSprinting)
         {
-             return movement.normalized * sprintSpeed * Time.fixedDeltaTime;
+            lockOn.TurnOffLockOn();
+            playerCombat.StopAttackingAnimations();
+            return movement.normalized * sprintSpeed * Time.fixedDeltaTime;
         }
-        else if (lockOnToggled)
+        else if (isLockedOn)
         {
             return movement.normalized * (speed / 2) * Time.fixedDeltaTime;
         }
