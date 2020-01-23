@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
         {
             currentHealth -= amount;
         }
+        Debug.LogWarning(currentHealth);
     }
 
     public bool isAlive()
