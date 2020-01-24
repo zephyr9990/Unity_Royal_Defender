@@ -317,12 +317,6 @@ Transform:
   m_Father: {fileID: 574754624}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &113988493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 113038, guid: 907325ec940ecbf409d1505976f5fcd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 577997991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &119756001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1214,12 +1208,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca16bd2c0008114883d448b97fda8cd, type: 3}
---- !u!1 &480800033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b,
-    type: 3}
-  m_PrefabInstance: {fileID: 740433386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &496778344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4031798082164398, guid: 2d336554bc95f6942a90d88547aeb1b8,
@@ -1807,12 +1795,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0668dbcd8d35e924580fd0a5c0535eb6, type: 3}
---- !u!1 &710236926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 107872, guid: 7add1d5b90ab7234d92b5feb2d77c953,
-    type: 3}
-  m_PrefabInstance: {fileID: 119756001}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736778422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1158696541861068, guid: 3f769da7f9d044c44b513002c34098b2,
@@ -4857,12 +4839,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0550f74a08933de42857fe15111782ae, type: 3}
---- !u!1 &1621584971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 166316, guid: 36dd14b7ef773c54e96eb7d110c8b5ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 1534287079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1628690396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4130696534079194, guid: dffdc461d114602489a611ab777ba3c8,
@@ -5181,7 +5157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 710236926}
+  enemy: {fileID: 107872, guid: 7add1d5b90ab7234d92b5feb2d77c953, type: 3}
   spawnTime: 20
   spawnPoints:
   - {fileID: 1160547094}
@@ -5197,8 +5173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 113988493}
-  spawnTime: 40
+  enemy: {fileID: 113038, guid: 907325ec940ecbf409d1505976f5fcd5, type: 3}
+  spawnTime: 25
   spawnPoints:
   - {fileID: 1933599226}
 --- !u!114 &1814797142
@@ -5213,8 +5189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 480800033}
-  spawnTime: 34
+  enemy: {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
+  spawnTime: 20
   spawnPoints:
   - {fileID: 655884704}
 --- !u!114 &1814797143
@@ -5229,8 +5205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1621584971}
-  spawnTime: 27
+  enemy: {fileID: 166316, guid: 36dd14b7ef773c54e96eb7d110c8b5ce, type: 3}
+  spawnTime: 30
   spawnPoints:
   - {fileID: 1140190615}
 --- !u!4 &1823621923 stripped
