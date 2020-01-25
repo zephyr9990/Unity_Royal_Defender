@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 8082626036764672405}
   - component: {fileID: 873204515130420085}
   - component: {fileID: 3865808776437687507}
-  - component: {fileID: 1834175789}
+  - component: {fileID: -2719152260466251083}
   m_Layer: 0
   m_Name: RedBoarPBR
   m_TagString: Enemy
@@ -960,7 +960,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 177538}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -999,8 +999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 125
---- !u!135 &1834175789
-SphereCollider:
+--- !u!136 &-2719152260466251083
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1009,9 +1009,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Height: 4.857025
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.6962864, z: 1.0795584}
 --- !u!1 &178406
 GameObject:
   m_ObjectHideFlags: 0

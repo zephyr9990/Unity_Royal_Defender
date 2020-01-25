@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 1716796818}
   - component: {fileID: 1716796819}
   - component: {fileID: 5397882835378074696}
-  - component: {fileID: 993300276}
+  - component: {fileID: -6151193736687788405}
   m_Layer: 0
   m_Name: GoldBoarPBR
   m_TagString: Enemy
@@ -1073,7 +1073,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 166316}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1099,8 +1099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 150
---- !u!135 &993300276
-SphereCollider:
+--- !u!136 &-6151193736687788405
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1109,9 +1109,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Height: 4.857025
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.6962864, z: 1.0795584}
 --- !u!1 &167614
 GameObject:
   m_ObjectHideFlags: 0

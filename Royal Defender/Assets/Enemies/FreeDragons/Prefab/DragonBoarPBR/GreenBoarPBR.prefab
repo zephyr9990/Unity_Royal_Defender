@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 5559673665161447307}
   - component: {fileID: 69588969450185171}
   - component: {fileID: -6794815383117721175}
-  - component: {fileID: 1542170195}
+  - component: {fileID: 3533804840919914685}
   m_Layer: 0
   m_Name: GreenBoarPBR
   m_TagString: Enemy
@@ -141,7 +141,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 107872}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 80
---- !u!135 &1542170195
-SphereCollider:
+--- !u!136 &3533804840919914685
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -177,9 +177,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Height: 4.857025
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.6962864, z: 1.0795584}
 --- !u!1 &108470
 GameObject:
   m_ObjectHideFlags: 0

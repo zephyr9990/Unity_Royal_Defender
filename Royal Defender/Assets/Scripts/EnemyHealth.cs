@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth;
-
+    Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
 
@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = MaxHealth;
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,7 +43,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        _anim.SetTrigger("Die");
+        
         bIsAlive = false;
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 2.0f);
     }
 }
