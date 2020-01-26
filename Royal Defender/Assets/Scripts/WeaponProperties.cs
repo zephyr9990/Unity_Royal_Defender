@@ -8,4 +8,5 @@ public class WeaponProperties : MonoBehaviour
     public int damage;
     public int maxDurability;
     public GameObject weaponMesh;
+    public WeaponType type;
 }

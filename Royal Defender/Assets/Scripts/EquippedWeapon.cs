@@ -13,6 +13,8 @@ public class EquippedWeapon : MonoBehaviour
     private float effectsDisplayTime;
     private ParticleSystem rangedParticleEffect;
     private Light rangedLightEffect;
+    private ParticleSystem meleeParticleEffect;
+    private Light meleeLightEffect;
     private bool weaponSwitchEffectPlaying;
 
     // other
@@ -27,6 +29,8 @@ public class EquippedWeapon : MonoBehaviour
         weaponSwitchEffectPlaying = false;
         rangedParticleEffect = rangedSocket.GetComponent<ParticleSystem>();
         rangedLightEffect = rangedSocket.GetComponent<Light>();
+        meleeParticleEffect = meleeSocket.GetComponent<ParticleSystem>();
+        meleeLightEffect = meleeSocket.GetComponent<Light>();
 
         animator = GetComponentInChildren<Animator>();
     }
@@ -44,7 +48,7 @@ public class EquippedWeapon : MonoBehaviour
 
     public void EquipWeapon(WeaponInfo weapon)
     {
-        // If these is already a weapon being displayed, unequip it before a new object is displayed
+        // If there is already a weapon being displayed, unequip it before a new object is displayed
         if (equippedWeapon != null)
         {
             UnequipWeapon();
@@ -55,6 +59,7 @@ public class EquippedWeapon : MonoBehaviour
         {
             // Don't play effect nor spawn a new weapon.
             animator.SetBool("HasRangedWeapon", false);
+            animator.SetBool("HasMeleeWeapon", false);
             UnequipWeapon();
             return;
         }
@@ -90,14 +95,24 @@ public class EquippedWeapon : MonoBehaviour
     private void AttachToWeaponSocket(WeaponInfo weapon)
     {
         GameObject weaponToEquip = GameObject.Instantiate(weapon.weaponMesh);
+        GameObject socket;
         if (weapon.type == WeaponType.Ranged)
         {
+            animator.SetBool("HasMeleeWeapon", false);
             animator.SetBool("HasRangedWeapon", true);
-            weaponToEquip.transform.parent = rangedSocket.transform;
-            weaponToEquip.transform.localPosition = Vector3.zero;
-            weaponToEquip.transform.localRotation = Quaternion.Euler(Vector3.zero);
-            PlayWeaponSwitchEffects(weapon);
+            socket = rangedSocket;
         }
+        else // type == melee
+        {
+            animator.SetBool("HasMeleeWeapon", true);
+            animator.SetBool("HasRangedWeapon", false);
+            socket = meleeSocket;
+        }
+
+        weaponToEquip.transform.parent = socket.transform;
+        weaponToEquip.transform.localPosition = Vector3.zero;
+        weaponToEquip.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        PlayWeaponSwitchEffects(weapon);
 
         // TODO add melee logic
     }
@@ -121,7 +136,9 @@ public class EquippedWeapon : MonoBehaviour
         }
         else // melee type weapon
         {
-            // TODO melee effect spawn
+            meleeParticleEffect.Stop();
+            meleeParticleEffect.Play();
+            meleeLightEffect.enabled = true;
         }
 
         weaponSwitchEffectPlaying = true;
@@ -130,7 +147,15 @@ public class EquippedWeapon : MonoBehaviour
     private void StopWeaponSwitchEffects()
     {
         weaponSwitchEffectPlaying = false;
-        rangedParticleEffect.Stop();
-        rangedLightEffect.enabled = false;
+        if (equippedWeapon.type == WeaponType.Ranged)
+        {
+            rangedParticleEffect.Stop();
+            rangedLightEffect.enabled = false;
+        }
+        else // melee type weapon
+        {
+            meleeParticleEffect.Stop();
+            meleeLightEffect.enabled = false;
+        }
     }
 }

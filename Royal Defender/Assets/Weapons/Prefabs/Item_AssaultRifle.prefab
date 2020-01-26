@@ -154,3 +154,4 @@ MonoBehaviour:
   maxDurability: 210
   weaponMesh: {fileID: 6015537844263738433, guid: 143476da9ec27bb40a72649f32defcb6,
     type: 3}
+  type: 1
