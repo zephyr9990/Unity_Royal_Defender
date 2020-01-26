@@ -48,6 +48,10 @@ public class PlayerCombat : MonoBehaviour
                 {
                     Shoot();
                 }
+                else
+                {
+                    StopAttackingAnimations();
+                }
             }
 
             if (timer >= timeBetweenShots * effectsDisplayTime)
@@ -77,7 +81,7 @@ public class PlayerCombat : MonoBehaviour
         muzzleFlash.Play();
         muzzleLight.enabled = true;
 
-        gunAudio.pitch = Random.Range(1.0f, 1.1f);
+        gunAudio.pitch = Random.Range(.99f, 1.01f);
         gunAudio.Play();
 
         // Damage enemy that is currently locked on.
