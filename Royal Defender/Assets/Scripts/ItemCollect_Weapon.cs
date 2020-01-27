@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollect_Ranged : MonoBehaviour
+public class ItemCollect_Weapon : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -11,8 +11,10 @@ public class ItemCollect_Ranged : MonoBehaviour
             PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
             // stores info into a struct so that information is saved when object is destroyed
-            WeaponInfo weaponInfo = new WeaponInfo(GetComponent<WeaponProperties>(), WeaponType.Ranged);
-            playerInventory.AddRangedWeapon(weaponInfo);
+            WeaponInfo weaponInfo = new WeaponInfo(GetComponent<WeaponProperties>());
+
+            playerInventory.AddWeapon(weaponInfo);
+
             Destroy(gameObject);
         }
     }

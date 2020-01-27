@@ -30,7 +30,8 @@ public class LockOnScript : MonoBehaviour
     void Update()
     {
         // Player cannot lockon if there's no weapon equipped.
-        if (equippedWeapon.GetWeaponInfo() == null)
+        if (equippedWeapon.GetWeaponInfo() == null
+            || equippedWeapon.GetWeaponInfo().type != WeaponType.Ranged)
         {
             TurnOffLockOn();
             return;
@@ -136,6 +137,7 @@ public class LockOnScript : MonoBehaviour
     {
         lockOnToggled = false;
         animator.SetBool("LockOnToggled", false);
+        animator.SetBool("IsShooting", false);
         currentlyLockedOnTarget = null;
     }
 
