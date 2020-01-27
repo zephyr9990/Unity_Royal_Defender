@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_30_f (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1747547292369272, guid: 56d66c6ced3c8cc42ac1089cc3729b50, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4031165061106790, guid: 56d66c6ced3c8cc42ac1089cc3729b50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -52.79
@@ -405,6 +409,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1180544155}
     m_Modifications:
+    - target: {fileID: 1856307242764454, guid: 792edc2a6feb36545babe0f211d63460, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4833948250300272, guid: 792edc2a6feb36545babe0f211d63460, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.391068
@@ -546,6 +554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1736254623067858, guid: f2bcea84332d3b5418c7fb64b9fc7d89, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4326252008067132, guid: f2bcea84332d3b5418c7fb64b9fc7d89, type: 3}
       propertyPath: m_LocalPosition.x
       value: 82.24356
@@ -610,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_Name
       value: banner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4731890663447788, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,6 +711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_38_f (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1824544568410630, guid: cdf7dc7eeb1172742afca768a04aebb5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4707951541485222, guid: cdf7dc7eeb1172742afca768a04aebb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5099983
@@ -759,6 +779,10 @@ PrefabInstance:
     - target: {fileID: 1448931260341668, guid: 914008923a1f33345b91f7350da887df, type: 3}
       propertyPath: m_Name
       value: civilian_house_11 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448931260341668, guid: 914008923a1f33345b91f7350da887df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4396813953502068, guid: 914008923a1f33345b91f7350da887df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,6 +873,10 @@ PrefabInstance:
     - target: {fileID: 1085690542139798, guid: b8a64239d2d33cc45a19f47b821be342, type: 3}
       propertyPath: m_Name
       value: citadel_tower_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085690542139798, guid: b8a64239d2d33cc45a19f47b821be342, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4439794999214386, guid: b8a64239d2d33cc45a19f47b821be342, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1007,6 +1035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_34_g (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1677642438990034, guid: 7c3e38b0eca1f45448217509c1d85d08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4098695146886754, guid: 7c3e38b0eca1f45448217509c1d85d08, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.84107
@@ -1141,6 +1173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_37_h (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1444255600759564, guid: b1c06622ad7c9004a8b4ef2d013dbf4c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4185753696144596, guid: b1c06622ad7c9004a8b4ef2d013dbf4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.50107
@@ -1198,6 +1234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486116169}
     m_Modifications:
+    - target: {fileID: 1743145126053366, guid: 9ca16bd2c0008114883d448b97fda8cd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4595937243714694, guid: 9ca16bd2c0008114883d448b97fda8cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0099983
@@ -1269,6 +1309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_25 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1753669731221868, guid: c256bafbf9f1ae64781a7491166c6944, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4927327058006326, guid: c256bafbf9f1ae64781a7491166c6944, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.52107
@@ -1330,6 +1374,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486116169}
     m_Modifications:
+    - target: {fileID: 1961665191684034, guid: ba51e9ed5e9a04d41bd5251a3734677d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4939403648603390, guid: ba51e9ed5e9a04d41bd5251a3734677d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4900017
@@ -1387,6 +1435,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1085690542139798, guid: b8a64239d2d33cc45a19f47b821be342, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4439794999214386, guid: b8a64239d2d33cc45a19f47b821be342, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.413559
@@ -1650,6 +1702,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329428709}
     m_Modifications:
+    - target: {fileID: 1835297315867510, guid: f5651983cbbb85348bde19e364385ccc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4193144697138438, guid: f5651983cbbb85348bde19e364385ccc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.2
@@ -1769,8 +1825,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -6.0686246e+26, y: -1.82481e-40, z: 2.196705e-37,
-    w: -8.41841e+19}
+  m_BoundingSphereOverride: {x: 4.731e-42, y: 6e-44, z: 0, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1893,6 +1948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_04 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1204793252515830, guid: 2ae16399f9f71cd49a385e59aa119a58, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4598511649334936, guid: 2ae16399f9f71cd49a385e59aa119a58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -68.810005
@@ -1969,6 +2028,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5150fe3dc2d993a4bb7146d51238b1be, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5150fe3dc2d993a4bb7146d51238b1be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5150fe3dc2d993a4bb7146d51238b1be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2047,7 +2110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409254, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.93
+      value: 27.42
       objectReference: {fileID: 0}
     - target: {fileID: 409254, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2168,6 +2231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1180544155}
     m_Modifications:
+    - target: {fileID: 1556677782104186, guid: 99d062afc5365824d84679b7d866f71b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4795323941061374, guid: 99d062afc5365824d84679b7d866f71b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.56
@@ -2349,6 +2416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486116169}
     m_Modifications:
+    - target: {fileID: 1125412742619236, guid: 2220091fa6cc86845938f9f1dae157b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4923025873330636, guid: 2220091fa6cc86845938f9f1dae157b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5099983
@@ -2416,6 +2487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1180544155}
     m_Modifications:
+    - target: {fileID: 1158696541861068, guid: 3f769da7f9d044c44b513002c34098b2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4450116380544556, guid: 3f769da7f9d044c44b513002c34098b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.693634
@@ -2525,6 +2600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_31_b (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1631352259739706, guid: f09328c8b25128e408553616636c2226, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4611873614480982, guid: f09328c8b25128e408553616636c2226, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5099983
@@ -2589,6 +2668,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 9d8e4744a9b3e1d41ae1dc1832a29d21, type: 3}
       propertyPath: m_Name
       value: civilian_house_18_b
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9d8e4744a9b3e1d41ae1dc1832a29d21, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d8e4744a9b3e1d41ae1dc1832a29d21, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2675,6 +2758,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1066124637356120, guid: 1a21ac63d1f3f8f469c6fa25adbfb1c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4738364704643662, guid: 1a21ac63d1f3f8f469c6fa25adbfb1c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.523556
@@ -2727,6 +2814,10 @@ PrefabInstance:
     - target: {fileID: 1229855858002622, guid: 8952f851d03275047a8be7e119e13728, type: 3}
       propertyPath: m_Name
       value: civilian_house_37_c (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229855858002622, guid: 8952f851d03275047a8be7e119e13728, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4910521076261438, guid: 8952f851d03275047a8be7e119e13728, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2801,6 +2892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1456136697227728, guid: b0b614057f82758419565fb514ebd466, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4588604808797830, guid: b0b614057f82758419565fb514ebd466, type: 3}
       propertyPath: m_LocalPosition.x
       value: -56.19644
@@ -2966,6 +3061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329428709}
     m_Modifications:
+    - target: {fileID: 1032458618449868, guid: e176cca1faaa9ae498e39c740c0d1b3d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4632091341378332, guid: e176cca1faaa9ae498e39c740c0d1b3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -85.4
@@ -3042,6 +3141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486116169}
     m_Modifications:
+    - target: {fileID: 1431631213492370, guid: 1182e36b95c8b7d498719de73a619cc1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4053598562822448, guid: 1182e36b95c8b7d498719de73a619cc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.0099983
@@ -3256,6 +3359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486116169}
     m_Modifications:
+    - target: {fileID: 1267184960582986, guid: 1f290b386bc343b4abde6ac8a609e068, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4631291590489646, guid: 1f290b386bc343b4abde6ac8a609e068, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.51
@@ -3381,6 +3488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1827498319948078, guid: 2c419a4d68bda8948a41d26abd8021e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4782824878747570, guid: 2c419a4d68bda8948a41d26abd8021e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.58644104
@@ -3540,6 +3651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_38_f
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 58b92482bf9714b4582766945809986d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58b92482bf9714b4582766945809986d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.210001
@@ -3678,6 +3793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329428709}
     m_Modifications:
+    - target: {fileID: 1382074337331480, guid: 9f44ce45268f57646b01f92a07d4dce2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4287664455509042, guid: 9f44ce45268f57646b01f92a07d4dce2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -90.810005
@@ -3817,6 +3936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_37_a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1321055205218638, guid: 2594e9284459863408cbe27384553415, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4158344807235840, guid: 2594e9284459863408cbe27384553415, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.671066
@@ -3873,6 +3996,10 @@ PrefabInstance:
     - target: {fileID: 1747547292369272, guid: 56d66c6ced3c8cc42ac1089cc3729b50, type: 3}
       propertyPath: m_Name
       value: civilian_house_30_f (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747547292369272, guid: 56d66c6ced3c8cc42ac1089cc3729b50, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4031165061106790, guid: 56d66c6ced3c8cc42ac1089cc3729b50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4087,6 +4214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 106098030}
     m_Modifications:
+    - target: {fileID: 1534625454089636, guid: f26b24b97b5031e4d8984eb41762eda1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4618654578175150, guid: f26b24b97b5031e4d8984eb41762eda1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.39356
@@ -4395,6 +4526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_06 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1446531704120262, guid: 2d336554bc95f6942a90d88547aeb1b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4031798082164398, guid: 2d336554bc95f6942a90d88547aeb1b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -60.29
@@ -4459,6 +4594,10 @@ PrefabInstance:
     - target: {fileID: 1066124637356120, guid: 1a21ac63d1f3f8f469c6fa25adbfb1c1, type: 3}
       propertyPath: m_Name
       value: citadel_wall_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066124637356120, guid: 1a21ac63d1f3f8f469c6fa25adbfb1c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4738364704643662, guid: 1a21ac63d1f3f8f469c6fa25adbfb1c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4541,6 +4680,10 @@ PrefabInstance:
     - target: {fileID: 1088795702756802, guid: 4ee08ada65953df469db0d6a3de4274b, type: 3}
       propertyPath: m_Name
       value: civilian_house_08 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088795702756802, guid: 4ee08ada65953df469db0d6a3de4274b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4267951790424872, guid: 4ee08ada65953df469db0d6a3de4274b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4625,6 +4768,10 @@ PrefabInstance:
     - target: {fileID: 1129744469564264, guid: 56b80e675fc69f54da5af8789679ac04, type: 3}
       propertyPath: m_Name
       value: fountain_b (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129744469564264, guid: 56b80e675fc69f54da5af8789679ac04, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4249239942434568, guid: 56b80e675fc69f54da5af8789679ac04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4809,6 +4956,10 @@ PrefabInstance:
     - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_Name
       value: banner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4731890663447788, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5057,6 +5208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_10 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1692582823283460, guid: 019a25b5cc9981d47ae145f0b82ad22d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4249937598678254, guid: 019a25b5cc9981d47ae145f0b82ad22d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5099983
@@ -5250,6 +5405,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0550f74a08933de42857fe15111782ae, type: 3}
       propertyPath: m_Name
       value: civilian_house_ruin_e
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0550f74a08933de42857fe15111782ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0550f74a08933de42857fe15111782ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10161,6 +10320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_31_b (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1631352259739706, guid: f09328c8b25128e408553616636c2226, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4611873614480982, guid: f09328c8b25128e408553616636c2226, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.15107
@@ -10289,7 +10452,7 @@ GameObject:
   m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1792774852
 BoxCollider:
@@ -10530,6 +10693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_32_b (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1968708044566858, guid: 9ce2518eaf8d4b04eaf6bdb56ed2b151, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4249490339975656, guid: 9ce2518eaf8d4b04eaf6bdb56ed2b151, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.90107
@@ -10741,6 +10908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_36_a (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1622358665942894, guid: f468f0ae4f8b613419a55fed888dfcca, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4609283677507300, guid: f468f0ae4f8b613419a55fed888dfcca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -93.960655
@@ -10793,6 +10964,10 @@ PrefabInstance:
     - target: {fileID: 1964917225155542, guid: 52ee6da1a8e1d9f4aa6148e483b2e1da, type: 3}
       propertyPath: m_Name
       value: civilian_house_38_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964917225155542, guid: 52ee6da1a8e1d9f4aa6148e483b2e1da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4834554208136952, guid: 52ee6da1a8e1d9f4aa6148e483b2e1da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10892,6 +11067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: civilian_house_36_b (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1330849665535216, guid: aebefcf320a8e1e47ae980463ac7e0e2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4384415686525662, guid: aebefcf320a8e1e47ae980463ac7e0e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.011066
@@ -10985,6 +11164,10 @@ PrefabInstance:
     - target: {fileID: 1994703282430264, guid: dffdc461d114602489a611ab777ba3c8, type: 3}
       propertyPath: m_Name
       value: civilian_house_34_i (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994703282430264, guid: dffdc461d114602489a611ab777ba3c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4130696534079194, guid: dffdc461d114602489a611ab777ba3c8, type: 3}
       propertyPath: m_LocalPosition.x
