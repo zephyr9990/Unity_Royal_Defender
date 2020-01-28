@@ -26,11 +26,12 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         PlayerMovement = GetComponent<PlayerMovement>();
-        PlayerCombat = GetComponent<PlayerCombat>();
-   
+        PlayerCombat = GetComponent<PlayerCombat>();   
 
         // Set up the initial player health
         currentHealth = maxHealth;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
     public void TakeDamage(int damageAmount)

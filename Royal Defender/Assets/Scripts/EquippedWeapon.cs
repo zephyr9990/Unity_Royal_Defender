@@ -149,6 +149,7 @@ public class EquippedWeapon : MonoBehaviour
         }
         else // ranged
         {
+            RangedWeaponImage.texture = weapon.icon;
             RangedWeaponName.text = weapon.weaponName;
             RangedWeaponDamage.text = weapon.damage + " DMG";
             RangedWeaponSlider.value = weapon.getWeaponDurabilityPercent();
@@ -170,12 +171,14 @@ public class EquippedWeapon : MonoBehaviour
         {
             rangedParticleEffect.Stop();
             rangedParticleEffect.Play();
+            rangedLightEffect.enabled = false;
             rangedLightEffect.enabled = true;
         }
         else // melee type weapon
         {
             meleeParticleEffect.Stop();
             meleeParticleEffect.Play();
+            meleeLightEffect.enabled = false;
             meleeLightEffect.enabled = true;
         }
 
@@ -185,6 +188,17 @@ public class EquippedWeapon : MonoBehaviour
     private void StopWeaponSwitchEffects()
     {
         weaponSwitchEffectPlaying = false;
+        // Turn off all effects if player switches weapon type or goes unarmed
+        if (equippedWeapon == null)
+        {
+            rangedParticleEffect.Stop();
+            rangedLightEffect.enabled = false;
+            meleeParticleEffect.Stop();
+            meleeLightEffect.enabled = false;
+            return;
+
+        }
+
         if (equippedWeapon.type == WeaponType.Ranged)
         {
             rangedParticleEffect.Stop();
@@ -192,13 +206,6 @@ public class EquippedWeapon : MonoBehaviour
         }
         else if (equippedWeapon.type == WeaponType.Melee)
         {
-            meleeParticleEffect.Stop();
-            meleeLightEffect.enabled = false;
-        }
-        else // no weapon equipped. Stop all effects
-        {
-            rangedParticleEffect.Stop();
-            rangedLightEffect.enabled = false;
             meleeParticleEffect.Stop();
             meleeLightEffect.enabled = false;
         }

@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100884}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 408018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!135 &394298302808284700
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59,11 +59,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e7cd915d69e5844ae3d7c64047579e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Savage Club
+  weaponName: Savage Mace
   damage: 20
   maxDurability: 20
   weaponMesh: {fileID: 100884, guid: 3b32b5a20c9db2c49b4d8e8025f6aeaa, type: 3}
-  weaponIcon: {fileID: 2800000, guid: f1e0910b5e707794c8dce7c0245306b3, type: 3}
+  weaponIcon: {fileID: 2800000, guid: 640a8ec99e9f89940ac53e711f80adbf, type: 3}
   type: 2
 --- !u!114 &3661861755697948133
 MonoBehaviour:
