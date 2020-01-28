@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquippedWeapon : MonoBehaviour
 {
@@ -17,10 +18,20 @@ public class EquippedWeapon : MonoBehaviour
     private Light meleeLightEffect;
     private bool weaponSwitchEffectPlaying;
 
-    // other
+    // components
     private WeaponInfo equippedWeapon;
     private Animator animator;
 
+    // ui
+    public RawImage MeleeWeaponImage;
+    public Text MeleeWeaponName;
+    public Text MeleeWeaponDamage;
+    public Slider MeleeWeaponSlider;
+
+    public RawImage RangedWeaponImage;
+    public Text RangedWeaponName;
+    public Text RangedWeaponDamage;
+    public Slider RangedWeaponSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +71,7 @@ public class EquippedWeapon : MonoBehaviour
             // Don't play effect nor spawn a new weapon.
             animator.SetBool("HasRangedWeapon", false);
             animator.SetBool("HasMeleeWeapon", false);
+
             UnequipWeapon();
             return;
         }
@@ -99,12 +111,14 @@ public class EquippedWeapon : MonoBehaviour
         if (weapon.type == WeaponType.Ranged)
         {
             animator.SetBool("HasMeleeWeapon", false);
+
             animator.SetBool("HasRangedWeapon", true);
             socket = rangedSocket;
         }
         else // type == melee
         {
             animator.SetBool("HasMeleeWeapon", true);
+
             animator.SetBool("HasRangedWeapon", false);
             socket = meleeSocket;
         }
@@ -113,8 +127,32 @@ public class EquippedWeapon : MonoBehaviour
         weaponToEquip.transform.localPosition = Vector3.zero;
         weaponToEquip.transform.localRotation = Quaternion.Euler(Vector3.zero);
         PlayWeaponSwitchEffects(weapon);
+        UpdateWeaponUI(weapon);
 
         // TODO add melee logic
+    }
+
+    private void UpdateWeaponUI(WeaponInfo weapon)
+    {
+        if (weapon == null)
+        {
+            // TODO set null values for equipped weapon type
+            return;
+        }
+
+        if (weapon.type == WeaponType.Melee)
+        {
+            MeleeWeaponImage.texture = weapon.icon;
+            MeleeWeaponName.text = weapon.weaponName;
+            MeleeWeaponDamage.text = weapon.damage + " DMG";
+            MeleeWeaponSlider.value = weapon.getWeaponDurabilityPercent();
+        }
+        else // ranged
+        {
+            RangedWeaponName.text = weapon.weaponName;
+            RangedWeaponDamage.text = weapon.damage + " DMG";
+            RangedWeaponSlider.value = weapon.getWeaponDurabilityPercent();
+        }
     }
 
     public void Shoot(GameObject enemy)
@@ -152,8 +190,15 @@ public class EquippedWeapon : MonoBehaviour
             rangedParticleEffect.Stop();
             rangedLightEffect.enabled = false;
         }
-        else // melee type weapon
+        else if (equippedWeapon.type == WeaponType.Melee)
         {
+            meleeParticleEffect.Stop();
+            meleeLightEffect.enabled = false;
+        }
+        else // no weapon equipped. Stop all effects
+        {
+            rangedParticleEffect.Stop();
+            rangedLightEffect.enabled = false;
             meleeParticleEffect.Stop();
             meleeLightEffect.enabled = false;
         }

@@ -75,6 +75,7 @@ MonoBehaviour:
   damage: 30
   maxDurability: 20
   weaponMesh: {fileID: 174004, guid: 6478e3e782a118f45a402645660f05ef, type: 3}
+  weaponIcon: {fileID: 2800000, guid: 4075c4781bb5c9f48ab67a0c9e82ec64, type: 3}
   type: 2
 --- !u!1 &196734
 GameObject:

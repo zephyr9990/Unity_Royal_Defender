@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
     // components
     private Animator animator;
     private EquippedWeapon equippedWeapon;
+    public Animator weaponPanelAnimator;
 
     // weapons
     private int currentRangedWeaponIndex;
@@ -44,7 +45,8 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetButtonDown("SwitchWeaponType"))
         {
-            SwitchWeaponList();
+            int direction = (int)Input.GetAxis("SwitchWeaponType");
+            SwitchWeaponList(direction);
             SwitchWeapon(currentWeaponList, 0);
         }
         
@@ -116,41 +118,22 @@ public class PlayerInventory : MonoBehaviour
         Debug.LogWarning("Switching to " + currentType.ToString() + " weapon index: " + currentWeaponIndex);
     }
 
-    private void SwitchWeaponList()
+    private void SwitchWeaponList(int direction)
     {
-        if (currentType == WeaponType.Ranged)
-        {
-            currentType = WeaponType.Melee;
-            currentWeaponList = meleeWeapons;
-        }
-        else if (currentType == WeaponType.Melee)
+        if (direction == 1) // Up pressed. User wants ranged weapons
         {
             currentType = WeaponType.Ranged;
             currentWeaponList = rangedWeapons;
+            weaponPanelAnimator.SetBool("MeleeListIsActive", false);
+            weaponPanelAnimator.SetBool("RangedListIsActive", true);
         }
-        else // initial switch. Find list with most weapons
+        else // User wants melee list
         {
-            if (meleeWeapons.Count == 0 && rangedWeapons.Count == 0)
-            {
-                currentType = WeaponType.NULL;
-                currentWeaponList = null;
-                return;
-            }
-            
-            if (meleeWeapons.Count > rangedWeapons.Count)
-            {
-                currentType = WeaponType.Melee;
-                currentWeaponList = meleeWeapons;
-            }
-            else
-            {
-                currentType = WeaponType.Ranged;
-                currentWeaponList = rangedWeapons;
-            }
-            
+            currentType = WeaponType.Melee;
+            currentWeaponList = meleeWeapons;
+            weaponPanelAnimator.SetBool("MeleeListIsActive", true);
+            weaponPanelAnimator.SetBool("RangedListIsActive", false);
         }
-
-        Debug.LogWarning("Current list: " + currentType.ToString());
     }
 
     private int GetCurrentWeaponIndex()
