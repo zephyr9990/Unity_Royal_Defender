@@ -1,14 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
     public float timeBetweenShots = 0.15f;
+    public float timeBetweenSwings = .6f;
     public float range = 100.0f;
     public GameObject gunSocket;
 
-    private int shootableMask;
     private float effectsDisplayTime = .2f;
     private float timer = 0;
 
@@ -20,7 +21,6 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootableMask = LayerMask.GetMask("Shootable");
         animator = GetComponentInChildren<Animator>();
         playerInventory = GetComponent<PlayerInventory>();
         equippedWeapon = GetComponent<EquippedWeapon>();
@@ -41,31 +41,56 @@ public class PlayerCombat : MonoBehaviour
 
         if (currentWeapon.type == WeaponType.Ranged)
         {
-            if (Input.GetButton("Attack"))
-            {
-                if (timer > timeBetweenShots
-                    && animator.GetBool("LockOnToggled"))
-                {
-                    Shoot();
-                }
-                else
-                {
-                    StopAttackingAnimations();
-                }
-            }
+            CheckIfPlayerWantsToShoot();
+        }
+        else // player has melee weapon
+        {
+            CheckIfPlayerWantsToSwing();
+        }
 
-            if (timer >= timeBetweenShots * effectsDisplayTime)
-            {
-                StopEffects();
-            }
 
-            if (Input.GetButtonUp("Attack"))
+    }
+
+    private void CheckIfPlayerWantsToSwing()
+    {
+        if (Input.GetButtonDown("Attack"))
+        {
+            bool isSprinting = animator.GetBool("IsSprinting");
+            if (isSprinting)
+                return; // cannot swing weapon if sprinting;
+
+            if (timer > timeBetweenSwings)
             {
-                StopShooting();
+                timer = 0f;
+                animator.SetBool("IsSwinging", true);
+            }
+        }
+    }
+
+    private void CheckIfPlayerWantsToShoot()
+    {
+        if (Input.GetButton("Attack"))
+        {
+            if (timer > timeBetweenShots
+                && animator.GetBool("LockOnToggled"))
+            {
+                Shoot();
+            }
+            else
+            {
+                StopAttackingAnimations();
             }
         }
 
-        
+        if (timer >= timeBetweenShots * effectsDisplayTime)
+        {
+            StopEffects();
+        }
+
+        if (Input.GetButtonUp("Attack"))
+        {
+            StopShooting();
+        }
     }
 
     private void Shoot()
@@ -81,7 +106,7 @@ public class PlayerCombat : MonoBehaviour
         muzzleFlash.Play();
         muzzleLight.enabled = true;
 
-        gunAudio.pitch = Random.Range(.99f, 1.01f);
+        gunAudio.pitch = UnityEngine.Random.Range(.99f, 1.01f);
         gunAudio.Play();
 
         // Damage enemy that is currently locked on.

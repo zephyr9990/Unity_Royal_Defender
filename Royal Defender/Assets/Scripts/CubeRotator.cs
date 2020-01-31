@@ -12,6 +12,6 @@ public class CubeRotator : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(new Vector3(changeinX, changeinY, changeinZ) * speed * Time.deltaTime);    
+        transform.Rotate(new Vector3(changeinX, changeinY, changeinZ) * speed * Time.deltaTime);
     }
 }

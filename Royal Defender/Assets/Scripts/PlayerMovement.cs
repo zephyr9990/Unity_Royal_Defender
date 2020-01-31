@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         bIsSprinting = Input.GetButton("Sprint");
+
+        // Cannot move if swinging.
+        bool PlayerIsSwinging = animator.GetBool("IsSwinging");
+        if (PlayerIsSwinging)
+            return;
+
         Move(horizontal, vertical);
     }
 

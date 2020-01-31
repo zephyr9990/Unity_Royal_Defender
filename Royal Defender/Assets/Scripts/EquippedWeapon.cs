@@ -164,6 +164,14 @@ public class EquippedWeapon : MonoBehaviour
         }
     }
 
+    public void SwingAt(GameObject enemy)
+    {
+        if (enemy)
+        {
+            enemy.GetComponent<EnemyHealth>().TakeDamage(equippedWeapon.damage);
+        }
+    }
+
     private void PlayWeaponSwitchEffects(WeaponInfo weapon)
     {
         timer = 0.0f;

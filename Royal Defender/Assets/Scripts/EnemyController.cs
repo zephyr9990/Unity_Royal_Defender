@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour
 
     private Animator _anim;
 
-        
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +38,14 @@ public class EnemyController : MonoBehaviour
         GoToTarget();
         //Debug.Log(Vector3.Distance(this.transform.position, target.transform.position));
         //Debug.Log(target);
+
     }
 
     void FixedUpdate()
     {
         
     }
-
-    
-
+   
     void FindTargets()
     {
         //Finding all availible targets

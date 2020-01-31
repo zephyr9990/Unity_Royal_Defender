@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     // components
-    private Animator animator;
+    public Animator animator;
     private EquippedWeapon equippedWeapon;
     public Animator weaponPanelAnimator;
 
@@ -17,6 +17,8 @@ public class PlayerInventory : MonoBehaviour
     public int maxAmmo;
     public int startingAmmo;
     private int currentAmmo;
+
+    private bool listSwitched;
 
     // inventory
     public int maxNumberOfRangedWeapons;
@@ -38,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
 
         rangedWeapons = new ArrayList();
         meleeWeapons = new ArrayList();
+        listSwitched = false;
     }
 
     // Update is called once per frame
@@ -45,16 +48,26 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetButtonDown("SwitchWeaponType"))
         {
-            int direction = (int)Input.GetAxis("SwitchWeaponType");
-            SwitchWeaponList(direction);
-            SwitchWeapon(currentWeaponList, 0);
+            // Player cannot switch weapons if they are swinging.
+            bool PlayerIsSwinging = animator.GetBool("IsSwinging");
+            if (!PlayerIsSwinging)
+            {
+                int direction = (int)Input.GetAxis("SwitchWeaponType");
+                SwitchWeaponList(direction);
+
+                // Only need to equip a different weapon if list has been switched.
+                if (listSwitched)
+                {
+                    SwitchWeapon(currentWeaponList, 0);
+                }
+            }
         }
-        
+
         if (Input.GetButtonDown("SwitchWeapon"))
         {
             // Passes the up or down direction the player has pressed
             // to change the weapon index value
-            int direction = (int) Input.GetAxis("SwitchWeapon");
+            int direction = (int)Input.GetAxis("SwitchWeapon");
             SwitchWeapon(currentWeaponList, direction);
         }
     }
@@ -120,19 +133,30 @@ public class PlayerInventory : MonoBehaviour
 
     private void SwitchWeaponList(int direction)
     {
+        listSwitched = false;
         if (direction == 1) // Up pressed. User wants ranged weapons
         {
-            currentType = WeaponType.Ranged;
-            currentWeaponList = rangedWeapons;
-            weaponPanelAnimator.SetBool("MeleeListIsActive", false);
-            weaponPanelAnimator.SetBool("RangedListIsActive", true);
+            if (currentWeaponList == meleeWeapons || currentWeaponList == null)
+            {
+                currentType = WeaponType.Ranged;
+                currentWeaponList = rangedWeapons;
+                weaponPanelAnimator.SetBool("MeleeListIsActive", false);
+                weaponPanelAnimator.SetBool("RangedListIsActive", true);
+
+                listSwitched = true;
+            }
         }
         else // User wants melee list
         {
-            currentType = WeaponType.Melee;
-            currentWeaponList = meleeWeapons;
-            weaponPanelAnimator.SetBool("MeleeListIsActive", true);
-            weaponPanelAnimator.SetBool("RangedListIsActive", false);
+            if (currentWeaponList == rangedWeapons || currentWeaponList == null)
+            {
+                currentType = WeaponType.Melee;
+                currentWeaponList = meleeWeapons;
+                weaponPanelAnimator.SetBool("MeleeListIsActive", true);
+                weaponPanelAnimator.SetBool("RangedListIsActive", false);
+
+                listSwitched = true;
+            }
         }
     }
 
