@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class SwingEventHandler : MonoBehaviour
 {
-    public GameObject meleeSocket;
-
+    public EquippedWeapon equippedWeapon;
     private Animator animator;
 
-    private float timer;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -18,7 +16,7 @@ public class SwingEventHandler : MonoBehaviour
     void Swing()
     {
         SetColliderEnabled(true);
-        GameObject weapon = GetWeaponObject();
+        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
     }
 
@@ -26,18 +24,12 @@ public class SwingEventHandler : MonoBehaviour
     {
         animator.SetBool("IsSwinging", false);
         SetColliderEnabled(false);
-        GameObject weapon = GetWeaponObject();
+        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
     }
     private void SetColliderEnabled(bool value)
     {
-        GameObject weapon = GetWeaponObject();
+        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
         weapon.GetComponent<BoxCollider>().enabled = value;
-    }
-
-    private GameObject GetWeaponObject()
-    {
-        // player switches weapons so must be called actively.
-        return meleeSocket.transform.GetChild(0).gameObject;
     }
 }

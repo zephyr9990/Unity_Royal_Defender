@@ -104,6 +104,11 @@ public class EquippedWeapon : MonoBehaviour
         return equippedWeapon;
     }
 
+    public GameObject GetEquippedMeleeWeaponObject()
+    {
+        return meleeSocket.transform.GetChild(0).gameObject;
+    }
+
     private void AttachToWeaponSocket(WeaponInfo weapon)
     {
         GameObject weaponToEquip = GameObject.Instantiate(weapon.weaponMesh);
