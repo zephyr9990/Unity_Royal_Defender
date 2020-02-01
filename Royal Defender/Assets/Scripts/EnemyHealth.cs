@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth;
+    public int scoreValue = 10;
     Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
@@ -46,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
         _anim.SetTrigger("Die");
         
         bIsAlive = false;
+        ScoreManager.score += scoreValue;
         Destroy(gameObject, 2.0f);
     }
 }

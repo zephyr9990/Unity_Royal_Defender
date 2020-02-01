@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 150
+  scoreValue: 50
 --- !u!136 &-6151193736687788405
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -802,7 +802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39309198bcd34cf4397c5dc75b90baee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 170
+  scoreValue: 70
 --- !u!54 &3053499785408429541
 Rigidbody:
   m_ObjectHideFlags: 0
