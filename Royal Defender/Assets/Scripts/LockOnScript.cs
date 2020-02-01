@@ -37,6 +37,7 @@ public class LockOnScript : MonoBehaviour
             return;
         }
 
+        // Toggle lock on when player presses the lock-on button
         if (Input.GetButtonDown("LockOnToggle") 
             && !animator.GetBool("IsSprinting")
             && PlayerHasRangedWeapon())
@@ -158,7 +159,7 @@ public class LockOnScript : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            enemies.Remove(other.gameObject);
+            RemoveFromLockOnList(other.gameObject);
         }
     }
 }

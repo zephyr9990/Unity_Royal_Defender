@@ -6,6 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth;
     public int scoreValue = 10;
+    private GameObject player;
+    private LockOnScript playerLockOnScript;
     Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
@@ -15,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = MaxHealth;
         _anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerLockOnScript = player.transform.GetChild(0).GetComponent<LockOnScript>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         
         bIsAlive = false;
         ScoreManager.score += scoreValue;
+        playerLockOnScript.RemoveFromLockOnList(gameObject);
         Destroy(gameObject, 2.0f);
     }
 }
