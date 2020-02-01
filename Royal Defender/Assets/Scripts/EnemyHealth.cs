@@ -25,16 +25,19 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth - amount <= 0)
+        if (bIsAlive)
         {
-            currentHealth = 0;
-            Die();
+            if (currentHealth - amount <= 0)
+            {
+                currentHealth = 0;
+                Die();
+            }
+            else
+            {
+                currentHealth -= amount;
+            }
+            Debug.LogWarning(currentHealth);
         }
-        else
-        {
-            currentHealth -= amount;
-        }
-        Debug.LogWarning(currentHealth);
     }
 
     public bool isAlive()
