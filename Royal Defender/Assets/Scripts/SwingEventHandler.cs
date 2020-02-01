@@ -24,8 +24,8 @@ public class SwingEventHandler : MonoBehaviour
 
     void StopSwinging()
     {
-        SetColliderEnabled(false);
         animator.SetBool("IsSwinging", false);
+        SetColliderEnabled(false);
         GameObject weapon = GetWeaponObject();
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
     }

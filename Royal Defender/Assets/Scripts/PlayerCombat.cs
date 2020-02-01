@@ -62,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
             if (timer > timeBetweenSwings)
             {
                 timer = 0f;
+                animator.SetBool("IsSwinging", false);
                 animator.SetBool("IsSwinging", true);
             }
         }
