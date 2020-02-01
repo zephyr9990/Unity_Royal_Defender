@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44612157, g: 0.49588937, b: 0.5745259, a: 1}
+  m_IndirectSpecularColor: {r: 0.4461215, g: 0.4958892, b: 0.57452536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3882,7 +3882,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 923bed573d2948141bff72f8368cf106, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 56a4e65c82975054c857d5934144df81, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
