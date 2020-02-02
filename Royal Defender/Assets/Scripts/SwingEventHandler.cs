@@ -15,21 +15,29 @@ public class SwingEventHandler : MonoBehaviour
 
     void Swing()
     {
-        SetColliderEnabled(true);
+        WeaponInfo weaponSwung = equippedWeapon.GetWeaponInfo();
+        if (weaponSwung == null)
+            return;
+
         GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
+        SetColliderEnabled(weapon, true);
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
     }
 
     void StopSwinging()
     {
         animator.SetBool("IsSwinging", false);
-        SetColliderEnabled(false);
+
+        WeaponInfo weaponSwung = equippedWeapon.GetWeaponInfo();
+        if (weaponSwung == null)
+            return;
+
         GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
+        SetColliderEnabled(weapon, false);
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
     }
-    private void SetColliderEnabled(bool value)
+    private void SetColliderEnabled(GameObject weapon, bool value)
     {
-        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
         weapon.GetComponent<BoxCollider>().enabled = value;
     }
 }

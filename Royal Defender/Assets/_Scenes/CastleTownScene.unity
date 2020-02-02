@@ -4602,7 +4602,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56a4e65c82975054c857d5934144df81, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 923bed573d2948141bff72f8368cf106, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -6942,7 +6942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955a467bc933a984b975e19daaa1dd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeSocket: {fileID: 1602601902}
+  equippedWeapon: {fileID: 1057588847}
 --- !u!1001 &919790670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7870,7 +7870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenShots: 0.1
-  timeBetweenSwings: 0.65
+  timeBetweenSwings: 0.6
   range: 100
   gunSocket: {fileID: 5043537223546847595}
 --- !u!54 &1057588846
@@ -7903,6 +7903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedSocket: {fileID: 5043537223546847595}
   meleeSocket: {fileID: 1602601902}
+  UnarmedIcon: {fileID: 2800000, guid: 2824649b34e6a8e4dbb121ab97f28ee3, type: 3}
+  playerInventory: {fileID: 1057588844}
   MeleeWeaponImage: {fileID: 2108506218}
   MeleeWeaponName: {fileID: 558908606}
   MeleeWeaponDamage: {fileID: 341995864}

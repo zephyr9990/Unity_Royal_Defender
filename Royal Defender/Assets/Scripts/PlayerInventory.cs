@@ -160,6 +160,11 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public WeaponType getCurrentType()
+    {
+        return currentType;
+    }
+
     private int GetCurrentWeaponIndex()
     {
         if (currentType == WeaponType.Ranged)
@@ -189,11 +194,17 @@ public class PlayerInventory : MonoBehaviour
         equippedWeapon.EquipWeapon(weapon);
     }
 
-    private void UnequipWeapon(WeaponType weaponType)
+    public void DiscardWeapon(WeaponType weaponType)
     {
         if (weaponType == WeaponType.Ranged)
+        {
+            rangedWeapons.RemoveAt(currentRangedWeaponIndex);
             currentRangedWeaponIndex = -1;
+        }
         else if (weaponType == WeaponType.Melee)
+        {
+            meleeWeapons.RemoveAt(currentMeleeWeaponIndex);
             currentMeleeWeaponIndex = -1;
+        }
     }
 }
