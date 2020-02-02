@@ -6,7 +6,7 @@ public class PlayerInventory : MonoBehaviour
 {
     // components
     public Animator animator;
-    private EquippedWeapon equippedWeapon;
+    private PlayerEquippedWeapon equippedWeapon;
     public Animator weaponPanelAnimator;
 
     // weapons
@@ -30,7 +30,7 @@ public class PlayerInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equippedWeapon = GetComponent<EquippedWeapon>();
+        equippedWeapon = GetComponent<PlayerEquippedWeapon>();
 
         // weapons
         currentRangedWeaponIndex = -1;
@@ -160,6 +160,35 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    private void SwitchWeaponList(WeaponType weaponType)
+    {
+        listSwitched = false;
+        if (weaponType == WeaponType.Ranged) // Up pressed. User wants ranged weapons
+        {
+            if (currentWeaponList == meleeWeapons || currentWeaponList == null)
+            {
+                currentType = WeaponType.Ranged;
+                currentWeaponList = rangedWeapons;
+                weaponPanelAnimator.SetBool("MeleeListIsActive", false);
+                weaponPanelAnimator.SetBool("RangedListIsActive", true);
+
+                listSwitched = true;
+            }
+        }
+        else // User wants melee list
+        {
+            if (currentWeaponList == rangedWeapons || currentWeaponList == null)
+            {
+                currentType = WeaponType.Melee;
+                currentWeaponList = meleeWeapons;
+                weaponPanelAnimator.SetBool("MeleeListIsActive", true);
+                weaponPanelAnimator.SetBool("RangedListIsActive", false);
+
+                listSwitched = true;
+            }
+        }
+    }
+
     public WeaponType getCurrentType()
     {
         return currentType;
@@ -206,5 +235,47 @@ public class PlayerInventory : MonoBehaviour
             meleeWeapons.RemoveAt(currentMeleeWeaponIndex);
             currentMeleeWeaponIndex = -1;
         }
+    }
+
+    public void SwapWeapons(WeaponInfo playerWeapon, WeaponInfo NPCWeapon)
+    {
+        if (NPCWeapon == null)
+        {
+            DiscardWeapon(playerWeapon.type);
+            return;
+        }
+
+        if (playerWeapon == null)
+        {
+            AddWeapon(NPCWeapon);
+            SwitchWeaponList(NPCWeapon.type);
+            return;
+        }
+
+        AdjustInventoryFromSwap(playerWeapon, NPCWeapon);
+        SwitchWeaponList(NPCWeapon.type);
+    }
+
+    private void AdjustInventoryFromSwap(WeaponInfo playerWeapon, WeaponInfo NPCWeapon)
+    {
+        ArrayList listToSwapTo;
+        if (NPCWeapon.type == WeaponType.Ranged)
+            listToSwapTo = rangedWeapons;
+        else
+            listToSwapTo = meleeWeapons;
+
+        int IndexToSwap;
+        if (NPCWeapon.type == playerWeapon.type)
+        {
+            IndexToSwap = GetCurrentWeaponIndex();
+        }
+        else
+        {
+            IndexToSwap = listToSwapTo.Count;
+        }
+
+        int IndexToRemove = GetCurrentWeaponIndex();
+        currentWeaponList.RemoveAt(IndexToRemove);
+        listToSwapTo.Insert(IndexToSwap, NPCWeapon);
     }
 }

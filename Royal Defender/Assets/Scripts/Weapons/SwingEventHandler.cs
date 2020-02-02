@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SwingEventHandler : MonoBehaviour
 {
-    public EquippedWeapon equippedWeapon;
+    public PlayerEquippedWeapon equippedWeapon;
     private Animator animator;
 
     void Start()

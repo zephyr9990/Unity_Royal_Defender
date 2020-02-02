@@ -10,7 +10,7 @@ public class LockOnScript : MonoBehaviour
     private ArrayList enemies;
     private Animator animator;
     private bool lockOnToggled = false;
-    private EquippedWeapon equippedWeapon;
+    private PlayerEquippedWeapon equippedWeapon;
     private GameObject currentlyLockedOnTarget;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class LockOnScript : MonoBehaviour
         playerInventory = transform.parent.GetComponent<PlayerInventory>();
         enemies = new ArrayList();
         animator = transform.parent.GetComponentInChildren<Animator>();
-        equippedWeapon = transform.parent.GetComponent<EquippedWeapon>();
+        equippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
     }
 
     // Start is called before the first frame update

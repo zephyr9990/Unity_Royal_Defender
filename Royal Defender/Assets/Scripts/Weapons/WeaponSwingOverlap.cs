@@ -6,11 +6,11 @@ public class WeaponSwingOverlap : MonoBehaviour
 {
     public float force = 10f;
     private GameObject player;
-    private EquippedWeapon equippedWeapon;
+    private PlayerEquippedWeapon equippedWeapon;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        equippedWeapon = player.GetComponent<EquippedWeapon>();
+        equippedWeapon = player.GetComponent<PlayerEquippedWeapon>();
     }
 
     private void OnTriggerEnter(Collider other)

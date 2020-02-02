@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EquippedWeapon : MonoBehaviour
+public class NPCEquippedWeapon : MonoBehaviour
 {
-    // weapon
     public GameObject rangedSocket;
     public GameObject meleeSocket;
-    public Texture UnarmedIcon;
-    private int durabilityDecreaseAmount;
+    public int durabilityDecreaseAmount;
 
     // effects
     private float timer;
@@ -22,20 +18,8 @@ public class EquippedWeapon : MonoBehaviour
     private bool weaponSwitchEffectPlaying;
 
     // components
-    public PlayerInventory playerInventory;
     private WeaponInfo equippedWeapon;
     private Animator animator;
-
-    // ui
-    public RawImage MeleeWeaponImage;
-    public Text MeleeWeaponName;
-    public Text MeleeWeaponDamage;
-    public Slider MeleeWeaponSlider;
-
-    public RawImage RangedWeaponImage;
-    public Text RangedWeaponName;
-    public Text RangedWeaponDamage;
-    public Slider RangedWeaponSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +27,12 @@ public class EquippedWeapon : MonoBehaviour
         durabilityDecreaseAmount = 1;
         effectsDisplayTime = 0.3f;
         weaponSwitchEffectPlaying = false;
+
         rangedParticleEffect = rangedSocket.GetComponent<ParticleSystem>();
         rangedLightEffect = rangedSocket.GetComponent<Light>();
         meleeParticleEffect = meleeSocket.GetComponent<ParticleSystem>();
         meleeLightEffect = meleeSocket.GetComponent<Light>();
-
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -70,7 +54,7 @@ public class EquippedWeapon : MonoBehaviour
             UnequipWeapon();
         }
 
-        // If no weapon is given, player wants to be unarmed
+        // If no weapon is given, npc becomes unarmed
         if (weapon == null)
         {
             // Don't play effect nor spawn a new weapon.
@@ -85,12 +69,9 @@ public class EquippedWeapon : MonoBehaviour
     public void UnequipWeapon()
     {
         if (equippedWeapon == null)
-        {   
-            SetUnarmedValues(playerInventory.getCurrentType());
+        {
             return;
         }
-
-        SetUnarmedValues(equippedWeapon.type);
 
         if (equippedWeapon.type == WeaponType.Ranged)
         {
@@ -141,32 +122,6 @@ public class EquippedWeapon : MonoBehaviour
         weaponToEquip.transform.localPosition = Vector3.zero;
         weaponToEquip.transform.localRotation = Quaternion.Euler(Vector3.zero);
         PlayWeaponSwitchEffects(weapon);
-        UpdateWeaponUI(weapon);
-    }
-
-    private void UpdateWeaponUI(WeaponInfo weapon)
-    {
-        if (weapon == null)
-        {
-            return;
-        }
-
-        if (weapon.type == WeaponType.Melee)
-        {
-            MeleeWeaponImage.texture = weapon.icon;
-            MeleeWeaponName.text = weapon.name;
-            MeleeWeaponDamage.text = weapon.damage + " DMG";
-            MeleeWeaponSlider.gameObject.SetActive(true);
-            MeleeWeaponSlider.value = weapon.getDurabilityPercent();
-        }
-        else // ranged
-        {
-            RangedWeaponImage.texture = weapon.icon;
-            RangedWeaponName.text = weapon.name;
-            RangedWeaponDamage.text = weapon.damage + " DMG";
-            RangedWeaponSlider.gameObject.SetActive(true);
-            RangedWeaponSlider.value = weapon.getDurabilityPercent();
-        }
     }
 
     public void Shoot(GameObject enemy)
@@ -175,9 +130,6 @@ public class EquippedWeapon : MonoBehaviour
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(equippedWeapon.damage);
         }
-
-        DecreaseDurability(durabilityDecreaseAmount);
-        UpdateWeaponUI(equippedWeapon);
     }
 
     public void SwingAt(GameObject enemy)
@@ -185,43 +137,6 @@ public class EquippedWeapon : MonoBehaviour
         if (enemy)
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(equippedWeapon.damage);
-        }
-
-        DecreaseDurability(durabilityDecreaseAmount);
-        UpdateWeaponUI(equippedWeapon);
-    }
-
-    private void DecreaseDurability(int amount)
-    {
-        equippedWeapon.DecreaseDurability(amount);
-        if (equippedWeapon.getCurrentDurability() <= 0)
-        {
-            DestroyWeapon();
-        }
-    }
-
-    private void DestroyWeapon()
-    {
-          playerInventory.DiscardWeapon(equippedWeapon.type);
-          UnequipWeapon();
-    }
-
-    private void SetUnarmedValues(WeaponType type)
-    {
-
-        if (type == WeaponType.Ranged)
-        {
-            RangedWeaponImage.texture = UnarmedIcon;
-            RangedWeaponName.text = "Unarmed";
-            RangedWeaponDamage.text = "";
-            RangedWeaponSlider.gameObject.SetActive(false);
-        }
-        else // melee
-        {
-            MeleeWeaponImage.texture = UnarmedIcon;
-            MeleeWeaponName.text = "Unarmed";
-            MeleeWeaponDamage.text = "";
-            MeleeWeaponSlider.gameObject.SetActive(false);
         }
     }
 

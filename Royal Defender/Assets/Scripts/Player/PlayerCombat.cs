@@ -15,7 +15,7 @@ public class PlayerCombat : MonoBehaviour
 
     private PlayerInventory playerInventory;
     private Animator animator;
-    private EquippedWeapon equippedWeapon;
+    private PlayerEquippedWeapon equippedWeapon;
     private LockOnScript lockOn;
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PlayerCombat : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         playerInventory = GetComponent<PlayerInventory>();
-        equippedWeapon = GetComponent<EquippedWeapon>();
+        equippedWeapon = GetComponent<PlayerEquippedWeapon>();
         lockOn = GetComponentInChildren<LockOnScript>();
     }
 
