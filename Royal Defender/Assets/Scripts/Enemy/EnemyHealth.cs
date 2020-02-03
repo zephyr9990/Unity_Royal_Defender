@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class EnemyHealth : MonoBehaviour
     Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
+
+    public bool isLocked = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,10 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public event Action<float> OnHealthPctChanged = delegate { };
 
     public void TakeDamage(int amount)
     {
@@ -39,6 +45,13 @@ public class EnemyHealth : MonoBehaviour
             else
             {
                 currentHealth -= amount;
+
+                //Update the percent slider when locked on
+                if (isLocked)
+                {
+                    float currentHealthPct = (float)currentHealth / (float)MaxHealth;
+                    OnHealthPctChanged(currentHealthPct);
+                }
             }
             Debug.LogWarning(currentHealth);
         }
@@ -52,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         _anim.SetTrigger("Die");
-        
+
         bIsAlive = false;
         ScoreManager.score += scoreValue;
         playerLockOnScript.RemoveFromLockOnList(gameObject);

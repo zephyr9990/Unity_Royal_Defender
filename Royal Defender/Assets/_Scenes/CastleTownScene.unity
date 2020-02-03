@@ -9887,7 +9887,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -14638,6 +14638,11 @@ PrefabInstance:
     - target: {fileID: 497588, guid: 907325ec940ecbf409d1505976f5fcd5, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9993741
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500006406161498606, guid: 907325ec940ecbf409d1505976f5fcd5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907325ec940ecbf409d1505976f5fcd5, type: 3}
@@ -28873,6 +28878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 170
   scoreValue: 70
+  isLocked: 0
 --- !u!1 &1777304471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1631352259739706, guid: f09328c8b25128e408553616636c2226,
