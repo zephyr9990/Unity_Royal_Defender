@@ -249,6 +249,7 @@ public class PlayerInventory : MonoBehaviour
         {
             AddWeapon(npcWeapon);
             SwitchWeaponList(npcWeapon.type);
+            SetCurrentWeaponIndex(currentWeaponList.IndexOf(npcWeapon));
             return;
         }
 
