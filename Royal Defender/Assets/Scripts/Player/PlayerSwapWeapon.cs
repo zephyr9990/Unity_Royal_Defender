@@ -7,20 +7,20 @@ public class PlayerSwapWeapon : MonoBehaviour
 {
     private PlayerInventory playerInventory;
     private PlayerEquippedWeapon playerEquippedWeapon;
-    private ArrayList NPCs;
+    private ArrayList npcs;
 
     // Start is called before the first frame update
     void Start()
     {
         playerInventory = transform.parent.GetComponent<PlayerInventory>();
         playerEquippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
-        NPCs = new ArrayList();
+        npcs = new ArrayList();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (NPCs.Count <= 0)
+        if (npcs.Count <= 0)
             return;
 
         GameObject closestNPC = GetClosestNPC();
@@ -36,19 +36,19 @@ public class PlayerSwapWeapon : MonoBehaviour
     {
         Vector3 distanceToClosestNPC = Vector3.zero;
         GameObject closestNPC = null;
-        foreach (GameObject NPC in NPCs)
+        foreach (GameObject npc in npcs)
         {
-            Vector3 distanceToNPC = NPC.transform.position - transform.parent.position;
+            Vector3 distanceToNPC = npc.transform.position - transform.parent.position;
 
             if (distanceToClosestNPC == Vector3.zero)
             {
                 distanceToClosestNPC = distanceToNPC;
-                closestNPC = NPC;
+                closestNPC = npc;
             }
             else if (distanceToNPC.magnitude < distanceToClosestNPC.magnitude)
             {
                 distanceToClosestNPC = distanceToNPC;
-                closestNPC = NPC;
+                closestNPC = npc;
             }
         }
 
@@ -75,7 +75,7 @@ public class PlayerSwapWeapon : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            NPCs.Add(other.gameObject);
+            npcs.Add(other.gameObject);
         }
     }
 
@@ -83,7 +83,7 @@ public class PlayerSwapWeapon : MonoBehaviour
     {
         if (other.CompareTag("NPC"))
         {
-            NPCs.Remove(other.gameObject);
+            npcs.Remove(other.gameObject);
         }
     }
 }

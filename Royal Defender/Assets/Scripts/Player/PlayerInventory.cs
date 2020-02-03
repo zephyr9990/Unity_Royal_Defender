@@ -237,9 +237,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void SwapWeapons(WeaponInfo playerWeapon, WeaponInfo NPCWeapon)
+    public void SwapWeapons(WeaponInfo playerWeapon, WeaponInfo npcWeapon)
     {
-        if (NPCWeapon == null)
+        if (npcWeapon == null)
         {
             DiscardWeapon(playerWeapon.type);
             return;
@@ -247,35 +247,36 @@ public class PlayerInventory : MonoBehaviour
 
         if (playerWeapon == null)
         {
-            AddWeapon(NPCWeapon);
-            SwitchWeaponList(NPCWeapon.type);
+            AddWeapon(npcWeapon);
+            SwitchWeaponList(npcWeapon.type);
             return;
         }
 
-        AdjustInventoryFromSwap(playerWeapon, NPCWeapon);
-        SwitchWeaponList(NPCWeapon.type);
+        AdjustInventoryFromSwap(playerWeapon, npcWeapon);
+        SwitchWeaponList(npcWeapon.type);
+        SetCurrentWeaponIndex(currentWeaponList.IndexOf(npcWeapon));
     }
 
-    private void AdjustInventoryFromSwap(WeaponInfo playerWeapon, WeaponInfo NPCWeapon)
+    private void AdjustInventoryFromSwap(WeaponInfo playerWeapon, WeaponInfo npcWeapon)
     {
         ArrayList listToSwapTo;
-        if (NPCWeapon.type == WeaponType.Ranged)
+        if (npcWeapon.type == WeaponType.Ranged)
             listToSwapTo = rangedWeapons;
         else
             listToSwapTo = meleeWeapons;
 
         int IndexToSwap;
-        if (NPCWeapon.type == playerWeapon.type)
+        int IndexToRemove = GetCurrentWeaponIndex();
+        if (npcWeapon.type == playerWeapon.type)
         {
             IndexToSwap = GetCurrentWeaponIndex();
         }
         else
         {
             IndexToSwap = listToSwapTo.Count;
+            SetCurrentWeaponIndex(-1);
         }
-
-        int IndexToRemove = GetCurrentWeaponIndex();
         currentWeaponList.RemoveAt(IndexToRemove);
-        listToSwapTo.Insert(IndexToSwap, NPCWeapon);
+        listToSwapTo.Insert(IndexToSwap, npcWeapon);
     }
 }
