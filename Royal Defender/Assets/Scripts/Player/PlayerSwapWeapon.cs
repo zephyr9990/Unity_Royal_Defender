@@ -60,9 +60,12 @@ public class PlayerSwapWeapon : MonoBehaviour
     {
         NPCEquippedWeapon NPCEquippedWeapon = closestNPC.GetComponent<NPCEquippedWeapon>();
         WeaponInfo NPCWeapon = NPCEquippedWeapon.GetWeaponInfo();
-        NPCEquippedWeapon.UnequipWeapon();
-
         WeaponInfo playerWeapon = playerEquippedWeapon.GetWeaponInfo();
+
+        if (playerWeapon == null && NPCWeapon == null)
+            return; // nothing to exchange.
+
+        NPCEquippedWeapon.UnequipWeapon();
         playerEquippedWeapon.UnequipWeapon();
 
         NPCEquippedWeapon.EquipWeapon(playerWeapon);

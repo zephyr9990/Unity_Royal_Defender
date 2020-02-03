@@ -239,12 +239,14 @@ public class PlayerInventory : MonoBehaviour
 
     public void SwapWeapons(WeaponInfo playerWeapon, WeaponInfo npcWeapon)
     {
+        // Giving weapon, receiving nothing
         if (npcWeapon == null)
         {
             DiscardWeapon(playerWeapon.type);
             return;
         }
 
+        // Taking weapon, giving nothing
         if (playerWeapon == null)
         {
             AddWeapon(npcWeapon);
@@ -253,6 +255,7 @@ public class PlayerInventory : MonoBehaviour
             return;
         }
 
+        // Proper swap of weapons.
         AdjustInventoryFromSwap(playerWeapon, npcWeapon);
         SwitchWeaponList(npcWeapon.type);
         SetCurrentWeaponIndex(currentWeaponList.IndexOf(npcWeapon));
