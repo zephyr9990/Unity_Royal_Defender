@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class WeaponSwingOverlap : MonoBehaviour
 {
+    private GameObject owner;
     public float force = 10f;
-    private GameObject player;
-    private GameObject npc;
-    private PlayerEquippedWeapon equippedWeapon;
+    private PlayerEquippedWeapon playerEquippedWeapon;
     private NPCEquippedWeapon npcEquippedWeapon;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        equippedWeapon = player.GetComponent<PlayerEquippedWeapon>();
-
-        npc = GameObject.FindGameObjectWithTag("NPC");
-        npcEquippedWeapon = npc.GetComponent<NPCEquippedWeapon>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            if (transform.root.CompareTag("Player"))
+            
+            if (owner.CompareTag("Player"))
             {
-                PlayerAttackEnemy(other, equippedWeapon);
+                PlayerAttackEnemy(other, playerEquippedWeapon);
             }
             else // npc attacking
             {
@@ -39,7 +34,7 @@ public class WeaponSwingOverlap : MonoBehaviour
         Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();
         if (rigidbody)
         {
-            Vector3 pushBackDirection = other.transform.position - player.transform.position;
+            Vector3 pushBackDirection = other.transform.position - owner.transform.position;
             other.gameObject.GetComponent<PushBack>().AddPushBack(pushBackDirection.normalized, force);
         }
     }
@@ -50,8 +45,21 @@ public class WeaponSwingOverlap : MonoBehaviour
         Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();
         if (rigidbody)
         {
-            Vector3 pushBackDirection = other.transform.position - player.transform.position;
+            Vector3 pushBackDirection = other.transform.position - owner.transform.position;
             other.gameObject.GetComponent<PushBack>().AddPushBack(pushBackDirection.normalized, force);
+        }
+    }
+
+    public void SetOwner(GameObject owner)
+    {
+        this.owner = owner;
+        if (owner.CompareTag("Player"))
+        {
+            playerEquippedWeapon = owner.GetComponent<PlayerEquippedWeapon>();
+        }
+        else // is npc
+        {
+            npcEquippedWeapon = owner.GetComponent<NPCEquippedWeapon>();
         }
     }
 }

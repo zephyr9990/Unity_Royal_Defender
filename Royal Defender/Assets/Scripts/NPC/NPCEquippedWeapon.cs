@@ -20,6 +20,7 @@ public class NPCEquippedWeapon : MonoBehaviour
     // components
     private WeaponInfo equippedWeapon;
     private Animator animator;
+    private WeaponSwingOverlap weaponCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -113,8 +114,8 @@ public class NPCEquippedWeapon : MonoBehaviour
         else // type == melee
         {
             animator.SetBool("HasMeleeWeapon", true);
-
             animator.SetBool("HasRangedWeapon", false);
+            weaponToEquip.GetComponent<WeaponSwingOverlap>().SetOwner(gameObject);
             socket = meleeSocket;
         }
 
@@ -136,6 +137,8 @@ public class NPCEquippedWeapon : MonoBehaviour
     {
         if (enemy)
         {
+            Debug.LogWarning(
+                gameObject.name + " attacks " + enemy.name + " for "+ equippedWeapon.damage + " points of damage!");
             enemy.GetComponent<EnemyHealth>().TakeDamage(equippedWeapon.damage);
         }
     }

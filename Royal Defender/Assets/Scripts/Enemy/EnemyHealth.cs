@@ -53,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
                     OnHealthPctChanged(currentHealthPct);
                 }
             }
-            Debug.LogWarning(currentHealth);
+            Debug.LogWarning(gameObject.name + " HP: " + currentHealth);
         }
     }
 
