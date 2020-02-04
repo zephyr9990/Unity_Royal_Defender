@@ -37,8 +37,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
     public Text RangedWeaponDamage;
     public Slider RangedWeaponSlider;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         durabilityDecreaseAmount = 1;
         effectsDisplayTime = 0.3f;

@@ -68,7 +68,6 @@ public class EnemyHealth : MonoBehaviour
 
         bIsAlive = false;
         ScoreManager.score += scoreValue;
-        playerLockOnScript.RemoveFromLockOnList(gameObject);
         Destroy(gameObject, 2.0f);
     }
 }
