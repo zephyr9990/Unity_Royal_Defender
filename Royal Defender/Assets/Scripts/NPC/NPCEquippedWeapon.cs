@@ -21,6 +21,7 @@ public class NPCEquippedWeapon : MonoBehaviour
     private WeaponInfo equippedWeapon;
     private Animator animator;
     private WeaponSwingOverlap weaponCollider;
+    private NPCMovement npcMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class NPCEquippedWeapon : MonoBehaviour
         meleeParticleEffect = meleeSocket.GetComponent<ParticleSystem>();
         meleeLightEffect = meleeSocket.GetComponent<Light>();
         animator = GetComponent<Animator>();
+        npcMovement = GetComponent<NPCMovement>();
     }
 
     // Update is called once per frame
@@ -106,8 +108,8 @@ public class NPCEquippedWeapon : MonoBehaviour
         GameObject socket;
         if (weapon.type == WeaponType.Ranged)
         {
+            animator.SetBool("IsSwinging", false);
             animator.SetBool("HasMeleeWeapon", false);
-
             animator.SetBool("HasRangedWeapon", true);
             socket = rangedSocket;
         }

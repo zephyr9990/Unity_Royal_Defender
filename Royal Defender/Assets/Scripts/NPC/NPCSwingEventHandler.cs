@@ -18,12 +18,10 @@ public class NPCSwingEventHandler : MonoBehaviour
     void Swing()
     {
         WeaponInfo weaponSwung = npcEquippedWeapon.GetWeaponInfo();
-        if (weaponSwung == null)
-            return;
+        if (weaponSwung == null || weaponSwung.type == WeaponType.Ranged)
+            return; // if there's no weapon or if player swaps out weapon mid-swing
 
-        GameObject weapon = npcEquippedWeapon.GetEquippedMeleeWeaponObject();
-        SetColliderEnabled(weapon, true);
-        weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+        EnableWeapon(true);
     }
 
     void StopSwinging()
@@ -31,12 +29,21 @@ public class NPCSwingEventHandler : MonoBehaviour
         animator.SetBool("IsSwinging", false);
 
         WeaponInfo weaponSwung = npcEquippedWeapon.GetWeaponInfo();
-        if (weaponSwung == null)
-            return;
+        if (weaponSwung == null || weaponSwung.type == WeaponType.Ranged)
+            return; // if there's no weapon or if player swaps out weapon mid-swing
 
+        EnableWeapon(false);
+    }
+
+    private void EnableWeapon(bool value)
+    {
         GameObject weapon = npcEquippedWeapon.GetEquippedMeleeWeaponObject();
-        SetColliderEnabled(weapon, false);
-        weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
+        SetColliderEnabled(weapon, value);
+
+        if (value == true)
+        { weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play(); }
+        else
+        { weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop(); }
     }
 
     private void SetColliderEnabled(GameObject weapon, bool value)

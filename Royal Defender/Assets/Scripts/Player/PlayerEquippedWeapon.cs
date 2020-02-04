@@ -123,8 +123,8 @@ public class PlayerEquippedWeapon : MonoBehaviour
         GameObject socket;
         if (weapon.type == WeaponType.Ranged)
         {
+            animator.SetBool("IsSwinging", false);
             animator.SetBool("HasMeleeWeapon", false);
-
             animator.SetBool("HasRangedWeapon", true);
             socket = rangedSocket;
         }

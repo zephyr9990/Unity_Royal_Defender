@@ -21,9 +21,7 @@ public class PlayerSwingEventHandler : MonoBehaviour
         if (weaponSwung == null)
             return;
 
-        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
-        SetColliderEnabled(weapon, true);
-        weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
+        EnableWeapon(true);
     }
 
     void StopSwinging()
@@ -34,10 +32,21 @@ public class PlayerSwingEventHandler : MonoBehaviour
         if (weaponSwung == null)
             return;
 
-        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
-        SetColliderEnabled(weapon, false);
-        weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
+
+        EnableWeapon(false);
     }
+
+    private void EnableWeapon(bool value)
+    {
+        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
+        SetColliderEnabled(weapon, value);
+
+        if (value == true)
+        { weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play(); }
+        else
+        { weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop(); }
+    }
+
     private void SetColliderEnabled(GameObject weapon, bool value)
     {
         weapon.GetComponent<BoxCollider>().enabled = value;

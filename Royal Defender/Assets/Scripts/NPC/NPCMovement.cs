@@ -27,8 +27,8 @@ public class NPCMovement : MonoBehaviour
         npcCombat = GetComponent<NPCCombat>();
     }
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         bool npcHasWeapon = IsArmed();
 
@@ -37,9 +37,7 @@ void Update()
             GameObject enemyToAttack = attackRange.GetNearestTarget();
             if (enemyToAttack == null)
             {
-                isAiming(false);
-                npcCombat.SetInMeleeRange(false);
-                npcCombat.SetInShootingRange(false);
+                GoCombatIdle();
                 GoToLocation(locationToGuard);
             }
             else
@@ -57,6 +55,13 @@ void Update()
         animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
         animator.SetFloat("VelocityX", navMeshAgent.velocity.x);
         animator.SetFloat("VelocityZ", navMeshAgent.velocity.z);
+    }
+
+    public void GoCombatIdle()
+    {
+        isAiming(false);
+        npcCombat.SetInMeleeRange(false);
+        npcCombat.SetInShootingRange(false);
     }
 
     private bool IsArmed()
@@ -86,15 +91,15 @@ void Update()
         WeaponInfo weapon = npcEquippedWeapon.GetWeaponInfo();
         if (weapon.type == WeaponType.Melee)
         {
-            Melee(enemy);
+            GoToMeleeRange(enemy);
         }
         else
         {
-            Shoot(enemy);
+            GoToShootingRange(enemy);
         }
     }
 
-    private void Melee(GameObject enemy)
+    private void GoToMeleeRange(GameObject enemy)
     {
         isAiming(false);
         Vector3 distanceToEnemy = enemy.transform.position - transform.position;
@@ -102,7 +107,6 @@ void Update()
         if (distanceToEnemy.magnitude > meleeDistance)
         {
             GoToLocation(enemy);
-
         }
         else
         {
@@ -110,7 +114,7 @@ void Update()
         }
     }
 
-    private void Shoot(GameObject enemy)
+    private void GoToShootingRange(GameObject enemy)
     {
         isAiming(true);
         Vector3 distanceToEnemy = enemy.transform.position - transform.position;

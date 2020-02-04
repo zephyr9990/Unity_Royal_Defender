@@ -7,12 +7,17 @@ public class NPCCombat : MonoBehaviour
     public float timeBetweenShots = 0.15f;
     public float timeBetweenSwings = .6f;
     public float range = 100.0f;
+    public int numberOfShotsPerBurst = 15;
+    public float timeBetweenBursts = 3f;
     public GameObject rangedSocket;
 
     private float effectsDisplayTime = .2f;
     private float timer = 0;
     private bool InMeleeRange;
     private bool InShootingRange;
+    private bool isCoolingDownFromBurst;
+
+    private int numberOfShotsFired;
 
     private Animator animator;
     private NPCEquippedWeapon npcEquippedWeapon;
@@ -21,8 +26,10 @@ public class NPCCombat : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        numberOfShotsFired = 0;
         InMeleeRange = false;
         InShootingRange = false;
+        isCoolingDownFromBurst = false;
         animator = GetComponentInChildren<Animator>();
         npcEquippedWeapon = GetComponent<NPCEquippedWeapon>();
         lockOn = GetComponentInChildren<LockOnScript>();
@@ -76,7 +83,10 @@ public class NPCCombat : MonoBehaviour
             if (timer > timeBetweenShots
                 && animator.GetBool("LockOnToggled"))
             {
-                Shoot();
+                if (!IsOnCooldownFromBurst())
+                {
+                    Shoot();
+                }
             }
             else
             {
@@ -117,6 +127,23 @@ public class NPCCombat : MonoBehaviour
         {
             npcEquippedWeapon.Shoot(enemy);
         }
+
+        if (++numberOfShotsFired > numberOfShotsPerBurst)
+        {
+            isCoolingDownFromBurst = true;
+            return;
+        }
+        isCoolingDownFromBurst = false;
+    }
+
+    private bool IsOnCooldownFromBurst()
+    {
+        if (timer > timeBetweenBursts)
+        {
+            isCoolingDownFromBurst = false;
+            numberOfShotsFired = 0;
+        }
+        return isCoolingDownFromBurst;
     }
 
     private void StopShooting()
