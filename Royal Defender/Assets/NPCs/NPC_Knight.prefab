@@ -889,6 +889,9 @@ MonoBehaviour:
   meleeDistance: 3
   lerpSmoothing: 7
   baseStoppingDistance: 5
+  safeShootingDistance: 15
+  movementSpeed: 3.5
+  aimingMovementSpeed: 2
 --- !u!114 &8618048715869313938
 MonoBehaviour:
   m_ObjectHideFlags: 0

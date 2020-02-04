@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class NamePlate : MonoBehaviour
 {
-    public string name = "";
+    public string characterName = "";
 
     private void Start()
     {
         GameObject namePlate = transform.GetChild(0).gameObject;
-        namePlate.GetComponent<Text>().text = name;
+        namePlate.GetComponent<Text>().text = characterName;
     }
 
     // Update is called once per frame
