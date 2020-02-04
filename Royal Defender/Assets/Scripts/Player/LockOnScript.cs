@@ -6,7 +6,6 @@ public class LockOnScript : MonoBehaviour
 {
     public float lerpSmoothing = 5.0f;
 
-    private PlayerInventory playerInventory;
     private ArrayList enemies;
     private Animator animator;
     private bool lockOnToggled = false;
@@ -15,7 +14,6 @@ public class LockOnScript : MonoBehaviour
 
     private void Awake()
     {
-        playerInventory = transform.parent.GetComponent<PlayerInventory>();
         enemies = new ArrayList();
         animator = transform.parent.GetComponentInChildren<Animator>();
         equippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
@@ -77,8 +75,9 @@ public class LockOnScript : MonoBehaviour
     {
         GameObject closestEnemy = null;
         Vector3 toClosestEnemy = Vector3.zero;
-        foreach (GameObject enemy in enemies)
+        for (int index = 0; index < enemies.Count; index++)
         {
+            GameObject enemy = enemies[index] as GameObject;
             if (enemy)
             {
                 EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
@@ -98,6 +97,10 @@ public class LockOnScript : MonoBehaviour
                             toClosestEnemy = ToEnemy;
                         }
                     }
+                }
+                else
+                {
+                    RemoveFromLockOnList(enemy);
                 }
             }
         }

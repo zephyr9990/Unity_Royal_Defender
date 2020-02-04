@@ -37,8 +37,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
     public Text RangedWeaponDamage;
     public Slider RangedWeaponSlider;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         durabilityDecreaseAmount = 1;
         effectsDisplayTime = 0.3f;
@@ -132,14 +131,15 @@ public class PlayerEquippedWeapon : MonoBehaviour
         else // type == melee
         {
             animator.SetBool("HasMeleeWeapon", true);
-
             animator.SetBool("HasRangedWeapon", false);
+            weaponToEquip.GetComponent<WeaponSwingOverlap>().SetOwner(gameObject);
             socket = meleeSocket;
         }
 
         weaponToEquip.transform.parent = socket.transform;
         weaponToEquip.transform.localPosition = Vector3.zero;
         weaponToEquip.transform.localRotation = Quaternion.Euler(Vector3.zero);
+
         PlayWeaponSwitchEffects(weapon);
         UpdateWeaponUI(weapon);
     }

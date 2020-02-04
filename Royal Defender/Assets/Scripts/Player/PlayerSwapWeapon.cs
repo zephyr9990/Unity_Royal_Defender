@@ -65,8 +65,8 @@ public class PlayerSwapWeapon : MonoBehaviour
         if (playerWeapon == null && NPCWeapon == null)
             return; // nothing to exchange.
 
-        NPCEquippedWeapon.UnequipWeapon();
-        playerEquippedWeapon.UnequipWeapon();
+        //NPCEquippedWeapon.UnequipWeapon();
+        //playerEquippedWeapon.UnequipWeapon();
 
         NPCEquippedWeapon.EquipWeapon(playerWeapon);
         playerEquippedWeapon.EquipWeapon(NPCWeapon);

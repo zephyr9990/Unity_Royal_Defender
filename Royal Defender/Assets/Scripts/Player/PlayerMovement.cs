@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 toTargetRotation = Vector3.RotateTowards(transform.forward, movement, Time.deltaTime * lerpSmoothing, 0.0f);
             transform.rotation = Quaternion.LookRotation(toTargetRotation);
         }
-    }
+   }
 
     private Vector3 GetMovementSpeed()
     {

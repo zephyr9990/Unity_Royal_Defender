@@ -3,23 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwingEventHandler : MonoBehaviour
+public class NPCSwingEventHandler : MonoBehaviour
 {
-    public PlayerEquippedWeapon equippedWeapon;
+
+    private NPCEquippedWeapon npcEquippedWeapon;
     private Animator animator;
 
-    void Start()
+    private void Awake()
     {
+        npcEquippedWeapon = GetComponent<NPCEquippedWeapon>();
         animator = GetComponent<Animator>();
     }
 
     void Swing()
     {
-        WeaponInfo weaponSwung = equippedWeapon.GetWeaponInfo();
+        WeaponInfo weaponSwung = npcEquippedWeapon.GetWeaponInfo();
         if (weaponSwung == null)
             return;
 
-        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
+        GameObject weapon = npcEquippedWeapon.GetEquippedMeleeWeaponObject();
         SetColliderEnabled(weapon, true);
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
     }
@@ -28,14 +30,15 @@ public class SwingEventHandler : MonoBehaviour
     {
         animator.SetBool("IsSwinging", false);
 
-        WeaponInfo weaponSwung = equippedWeapon.GetWeaponInfo();
+        WeaponInfo weaponSwung = npcEquippedWeapon.GetWeaponInfo();
         if (weaponSwung == null)
             return;
 
-        GameObject weapon = equippedWeapon.GetEquippedMeleeWeaponObject();
+        GameObject weapon = npcEquippedWeapon.GetEquippedMeleeWeaponObject();
         SetColliderEnabled(weapon, false);
         weapon.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Stop();
     }
+
     private void SetColliderEnabled(GameObject weapon, bool value)
     {
         weapon.GetComponent<BoxCollider>().enabled = value;
