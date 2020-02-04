@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: name
       value: Hartinger
       objectReference: {fileID: 0}
+    - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
+      propertyPath: characterName
+      value: Hartinger
+      objectReference: {fileID: 0}
     - target: {fileID: 8618048715869122107, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2536,6 +2540,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
       propertyPath: name
+      value: Natag-Oy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
+      propertyPath: characterName
       value: Natag-Oy
       objectReference: {fileID: 0}
     - target: {fileID: 8618048715869122107, guid: c989701f54c9ef74c986d1029bbd4c1e,
@@ -5400,6 +5408,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
       propertyPath: name
+      value: Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
+      propertyPath: characterName
       value: Young
       objectReference: {fileID: 0}
     - target: {fileID: 8618048715869122107, guid: c989701f54c9ef74c986d1029bbd4c1e,
@@ -11840,6 +11852,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
       propertyPath: name
+      value: Cherubini
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
+      propertyPath: characterName
       value: Cherubini
       objectReference: {fileID: 0}
     - target: {fileID: 8618048715869122107, guid: c989701f54c9ef74c986d1029bbd4c1e,
@@ -20182,6 +20198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1880338088}
     m_Modifications:
+    - target: {fileID: 1293424378, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
+      propertyPath: characterName
+      value: Aragon
+      objectReference: {fileID: 0}
     - target: {fileID: 1293424381, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
       propertyPath: m_Camera
       value: 
