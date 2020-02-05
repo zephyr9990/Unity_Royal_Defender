@@ -114,9 +114,9 @@ public class LockOnScript : MonoBehaviour
     private void LockOnto(GameObject target)
     {
         // Make the player always face the target so that they do not have to aim
-        EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
         if (target)
         {
+            EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
             if (targetHealth.isAlive())
             {
                 
