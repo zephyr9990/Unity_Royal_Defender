@@ -10,10 +10,7 @@ public class LockOnScript : MonoBehaviour
     private Animator animator;
     private bool lockOnToggled = false;
     private PlayerEquippedWeapon equippedWeapon;
-    private GameObject currentlyLockedOnTarget;
-    private EnemyHealth currentEnemyHealth;
-
-    
+    private GameObject currentlyLockedOnTarget;    
 
     private void Awake()
     {
@@ -45,6 +42,8 @@ public class LockOnScript : MonoBehaviour
         {
             lockOnToggled = !lockOnToggled;
             animator.SetBool("LockOnToggled", lockOnToggled);
+            if (!lockOnToggled)
+            { TurnOffLockOn(); }
         }
 
         if (enemies.Count > 0 && PlayerHasRangedWeapon())
@@ -83,6 +82,7 @@ public class LockOnScript : MonoBehaviour
             GameObject enemy = enemies[index] as GameObject;
             if (enemy)
             {
+                SetHealthBarEnabled(enemy, false);
                 EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
                 if (enemyHealth.isAlive())
                 {
@@ -123,16 +123,10 @@ public class LockOnScript : MonoBehaviour
                 Vector3 toTarget = target.transform.position - transform.parent.position;
                 toTarget.y = 0;
                 Vector3 toTargetRotation = Vector3.RotateTowards(transform.parent.forward, toTarget, Time.deltaTime * lerpSmoothing, 0.0f);
-
                 transform.parent.rotation = Quaternion.LookRotation(toTargetRotation);
 
-
                 currentlyLockedOnTarget = target;
-                currentEnemyHealth = target.GetComponent<EnemyHealth>();
-                //update targeted enemy locked status
-                currentEnemyHealth.isLocked = true;
-
-                Debug.LogWarning(gameObject.name + " lOCK Enabled ");
+                SetHealthBarEnabled(currentlyLockedOnTarget, true);
             }
         }
     }
@@ -149,17 +143,22 @@ public class LockOnScript : MonoBehaviour
 
     public void TurnOffLockOn()
     {
-        if (currentEnemyHealth != null) {
-            currentEnemyHealth.isLocked = false;
-            Debug.LogWarning(gameObject.name + " lOCK Disabled ");
-        }
-
         lockOnToggled = false;
         animator.SetBool("LockOnToggled", false);
         animator.SetBool("IsShooting", false);
-        
+
+        if (currentlyLockedOnTarget)
+        {
+            SetHealthBarEnabled(currentlyLockedOnTarget, false);
+        }
         currentlyLockedOnTarget = null;
-        currentEnemyHealth = null;
+
+    }
+
+    private void SetHealthBarEnabled(GameObject target, bool value)
+    {
+        EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
+        enemyHealth.isLocked = value;
     }
 
     public void RemoveFromLockOnList(GameObject enemy)
