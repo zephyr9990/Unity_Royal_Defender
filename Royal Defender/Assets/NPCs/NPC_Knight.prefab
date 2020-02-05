@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0916e168cbd38e4baa455722fd1e2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Aragon
+  characterName: 
 --- !u!1 &8618048715869126747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,7 +2052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8618048716151655123}
   m_LocalRotation: {x: 0.60683894, y: 0.45176384, z: 0.014055722, w: 0.6538031}
-  m_LocalPosition: {x: -15.7, y: -27.3, z: -22.6}
+  m_LocalPosition: {x: 0.5, y: -19.3, z: -21.4}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 8618048715869037485}
@@ -6926,13 +6926,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8618048716970381416}
-  m_LocalRotation: {x: 0.6929418, y: 0.70665354, z: -0.07870284, w: 0.11949212}
-  m_LocalPosition: {x: -37.3, y: -6.9, z: 28.9}
+  m_LocalRotation: {x: 0.69750595, y: 0.7025339, z: -0.10954152, w: 0.08906341}
+  m_LocalPosition: {x: -17.6, y: -3.9, z: 32.3}
   m_LocalScale: {x: 150, y: 150, z: 150}
   m_Children: []
   m_Father: {fileID: 8618048715869037485}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 16.071001, y: 176.432, z: 88.373}
+  m_LocalEulerAnglesHint: {x: 16.150002, y: 181.65099, z: 89.823006}
 --- !u!198 &8618048716970381420
 ParticleSystem:
   m_ObjectHideFlags: 0
