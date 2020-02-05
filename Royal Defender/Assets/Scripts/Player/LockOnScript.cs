@@ -11,6 +11,9 @@ public class LockOnScript : MonoBehaviour
     private bool lockOnToggled = false;
     private PlayerEquippedWeapon equippedWeapon;
     private GameObject currentlyLockedOnTarget;
+    private EnemyHealth currentEnemyHealth;
+
+    
 
     private void Awake()
     {
@@ -111,18 +114,25 @@ public class LockOnScript : MonoBehaviour
     private void LockOnto(GameObject target)
     {
         // Make the player always face the target so that they do not have to aim
+        EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
         if (target)
         {
-            EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
             if (targetHealth.isAlive())
             {
+                
                 Vector3 toTarget = target.transform.position - transform.parent.position;
                 toTarget.y = 0;
                 Vector3 toTargetRotation = Vector3.RotateTowards(transform.parent.forward, toTarget, Time.deltaTime * lerpSmoothing, 0.0f);
 
                 transform.parent.rotation = Quaternion.LookRotation(toTargetRotation);
 
+
                 currentlyLockedOnTarget = target;
+                currentEnemyHealth = target.GetComponent<EnemyHealth>();
+                //update targeted enemy locked status
+                currentEnemyHealth.isLocked = true;
+
+                Debug.LogWarning(gameObject.name + " lOCK Enabled ");
             }
         }
     }
@@ -139,10 +149,17 @@ public class LockOnScript : MonoBehaviour
 
     public void TurnOffLockOn()
     {
+        if (currentEnemyHealth != null) {
+            currentEnemyHealth.isLocked = false;
+            Debug.LogWarning(gameObject.name + " lOCK Disabled ");
+        }
+
         lockOnToggled = false;
         animator.SetBool("LockOnToggled", false);
         animator.SetBool("IsShooting", false);
+        
         currentlyLockedOnTarget = null;
+        currentEnemyHealth = null;
     }
 
     public void RemoveFromLockOnList(GameObject enemy)

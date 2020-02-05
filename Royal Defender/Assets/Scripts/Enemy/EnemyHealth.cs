@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth;
 
     public bool isLocked = false;
-
+    public bool isDamaged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,12 @@ public class EnemyHealth : MonoBehaviour
 
     public event Action<float> OnHealthPctChanged = delegate { };
 
+    public void UpdateHealthPCT()
+    {
+        float currentHealthPct = (float)currentHealth / (float)MaxHealth;
+        OnHealthPctChanged(currentHealthPct);
+    }
+
     public void TakeDamage(int amount)
     {
         if (bIsAlive)
@@ -49,9 +55,9 @@ public class EnemyHealth : MonoBehaviour
                 //Update the percent slider when locked on
                 if (isLocked)
                 {
-                    float currentHealthPct = (float)currentHealth / (float)MaxHealth;
-                    OnHealthPctChanged(currentHealthPct);
+                    UpdateHealthPCT();
                 }
+
             }
             Debug.LogWarning(gameObject.name + " HP: " + currentHealth);
         }

@@ -11,22 +11,35 @@ public class enemyHealthBar : MonoBehaviour
     public Image backgroundImage;
     //Control the speed of update for the bar for a natural transition
     public float updateSpeedSeconds = 0.5f;
-    public bool locked;
+
 
     EnemyHealth enemyHealth;
 
     public void Update()
     {
-        locked = enemyHealth.isLocked;
-        if (locked && foregroundImage.enabled == false)
+        if (enemyHealth.isLocked)
         {
-            foregroundImage.enabled = true;
-            backgroundImage.enabled = true;
+            DisplayHealth();
         }
-        else if (!locked && foregroundImage.enabled == true) {
-            foregroundImage.enabled = false;
-            backgroundImage.enabled = false;
+        else if (!enemyHealth.isLocked) {
+            TurnOffDisplay();
         }
+    }
+
+    //displayes the healthbar
+
+    public void DisplayHealth()
+    {
+        foregroundImage.enabled = true;
+        backgroundImage.enabled = true;
+    }
+
+    //Turn off healthbar display
+
+    public void TurnOffDisplay()
+    {
+        foregroundImage.enabled = false;
+        backgroundImage.enabled = false;
     }
 
     public void Awake()
