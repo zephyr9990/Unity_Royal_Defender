@@ -2,12 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerSwapWeapon : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     private PlayerInventory playerInventory;
     private PlayerEquippedWeapon playerEquippedWeapon;
     private ArrayList npcs;
+    private float timeBetweenReviveCalls;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +18,15 @@ public class PlayerSwapWeapon : MonoBehaviour
         playerInventory = transform.parent.GetComponent<PlayerInventory>();
         playerEquippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
         npcs = new ArrayList();
+        timeBetweenReviveCalls = 1f;
+        timer = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         if (npcs.Count <= 0)
             return;
 
@@ -29,6 +36,12 @@ public class PlayerSwapWeapon : MonoBehaviour
         if (Input.GetButtonDown("SwapWeapon"))
         {
             SwapWeapons(closestNPC);
+        }
+
+        if (Input.GetButton("Revive") && timer > timeBetweenReviveCalls)
+        {
+            timer = 0f;
+            Revive(closestNPC);
         }
     }
 
@@ -62,7 +75,7 @@ public class PlayerSwapWeapon : MonoBehaviour
         WeaponInfo NPCWeapon = NPCEquippedWeapon.GetWeaponInfo();
         WeaponInfo playerWeapon = playerEquippedWeapon.GetWeaponInfo();
 
-        if (playerWeapon == null && NPCWeapon == null)
+        if (NPCEquippedWeapon.enabled == false || playerWeapon == null && NPCWeapon == null)
             return; // nothing to exchange.
 
         //NPCEquippedWeapon.UnequipWeapon();
@@ -72,6 +85,15 @@ public class PlayerSwapWeapon : MonoBehaviour
         playerEquippedWeapon.EquipWeapon(NPCWeapon);
 
         playerInventory.SwapWeapons(playerWeapon, NPCWeapon);
+    }
+
+    private void Revive(GameObject closestNPC)
+    {
+        if (closestNPC)
+        {
+            NPCRevive npcRevive = closestNPC.GetComponent<NPCRevive>();
+            npcRevive.BeginReviving();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
