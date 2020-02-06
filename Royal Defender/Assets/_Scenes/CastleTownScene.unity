@@ -1099,6 +1099,16 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5559673665161447307, guid: 7add1d5b90ab7234d92b5feb2d77c953,
+        type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559673665161447307, guid: 7add1d5b90ab7234d92b5feb2d77c953,
+        type: 3}
+      propertyPath: attackInterval
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7add1d5b90ab7234d92b5feb2d77c953, type: 3}
 --- !u!1 &126007679 stripped
@@ -5847,6 +5857,16 @@ PrefabInstance:
     - target: {fileID: 409254, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873204515130420085, guid: 83187382e7bb7844da2964a6fec3b29b,
+        type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 873204515130420085, guid: 83187382e7bb7844da2964a6fec3b29b,
+        type: 3}
+      propertyPath: attackInterval
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
@@ -17976,6 +17996,8 @@ MonoBehaviour:
   MaxHealth: 170
   scoreValue: 70
   isLocked: 0
+  isDamaged: 0
+  displayTime: 3
 --- !u!1 &1777304471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1631352259739706, guid: f09328c8b25128e408553616636c2226,

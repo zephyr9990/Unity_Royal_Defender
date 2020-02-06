@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using System;
 
 public class EnemyHealth : MonoBehaviour
@@ -9,9 +10,10 @@ public class EnemyHealth : MonoBehaviour
     public int scoreValue = 10;
     private GameObject player;
     private LockOnScript playerLockOnScript;
-    Animator _anim;
+    private Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
+    private NavMeshAgent _nav;
 
     public bool isLocked = false;
     public bool isDamaged = false;
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = MaxHealth;
         _anim = GetComponent<Animator>();
+        _nav = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerLockOnScript = player.transform.GetChild(0).GetComponent<LockOnScript>();
     }
@@ -85,9 +88,10 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         _anim.SetTrigger("Die");
+        _nav.isStopped = true;
 
         bIsAlive = false;
         ScoreManager.score += scoreValue;
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject, 2.5f);
     }
 }
