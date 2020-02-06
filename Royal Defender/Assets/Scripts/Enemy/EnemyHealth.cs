@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     public bool isLocked = false;
     public bool isDamaged = false;
     public int displayTime = 3;
+    
+
 
 
 
@@ -92,6 +94,10 @@ public class EnemyHealth : MonoBehaviour
 
         bIsAlive = false;
         ScoreManager.score += scoreValue;
+        GetComponent<EnemyController>().DropWeapon();
         Destroy(gameObject, 2.5f);
+        
     }
+
+    
 }

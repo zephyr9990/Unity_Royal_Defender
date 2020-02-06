@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     public float SD = 5; // Initially set to 5 needs to be adjusted to find right ditance and then set private
     public int attackDamage = 10;
     public float attackInterval = 4;
+    public GameObject[] Weapons;
 
     // Start is called before the first frame update
     void Start()
@@ -117,4 +118,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void DropWeapon()
+    {
+        int randInt = UnityEngine.Random.Range(0, Weapons.Length);
+        //Instantiate(Weapons[randInt], transform.position);
+        Instantiate(Weapons[randInt], transform.position, Quaternion.identity);
+
+    }
 }
