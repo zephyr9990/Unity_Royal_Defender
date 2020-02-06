@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         lockOn = GetComponentInChildren<LockOnScript>();
         playerCombat = GetComponent<PlayerCombat>();
         playerController = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         sprintSpeed = speed + 3;
         isLockedOn = false;
     }

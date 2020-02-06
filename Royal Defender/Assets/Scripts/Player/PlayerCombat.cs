@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         playerInventory = GetComponent<PlayerInventory>();
         equippedWeapon = GetComponent<PlayerEquippedWeapon>();
         lockOn = GetComponentInChildren<LockOnScript>();

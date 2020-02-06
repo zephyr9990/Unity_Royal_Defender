@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     // components
-    public Animator animator;
+    private Animator animator;
     private PlayerEquippedWeapon equippedWeapon;
     public Animator weaponPanelAnimator;
 
@@ -26,21 +26,25 @@ public class PlayerInventory : MonoBehaviour
     private ArrayList rangedWeapons;
     private ArrayList meleeWeapons;
     private ArrayList currentWeaponList;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        animator = GetComponent<Animator>();
         equippedWeapon = GetComponent<PlayerEquippedWeapon>();
 
         // weapons
         currentRangedWeaponIndex = -1;
         currentMeleeWeaponIndex = -1;
-
-        currentAmmo = startingAmmo;
-
         rangedWeapons = new ArrayList();
         meleeWeapons = new ArrayList();
         listSwitched = false;
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentAmmo = startingAmmo;
     }
 
     // Update is called once per frame
