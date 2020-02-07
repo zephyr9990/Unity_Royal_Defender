@@ -7,7 +7,8 @@ using System;
 public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth;
-    public int scoreValue = 10;
+    public int pointsValue = 10;
+    public int enemiesslainValue = 1;
     private GameObject player;
     private LockOnScript playerLockOnScript;
     private Animator _anim;
@@ -93,7 +94,8 @@ public class EnemyHealth : MonoBehaviour
         _nav.isStopped = true;
 
         bIsAlive = false;
-        ScoreManager.score += scoreValue;
+        PointsManager.points += pointsValue;
+        EnemiesSlainManager.enemiesslain += enemiesslainValue;
         GetComponent<EnemyController>().DropWeapon();
         Destroy(gameObject, 2.5f);
         

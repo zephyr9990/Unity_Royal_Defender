@@ -1,23 +1,23 @@
-﻿//Senior Desgin Project Score Manager
+﻿//Senior Desgin Project Points Manager
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class PointsManager : MonoBehaviour
 {
-    public static int score;
+    public static int points;
 
     Text text;
 
     void Awake()
     {
         text = GetComponent <Text> ();
-        score = 0;
+        points = 0;
     }
     
     void Update()
     {
-        text.text = "Score: " + score;
+        text.text = "Points: " + points;
     }
 }
