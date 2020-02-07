@@ -28,10 +28,10 @@ public class NPCRevive : MonoBehaviour
 
     public void BeginReviving()
     {
-        if (ScoreManager.score - amountSubtractedPerReviveCall < 0)
+        if (PointsManager.points - amountSubtractedPerReviveCall < 0)
             return; // not enough points to activate revive tick.
         
-        ScoreManager.score -= amountSubtractedPerReviveCall;
+        PointsManager.points -= amountSubtractedPerReviveCall;
 
         currentReviveProgress += amountAddedPerReviveCall;
         npcUI.SetSliderValue(currentReviveProgress / amountNeededToRevive);

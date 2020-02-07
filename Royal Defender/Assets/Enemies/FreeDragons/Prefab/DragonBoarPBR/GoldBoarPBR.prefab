@@ -1110,7 +1110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 150
-  scoreValue: 50
+  pointsValue: 30
+  enemiesslainValue: 1
   isLocked: 0
   isDamaged: 0
   displayTime: 3
