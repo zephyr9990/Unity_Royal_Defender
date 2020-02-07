@@ -71,11 +71,11 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
 
         //Tell the animator to play the death animation
-        anim.SetTrigger("Die");
+        anim.SetBool("IsDead", true);
 
         //Play death audio clip
-        playerAudio.clip = deathAudio;
-        playerAudio.Play();
+        /*playerAudio.clip = deathAudio;
+        playerAudio.Play();*/
 
         //Turn off player functions
         PlayerMovement.enabled = false;

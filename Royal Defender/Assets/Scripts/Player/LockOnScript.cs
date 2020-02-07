@@ -15,7 +15,7 @@ public class LockOnScript : MonoBehaviour
     private void Awake()
     {
         enemies = new ArrayList();
-        animator = transform.parent.GetComponentInChildren<Animator>();
+        animator = transform.root.GetComponent<Animator>();
         equippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
     }
 

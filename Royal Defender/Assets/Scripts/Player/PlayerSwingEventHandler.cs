@@ -11,7 +11,7 @@ public class PlayerSwingEventHandler : MonoBehaviour
 
     private void Awake()
     {   
-        equippedWeapon = transform.parent.GetComponent<PlayerEquippedWeapon>();
+        equippedWeapon = GetComponent<PlayerEquippedWeapon>();
         animator = GetComponent<Animator>();
     }
 

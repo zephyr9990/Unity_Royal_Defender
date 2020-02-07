@@ -47,7 +47,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
         meleeParticleEffect = meleeSocket.GetComponent<ParticleSystem>();
         meleeLightEffect = meleeSocket.GetComponent<Light>();
 
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

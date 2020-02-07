@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class NamePlate : MonoBehaviour
 {
+    public Text nameText;
     public string characterName = "";
 
     private void Start()
     {
-        GameObject namePlate = transform.GetChild(0).gameObject;
-        namePlate.GetComponent<Text>().text = characterName;
+        nameText.text = characterName;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Camera.main.transform.rotation;
+        nameText.transform.rotation = Camera.main.transform.rotation;
     }
 }
