@@ -488,6 +488,45 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8394218021194674603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8065121806961418722}
+  - component: {fileID: 8128882105326932079}
+  m_Layer: 0
+  m_Name: Aiming
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8065121806961418722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394218021194674603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.094, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 100}
+  m_Children: []
+  m_Father: {fileID: 8618048715869122107}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8128882105326932079
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394218021194674603}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8618048715869126747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1072,7 @@ GameObject:
   - component: {fileID: 8618048715869313940}
   - component: {fileID: 2290657220273311639}
   - component: {fileID: 5320076512543304247}
+  - component: {fileID: 1562343846455002050}
   m_Layer: 0
   m_Name: NPC_Knight
   m_TagString: NPC
@@ -1057,6 +1097,7 @@ Transform:
   - {fileID: 8618048715869111775}
   - {fileID: 8618048715869030147}
   - {fileID: 1293424377}
+  - {fileID: 8065121806961418722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1228,7 +1269,20 @@ MonoBehaviour:
   nameText: {fileID: 865005861}
   sliderText: {fileID: 1605673845160649520}
   reviveSlider: {fileID: 683847589028234335}
-  characterName: Boo
+  characterName: Name
+--- !u!114 &1562343846455002050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618048715869313951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466e6c74c2dac9b48804029f644a4166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimingCube: {fileID: 8394218021194674603}
 --- !u!1 &8618048715869314225
 GameObject:
   m_ObjectHideFlags: 0

@@ -119,7 +119,6 @@ public class LockOnScript : MonoBehaviour
             EnemyHealth targetHealth = target.GetComponent<EnemyHealth>();
             if (targetHealth.isAlive())
             {
-                
                 Vector3 toTarget = target.transform.position - transform.parent.position;
                 toTarget.y = 0;
                 Vector3 toTargetRotation = Vector3.RotateTowards(transform.parent.forward, toTarget, Time.deltaTime * lerpSmoothing, 0.0f);

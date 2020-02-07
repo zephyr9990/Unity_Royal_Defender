@@ -13,6 +13,8 @@ public class NPCMovement : MonoBehaviour
     public float movementSpeed = 3.5f;
     public float aimingMovementSpeed = 2.0f;
 
+    private GameObject enemy;
+
     // components
     private Animator animator;
     private NavMeshAgent navMeshAgent;
@@ -38,15 +40,15 @@ public class NPCMovement : MonoBehaviour
 
         if (npcHasWeapon)
         {
-            GameObject enemyToAttack = attackRange.GetNearestTarget();
-            if (enemyToAttack == null)
+            enemy = attackRange.GetNearestTarget();
+            if (enemy == null)
             {
                 GoCombatIdle();
                 GoToLocation(locationToGuard);
             }
             else
             {
-                Attack(enemyToAttack);
+                Attack(enemy);
             }
         }
         else // NPC has no weapon. Go back to base.
@@ -99,27 +101,27 @@ public class NPCMovement : MonoBehaviour
         navMeshAgent.SetDestination(targetPosition);
     }
 
-    private void Attack(GameObject enemy)
+    private void Attack(GameObject target)
     {
         WeaponInfo weapon = npcEquippedWeapon.GetWeaponInfo();
         if (weapon.type == WeaponType.Melee)
         {
-            GoToMeleeRange(enemy);
+            GoToMeleeRange(target);
         }
         else
         {
-            GoToShootingRange(enemy);
+            GoToShootingRange(target);
         }
     }
 
-    private void GoToMeleeRange(GameObject enemy)
+    private void GoToMeleeRange(GameObject target)
     {
         SetIsAiming(false);
-        Vector3 distanceToEnemy = enemy.transform.position - transform.position;
-        LockOnto(enemy);
+        Vector3 distanceToEnemy = target.transform.position - transform.position;
+        LockOnto(target);
         if (distanceToEnemy.magnitude > meleeDistance)
         {
-            GoToLocation(enemy);
+            GoToLocation(target);
         }
         else
         {
@@ -127,20 +129,20 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
-    private void GoToShootingRange(GameObject enemy)
+    private void GoToShootingRange(GameObject target)
     {
         SetIsAiming(true);
-        Vector3 distanceToEnemy = enemy.transform.position - transform.position;
-        LockOnto(enemy);
+        Vector3 distanceToEnemy = target.transform.position - transform.position;
+        LockOnto(target);
         if (distanceToEnemy.magnitude > attackRangeSphere.radius)
         {
             npcCombat.SetInShootingRange(false);
-            GoToLocation(enemy);
+            GoToLocation(target);
         }
         else if (distanceToEnemy.magnitude < safeShootingDistance)
         {
             npcCombat.SetInShootingRange(true);
-            Vector3 enemyToSelf = transform.position - enemy.transform.position;
+            Vector3 enemyToSelf = transform.position - target.transform.position;
             Vector3 awayFromEnemy = transform.position + enemyToSelf;
             GoToLocation(awayFromEnemy);
         }
@@ -179,5 +181,13 @@ public class NPCMovement : MonoBehaviour
     private void SetIsAiming(bool value)
     {
         animator.SetBool("LockOnToggled", value);
+    }
+
+    public GameObject getTarget()
+    {
+        if (enemy)
+        { return enemy; }
+
+        return null;
     }
 }
