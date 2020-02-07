@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 394298302808284700}
   - component: {fileID: 8646880205219495304}
   - component: {fileID: 3661861755697948133}
+  - component: {fileID: 7205458145635060808}
   m_Layer: 0
   m_Name: Item_Mace00
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ad7d3c6d2e8c945a819bba6061fb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7205458145635060808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dc94c50a4fd8b4c930bcd89b0dac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBeforeDestroyed: 15
 --- !u!1 &114446
 GameObject:
   m_ObjectHideFlags: 0

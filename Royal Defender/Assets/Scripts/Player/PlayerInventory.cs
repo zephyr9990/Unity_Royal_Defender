@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerInventory : MonoBehaviour
     private Animator animator;
     private PlayerEquippedWeapon equippedWeapon;
     public Animator weaponPanelAnimator;
+    public Text RangedWeaponsText;
+    public Text MeleeWeaponsText;
 
     // weapons
     private int currentRangedWeaponIndex;
@@ -45,6 +48,8 @@ public class PlayerInventory : MonoBehaviour
     void Start()
     {
         currentAmmo = startingAmmo;
+        RangedWeaponsText.text = "Ranged Weapons 0/0";
+        MeleeWeaponsText.text = "Melee Weapons 0/0";
     }
 
     // Update is called once per frame
@@ -63,6 +68,7 @@ public class PlayerInventory : MonoBehaviour
                 if (listSwitched)
                 {
                     SwitchWeapon(currentWeaponList, 0);
+                    UpdateWeaponTextUI();
                 }
             }
         }
@@ -73,6 +79,7 @@ public class PlayerInventory : MonoBehaviour
             // to change the weapon index value
             int direction = (int)Input.GetAxis("SwitchWeapon");
             SwitchWeapon(currentWeaponList, direction);
+            UpdateWeaponTextUI();
         }
     }
 
@@ -85,7 +92,6 @@ public class PlayerInventory : MonoBehaviour
             {
                 rangedWeapons.Add(weapon);
             }
-            Debug.LogWarning("Ranged weapon count: " + rangedWeapons.Count);
         }
         else if (weapon.type == WeaponType.Melee)
         {
@@ -94,8 +100,8 @@ public class PlayerInventory : MonoBehaviour
             {
                 meleeWeapons.Add(weapon);
             }
-            Debug.LogWarning("Melee weapon count: " + meleeWeapons.Count);
         }
+        UpdateWeaponTextUI();
     }
 
     public int getCurrentAmmo() 
@@ -116,7 +122,6 @@ public class PlayerInventory : MonoBehaviour
         if (desiredWeaponIndex >= weapons.Count)
         {
             // Don't play effect if there are no more weapons.
-            Debug.LogWarning("Switching to " + currentType.ToString() + " weapon index: " + currentWeaponIndex);
             return;
         }
         else if (desiredWeaponIndex >=0 && desiredWeaponIndex <= weapons.Count - 1)
@@ -132,7 +137,6 @@ public class PlayerInventory : MonoBehaviour
 
         SetCurrentWeaponIndex(currentWeaponIndex);
         EquipWeapon(weaponToEquip);
-        Debug.LogWarning("Switching to " + currentType.ToString() + " weapon index: " + currentWeaponIndex);
     }
 
     private void SwitchWeaponList(int direction)
@@ -239,6 +243,8 @@ public class PlayerInventory : MonoBehaviour
             meleeWeapons.RemoveAt(currentMeleeWeaponIndex);
             currentMeleeWeaponIndex = -1;
         }
+
+        UpdateWeaponTextUI();
     }
 
     public void SwapWeapons(WeaponInfo playerWeapon, WeaponInfo npcWeapon)
@@ -263,6 +269,7 @@ public class PlayerInventory : MonoBehaviour
         AdjustInventoryFromSwap(playerWeapon, npcWeapon);
         SwitchWeaponList(npcWeapon.type);
         SetCurrentWeaponIndex(currentWeaponList.IndexOf(npcWeapon));
+        UpdateWeaponTextUI();
     }
 
     private void AdjustInventoryFromSwap(WeaponInfo playerWeapon, WeaponInfo npcWeapon)
@@ -286,5 +293,11 @@ public class PlayerInventory : MonoBehaviour
         }
         currentWeaponList.RemoveAt(IndexToRemove);
         listToSwapTo.Insert(IndexToSwap, npcWeapon);
+    }
+
+    private void UpdateWeaponTextUI()
+    {
+        MeleeWeaponsText.text = "Melee Weapons " + (currentMeleeWeaponIndex + 1) + "/" + meleeWeapons.Count;
+        RangedWeaponsText.text = "Ranged Weapons " + (currentRangedWeaponIndex + 1) + "/" + rangedWeapons.Count;
     }
 }

@@ -70,16 +70,17 @@ public class PlayerHealth : MonoBehaviour
         //Set the death flag so this function does not repeat
         isDead = true;
 
-        //Tell the animator to play the death animation
+        //TODO Comment out for player death.
+        /*//Tell the animator to play the death animation
         anim.SetBool("IsDead", true);
 
         //Play death audio clip
-        /*playerAudio.clip = deathAudio;
-        playerAudio.Play();*/
+        playerAudio.clip = deathAudio;
+        playerAudio.Play();
 
         //Turn off player functions
         PlayerMovement.enabled = false;
-        PlayerCombat.enabled = false;
+        PlayerCombat.enabled = false;*/
     }
 
 }

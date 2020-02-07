@@ -8012,6 +8012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPanelAnimator: {fileID: 2111813207}
+  RangedWeaponsText: {fileID: 1706701201}
+  MeleeWeaponsText: {fileID: 973003980}
   maxAmmo: 0
   startingAmmo: 0
   maxNumberOfRangedWeapons: 5

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1087061912}
   - component: {fileID: 1087061910}
   - component: {fileID: 1087061911}
+  - component: {fileID: 922306074427134155}
   m_Layer: 0
   m_Name: Item_Axe00
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   weaponMesh: {fileID: 174004, guid: 6478e3e782a118f45a402645660f05ef, type: 3}
   weaponIcon: {fileID: 2800000, guid: 1929341cb9bd7ac49817b013f48dbbc9, type: 3}
   type: 2
+--- !u!114 &922306074427134155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dc94c50a4fd8b4c930bcd89b0dac26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBeforeDestroyed: 15
 --- !u!1 &196734
 GameObject:
   m_ObjectHideFlags: 0
