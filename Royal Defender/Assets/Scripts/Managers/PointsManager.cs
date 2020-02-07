@@ -18,6 +18,6 @@ public class PointsManager : MonoBehaviour
     
     void Update()
     {
-        text.text = "Points: " + points;
+        text.text = points.ToString();
     }
 }

@@ -18,6 +18,6 @@ public class EnemiesSlainManager : MonoBehaviour
 
     void Update()
     {
-        text.text = "Enemies Slain: " + enemiesslain;
+        text.text = "Enemies Slain\n" + enemiesslain;
     }
 }

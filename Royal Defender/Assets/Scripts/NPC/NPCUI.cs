@@ -28,7 +28,7 @@ public class NPCUI : MonoBehaviour
         reviveSlider.value = value;
     }
 
-    internal void SetSliderText(string value)
+    public void SetSliderText(string value)
     {
         sliderText.text = value;
     }
