@@ -56,8 +56,6 @@ public class NPCEquippedWeapon : MonoBehaviour
         {
             UnequipWeapon();
         }
-        equippedWeapon = null;
-        StopWeaponSwitchEffects();
 
         // If no weapon is given, npc becomes unarmed
         if (weapon == null)
