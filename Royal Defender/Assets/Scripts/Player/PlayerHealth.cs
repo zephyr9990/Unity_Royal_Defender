@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    [SerializeField]
+    GameObject DeathMenu;
+
     public int maxHealth = 100;     //Starting health and maximum health for player
     public Slider healthSlider;     //UI slider component
     public AudioClip deathAudio;    //Death Audio Clip
@@ -47,6 +52,9 @@ public class PlayerHealth : MonoBehaviour
         {
             //Kill the player
             Death();
+            //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            DeathMenu.gameObject.SetActive(true);
+
         }
     }
 
