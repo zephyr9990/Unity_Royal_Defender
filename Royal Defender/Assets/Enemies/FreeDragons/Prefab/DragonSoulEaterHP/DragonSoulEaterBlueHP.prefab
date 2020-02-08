@@ -269,7 +269,6 @@ MonoBehaviour:
   foregroundImage: {fileID: 5738416378956432694}
   backgroundImage: {fileID: 5556096152461671769}
   updateSpeedSeconds: 0.5
-  locked: 0
 --- !u!1 &1035570738180810829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,8 +1320,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 170
-  scoreValue: 10
+  pointsValue: 34
+  enemiesslainValue: 1
   isLocked: 0
+  isDamaged: 0
+  displayTime: 3
 --- !u!1 &5365679892838847631
 GameObject:
   m_ObjectHideFlags: 0

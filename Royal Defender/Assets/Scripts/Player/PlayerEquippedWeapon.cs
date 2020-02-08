@@ -69,6 +69,8 @@ public class PlayerEquippedWeapon : MonoBehaviour
             UnequipWeapon();
         }
 
+        StopWeaponSwitchEffects();
+
         // If no weapon is given, player wants to be unarmed
         if (weapon == null)
         {

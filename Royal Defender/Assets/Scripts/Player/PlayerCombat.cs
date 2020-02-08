@@ -47,8 +47,6 @@ public class PlayerCombat : MonoBehaviour
         {
             CheckIfPlayerWantsToSwing();
         }
-
-
     }
 
     private void CheckIfPlayerWantsToSwing()
@@ -79,7 +77,8 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
-                StopAttackingAnimations();
+                // TODO make sure this is truly needed.
+                //StopAttackingAnimations();
             }
         }
 

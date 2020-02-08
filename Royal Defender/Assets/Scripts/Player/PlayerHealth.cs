@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     AudioSource playerAudio;        //Player audio component
     PlayerMovement PlayerMovement;  //References Player Movement Script
     PlayerCombat PlayerCombat;      //References Player Combat Script
+    PlayerInventory playerInventory; //References PlayerInventory Script
 
     bool isDead;                    //Changed to true when currentHealth = 0
 
@@ -31,7 +32,8 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         PlayerMovement = GetComponent<PlayerMovement>();
-        PlayerCombat = GetComponent<PlayerCombat>();   
+        PlayerCombat = GetComponent<PlayerCombat>();
+        playerInventory = GetComponent < PlayerInventory >();
 
         // Set up the initial player health
         currentHealth = maxHealth;
@@ -52,9 +54,6 @@ public class PlayerHealth : MonoBehaviour
         {
             //Kill the player
             Death();
-            //SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            DeathMenu.gameObject.SetActive(true);
-
         }
     }
 
@@ -79,16 +78,22 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
 
         //TODO Comment out for player death.
-        /*//Tell the animator to play the death animation
+        //Tell the animator to play the death animation
         anim.SetBool("IsDead", true);
 
         //Play death audio clip
-        playerAudio.clip = deathAudio;
-        playerAudio.Play();
-
+       /* playerAudio.clip = deathAudio;
+        playerAudio.Play();*/
+            
         //Turn off player functions
         PlayerMovement.enabled = false;
-        PlayerCombat.enabled = false;*/
+        PlayerCombat.enabled = false;
+        playerInventory.enabled = false;
     }
 
+    void GameOver()
+    {
+        Time.timeScale = 0;
+        DeathMenu.gameObject.SetActive(true);
+    }
 }

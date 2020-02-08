@@ -90,6 +90,7 @@ public class NPCCombat : MonoBehaviour
             }
             else
             {
+                //TODO check if this is truly needed.
                 StopAttackingAnimations();
             }
         }

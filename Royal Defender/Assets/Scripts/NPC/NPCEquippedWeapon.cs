@@ -56,6 +56,8 @@ public class NPCEquippedWeapon : MonoBehaviour
         {
             UnequipWeapon();
         }
+        equippedWeapon = null;
+        StopWeaponSwitchEffects();
 
         // If no weapon is given, npc becomes unarmed
         if (weapon == null)
@@ -177,7 +179,6 @@ public class NPCEquippedWeapon : MonoBehaviour
             meleeParticleEffect.Stop();
             meleeLightEffect.enabled = false;
             return;
-
         }
 
         if (equippedWeapon.type == WeaponType.Ranged)

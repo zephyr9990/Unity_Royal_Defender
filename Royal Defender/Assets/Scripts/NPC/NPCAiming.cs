@@ -45,7 +45,6 @@ public class NPCAiming : MonoBehaviour
             aimingCube.transform.rotation = Quaternion.LookRotation(toTarget);
             Quaternion aimDirection = aimingCube.transform.rotation.normalized;
             animator.SetFloat("AimDirectionX", aimDirection.x);
-            Debug.Log(animator.GetFloat("AimDirectionX"));
         }
     }
 
