@@ -12976,6 +12976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausedMenu: {fileID: 406741552}
+  player: {fileID: 1057588840}
 --- !u!1001 &1366459109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20547,7 +20548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -20565,7 +20566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause Menu
+  m_Text: Paused
 --- !u!222 &1688025082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22776,7 +22777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8039216}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

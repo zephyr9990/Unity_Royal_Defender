@@ -72,6 +72,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public bool isGreaterThanZero()
+    {
+        return currentHealth > 0;
+    }
+
     void Death()
     {
         //Set the death flag so this function does not repeat

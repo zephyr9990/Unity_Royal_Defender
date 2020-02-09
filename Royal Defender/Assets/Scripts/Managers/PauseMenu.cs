@@ -6,15 +6,18 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public Transform pausedMenu;
+    public GameObject player;
+    private PlayerHealth playerHealth;
 
     void Start()
     {
-
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)
+            && playerHealth.isGreaterThanZero())
         {
             Paused();
         }
