@@ -17,8 +17,9 @@ public class FlyingEnemyController : MonoBehaviour
 
     private Animator _anim;
 
+    public GameObject[] Weapons;
 
-// Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         //setting up the navAgent
@@ -97,6 +98,10 @@ public class FlyingEnemyController : MonoBehaviour
 
     }
 
-    
-
+    public void DropWeapon()
+    {
+        int randInt = UnityEngine.Random.Range(0, Weapons.Length);
+        //Instantiate(Weapons[randInt], transform.position);
+        Instantiate(Weapons[randInt], transform.position, Quaternion.identity);
+    }
 }

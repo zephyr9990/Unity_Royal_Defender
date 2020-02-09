@@ -96,7 +96,15 @@ public class EnemyHealth : MonoBehaviour
         bIsAlive = false;
         PointsManager.points += pointsValue;
         EnemiesSlainManager.enemiesslain += enemiesslainValue;
-        GetComponent<EnemyController>().DropWeapon();
+        EnemyController enemyController = GetComponent<EnemyController>();
+        if (enemyController)
+        {
+            enemyController.DropWeapon();
+        }
+        else // flying enemy
+        {
+            GetComponent<FlyingEnemyController>().DropWeapon();
+        }
         Destroy(gameObject, 2.5f);
         
     }
