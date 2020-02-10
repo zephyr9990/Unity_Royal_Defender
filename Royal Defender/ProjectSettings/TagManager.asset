@@ -7,6 +7,9 @@ TagManager:
   - NPC
   - Cube
   - Enemy
+  - SlainText
+  - PointText
+  - TimerText
   layers:
   - Default
   - TransparentFX

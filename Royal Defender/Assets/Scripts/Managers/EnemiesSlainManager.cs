@@ -6,18 +6,32 @@ using UnityEngine.UI;
 
 public class EnemiesSlainManager : MonoBehaviour
 {
-    public static int enemiesslain;
-
-    Text text;
+    public int enemiesSlain;
+    private TimerManager timeManagerScript;
+    public Text enemiesSlainText;
+    public int enemiesSlainCounter = 5;
 
     void Awake()
     {
-        text = GetComponent<Text>();
-        enemiesslain = 0;
+        enemiesSlainText = GetComponent<Text>();
+        timeManagerScript = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TimerManager>();
+        enemiesSlain = 0;
+        UpdateTextField();
     }
 
-    void Update()
+    public void CounterIncrease()
     {
-        text.text = "Enemies Slain\n" + enemiesslain;
+        enemiesSlain += 1;
+        UpdateTextField();
+    }
+
+    private void UpdateTextField()
+    {
+        enemiesSlainText.text = "Enemies Slain\n" + enemiesSlain;
+    }
+
+    public int GetEnemiesSlain()
+    {
+        return enemiesSlain;
     }
 }

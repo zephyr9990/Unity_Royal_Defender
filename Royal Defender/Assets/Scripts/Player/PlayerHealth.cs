@@ -77,7 +77,8 @@ public class PlayerHealth : MonoBehaviour
         return currentHealth > 0;
     }
 
-    void Death()
+
+    public void Death()
     {
         //Set the death flag so this function does not repeat
         isDead = true;
