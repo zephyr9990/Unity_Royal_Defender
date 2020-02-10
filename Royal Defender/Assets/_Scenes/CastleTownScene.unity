@@ -1012,6 +1012,11 @@ PrefabInstance:
       propertyPath: characterName
       value: Hartinger
       objectReference: {fileID: 0}
+    - target: {fileID: 2290657220273311639, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: pointsManager
+      value: 
+      objectReference: {fileID: 2105658368}
     - target: {fileID: 3710624583968989036, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2643,6 +2648,11 @@ PrefabInstance:
       propertyPath: characterName
       value: Natag-Oy
       objectReference: {fileID: 0}
+    - target: {fileID: 2290657220273311639, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: pointsManager
+      value: 
+      objectReference: {fileID: 2105658368}
     - target: {fileID: 3710624583968989036, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6028,6 +6038,11 @@ PrefabInstance:
       propertyPath: characterName
       value: Young
       objectReference: {fileID: 0}
+    - target: {fileID: 2290657220273311639, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: pointsManager
+      value: 
+      objectReference: {fileID: 2105658368}
     - target: {fileID: 3710624583968989036, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -12811,7 +12826,7 @@ GameObject:
   - component: {fileID: 1330769312}
   - component: {fileID: 1330769313}
   m_Layer: 0
-  m_Name: PlayerSwapWeaponRange
+  m_Name: PlayerInteractionRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14422,6 +14437,11 @@ PrefabInstance:
       propertyPath: characterName
       value: Cherubini
       objectReference: {fileID: 0}
+    - target: {fileID: 2290657220273311639, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: pointsManager
+      value: 
+      objectReference: {fileID: 2105658368}
     - target: {fileID: 3710624583968989036, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -24141,6 +24161,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 2290657220273311639, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: pointsManager
+      value: 
+      objectReference: {fileID: 2105658368}
     - target: {fileID: 3710624583968989036, guid: c989701f54c9ef74c986d1029bbd4c1e,
         type: 3}
       propertyPath: m_AnchorMax.y

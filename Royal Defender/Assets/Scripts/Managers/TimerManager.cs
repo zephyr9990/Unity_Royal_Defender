@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour
 {
-    float startTime = 60f; // 1 minute
+    float startTime = 300f; // 5 minute
     float timeRemaining;
 
     public Text timerText;

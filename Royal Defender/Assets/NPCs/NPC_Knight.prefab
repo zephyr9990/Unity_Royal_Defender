@@ -1146,7 +1146,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3.6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   lerpSmoothing: 7
   baseStoppingDistance: 5
   safeShootingDistance: 15
-  movementSpeed: 3.5
+  movementSpeed: 3.6
   aimingMovementSpeed: 2
 --- !u!114 &8618048715869313938
 MonoBehaviour:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   timeBetweenShots: 0.15
   timeBetweenSwings: 2
   range: 100
-  numberOfShotsPerBurst: 15
+  numberOfShotsPerBurst: 10
   timeBetweenBursts: 3
   rangedSocket: {fileID: 8618048716970381416}
 --- !u!114 &8618048715869313940
@@ -1253,6 +1253,7 @@ MonoBehaviour:
   amountNeededToRevive: 500
   amountAddedPerReviveCall: 100
   amountSubtractedPerReviveCall: 100
+  pointsManager: {fileID: 0}
 --- !u!114 &5320076512543304247
 MonoBehaviour:
   m_ObjectHideFlags: 0

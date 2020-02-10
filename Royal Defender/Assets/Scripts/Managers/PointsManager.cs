@@ -22,6 +22,12 @@ public class PointsManager : MonoBehaviour
         UpdateTextField();
     }
 
+    public void DecreasePoints(int amount)
+    {
+        points -= amount;
+        UpdateTextField();
+    }
+
     private void UpdateTextField()
     {
         pointsText.text = points.ToString();
