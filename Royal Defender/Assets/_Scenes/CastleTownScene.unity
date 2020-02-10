@@ -4770,10 +4770,9 @@ GameObject:
   - component: {fileID: 550521615}
   - component: {fileID: 550521614}
   - component: {fileID: 550521613}
-  - component: {fileID: 550521612}
   m_Layer: 5
   m_Name: TimeText
-  m_TagString: Untagged
+  m_TagString: TimerText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4797,18 +4796,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &550521612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 550521610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 225ebb95ea2c3e542a56d5049c4e8303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &550521613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5726,7 +5713,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: -1.114e-42, y: 6e-45, z: 2.4e-44, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -9099,7 +9086,7 @@ GameObject:
   - component: {fileID: 988569229}
   m_Layer: 5
   m_Name: EnemiesSlainText
-  m_TagString: Untagged
+  m_TagString: SlainText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9192,6 +9179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d133e86c116f2449af9f0b70df9aadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesSlainText: {fileID: 988569226}
 --- !u!4 &991931282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4782824878747570, guid: 2c419a4d68bda8948a41d26abd8021e9,
@@ -23305,7 +23293,7 @@ GameObject:
   - component: {fileID: 2105658368}
   m_Layer: 5
   m_Name: PointsText
-  m_TagString: Untagged
+  m_TagString: PointText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23396,6 +23384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225ebb95ea2c3e542a56d5049c4e8303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsText: {fileID: 0}
 --- !u!1 &2108506216
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,18 +6,25 @@ using UnityEngine.UI;
 
 public class EnemiesSlainManager : MonoBehaviour
 {
-    public static int enemiesslain;
+    public static int enemiesSlain;
 
-    Text text;
+    public Text enemiesSlainText;
 
     void Awake()
     {
-        text = GetComponent<Text>();
-        enemiesslain = 0;
+        enemiesSlainText = GetComponent<Text>();
+        enemiesSlain = -1;
+        CounterIncrease();
     }
 
-    void Update()
+    public void CounterIncrease()
     {
-        text.text = "Enemies Slain\n" + enemiesslain;
+        enemiesSlain += 1;
+        enemiesSlainText.text = "Enemies Slain\n" + enemiesSlain;
+    }
+
+    public int GetEnemiesSlain()
+    {
+        return enemiesSlain;
     }
 }

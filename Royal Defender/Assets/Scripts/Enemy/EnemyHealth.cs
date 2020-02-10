@@ -8,9 +8,10 @@ public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth;
     public int pointsValue = 10;
-    public int enemiesslainValue = 1;
     private GameObject player;
     private LockOnScript playerLockOnScript;
+    private EnemiesSlainManager enemiesSlainScript;
+    private PointsManager pointsManagerScript;
     private Animator _anim;
     private bool bIsAlive = true;
     private int currentHealth;
@@ -33,6 +34,8 @@ public class EnemyHealth : MonoBehaviour
         _nav = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerLockOnScript = player.transform.GetChild(0).GetComponent<LockOnScript>();
+        enemiesSlainScript = GameObject.FindGameObjectWithTag("SlainText").GetComponent<EnemiesSlainManager>();
+        pointsManagerScript = GameObject.FindGameObjectWithTag("PointText").GetComponent<PointsManager>();
     }
 
     // Update is called once per frame
@@ -94,8 +97,8 @@ public class EnemyHealth : MonoBehaviour
         _nav.isStopped = true;
 
         bIsAlive = false;
-        PointsManager.points += pointsValue;
-        EnemiesSlainManager.enemiesslain += enemiesslainValue;
+        enemiesSlainScript.CounterIncrease();
+        pointsManagerScript.IncreasePoints(pointsValue);
         EnemyController enemyController = GetComponent<EnemyController>();
         if (enemyController)
         {

@@ -8,16 +8,24 @@ public class PointsManager : MonoBehaviour
 {
     public static int points;
 
-    Text text;
+    public Text pointsText;
 
     void Awake()
     {
-        text = GetComponent <Text> ();
+        pointsText = GetComponent <Text> ();
         points = 0;
+
     }
-    
-    void Update()
+
+    public void IncreasePoints(int monsterPoints)
     {
-        text.text = points.ToString();
+        points += monsterPoints;
+        UpdateTextField();
     }
+
+    private void UpdateTextField()
+    {
+        pointsText.text = points.ToString();
+    }
+
 }
