@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 2290657220273311639}
   - component: {fileID: 5320076512543304247}
   - component: {fileID: 1562343846455002050}
+  - component: {fileID: 7911520001681456202}
   m_Layer: 0
   m_Name: NPC_Knight
   m_TagString: NPC
@@ -1187,7 +1188,7 @@ MonoBehaviour:
   baseLocation: {fileID: 0}
   locationToGuard: {fileID: 0}
   attackRangeSphere: {fileID: 8618048716223027649}
-  meleeDistance: 3
+  meleeDistance: 3.25
   lerpSmoothing: 7
   baseStoppingDistance: 5
   safeShootingDistance: 15
@@ -1284,6 +1285,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingCube: {fileID: 8394218021194674603}
+--- !u!114 &7911520001681456202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618048715869313951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1023a2a80e8fcbc4a80d625296643672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  downAudio: {fileID: 0}
 --- !u!1 &8618048715869314225
 GameObject:
   m_ObjectHideFlags: 0

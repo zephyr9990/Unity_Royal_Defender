@@ -59,12 +59,20 @@ public class FlyingEnemyController : MonoBehaviour
     }   
 
     void SelectTarget()
+    {
+        // Check if NPC is alive
+        NPCHealth npcHealth = NPC.GetComponent<NPCHealth>();
+        bool npcIsDown = true;
+        if (npcHealth)
         {
+            npcIsDown = npcHealth.GetIsDown();
+        }
+
         if (Vector3.Distance(this.transform.position, player.transform.position) < PlayerRange)
         { 
             target = player;
         }
-        else if ((Vector3.Distance(this.transform.position, NPC.transform.position) < NPCRange))
+        else if (!npcIsDown && (Vector3.Distance(this.transform.position, NPC.transform.position) < NPCRange))
         {
            target = NPC;
         }

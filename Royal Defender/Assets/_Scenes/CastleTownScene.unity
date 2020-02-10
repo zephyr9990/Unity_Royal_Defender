@@ -1117,6 +1117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Knight_Hartinger
       objectReference: {fileID: 0}
+    - target: {fileID: 8618048715869313951, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
 --- !u!4 &112853354 stripped
@@ -2752,6 +2757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Knight_Natag-Oy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618048715869313951, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
@@ -6142,6 +6152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Knight_Young
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618048715869313951, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
@@ -9668,7 +9683,7 @@ CharacterController:
   m_Height: 2.5
   m_Radius: 0.7
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.25, z: 0}
@@ -14541,6 +14556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Knight_Cherubini
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618048715869313951, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}
@@ -24285,6 +24305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Knight_Aragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8618048715869313951, guid: c989701f54c9ef74c986d1029bbd4c1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c989701f54c9ef74c986d1029bbd4c1e, type: 3}

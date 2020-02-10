@@ -11,6 +11,7 @@ public class NPCRevive : MonoBehaviour
     public int amountSubtractedPerReviveCall = 100;
     public PointsManager pointsManager;
 
+    private NPCHealth npcHealth;
     private Animator animator;
     private NPCUI npcUI;
     private float currentReviveProgress;
@@ -19,6 +20,7 @@ public class NPCRevive : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         npcUI = GetComponent<NPCUI>();
+        npcHealth = GetComponent<NPCHealth>();
         currentReviveProgress = 0;
     }
 
@@ -29,8 +31,9 @@ public class NPCRevive : MonoBehaviour
 
     public void BeginReviving()
     {
-        if (PointsManager.points - amountSubtractedPerReviveCall < 0)
-            return; // not enough points to activate revive tick.
+        if (PointsManager.points - amountSubtractedPerReviveCall < 0
+            || animator.GetBool("IsRevived")) 
+            return; // not enough points to activate revive tick or is already revived.
 
         pointsManager.DecreasePoints(amountSubtractedPerReviveCall);
 
@@ -46,6 +49,7 @@ public class NPCRevive : MonoBehaviour
 
     private void GetUp()
     {
+        npcHealth.SetIsDown(false);
         GetComponent<NPCMovement>().enabled = true;
         GetComponent<NPCCombat>().enabled = true;
         GetComponent<NPCEquippedWeapon>().enabled = true;

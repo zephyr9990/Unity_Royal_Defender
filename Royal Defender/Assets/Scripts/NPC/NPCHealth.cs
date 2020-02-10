@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCHealth : MonoBehaviour
 {
-    public int maxHealth = 100;     //Starting health and maximum health for NPC
+    public int maxHealth = 500;     //Starting health and maximum health for NPC
     public AudioClip downAudio;    //Down Audio Clip
 
     Animator anim;                  //NPC animator component
@@ -22,6 +22,7 @@ public class NPCHealth : MonoBehaviour
 
         // Set up the initial NPC health
         currentHealth = maxHealth;
+        isDown = true;
     }
 
     public void TakeDamage(int damageAmount)
@@ -60,5 +61,15 @@ public class NPCHealth : MonoBehaviour
         //Play down audio clip
         npcAudio.clip = downAudio;
         npcAudio.Play();
+    }
+
+    public void SetIsDown(bool value)
+    {
+        isDown = value;
+    }
+
+    public bool GetIsDown()
+    {
+        return isDown;
     }
 }

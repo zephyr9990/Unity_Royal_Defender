@@ -126,6 +126,7 @@ public class NPCMovement : MonoBehaviour
         else
         {
             npcCombat.SetInMeleeRange(true);
+            setNavStopped(true);
         }
     }
 

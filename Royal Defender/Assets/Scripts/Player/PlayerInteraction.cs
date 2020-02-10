@@ -91,9 +91,26 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (closestNPC)
         {
+            bool npcIsDown = GetIfNPCIsAlive(closestNPC);
+            if (!npcIsDown)
+                return; // NPC is already revived.
+
             NPCRevive npcRevive = closestNPC.GetComponent<NPCRevive>();
             npcRevive.BeginReviving();
         }
+    }
+
+    private static bool GetIfNPCIsAlive(GameObject closestNPC)
+    {
+        // Check if NPC is alive
+        NPCHealth npcHealth = closestNPC.GetComponent<NPCHealth>();
+        bool npcIsDown = true;
+        if (npcHealth)
+        {
+            npcIsDown = npcHealth.GetIsDown();
+        }
+
+        return npcIsDown;
     }
 
     private void OnTriggerEnter(Collider other)
