@@ -6,20 +6,27 @@ using UnityEngine.UI;
 
 public class EnemiesSlainManager : MonoBehaviour
 {
-    public static int enemiesSlain;
-
+    public int enemiesSlain;
+    private TimerManager timeManagerScript;
     public Text enemiesSlainText;
+    public int enemiesSlainCounter = 5;
 
     void Awake()
     {
         enemiesSlainText = GetComponent<Text>();
-        enemiesSlain = -1;
-        CounterIncrease();
+        timeManagerScript = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TimerManager>();
+        enemiesSlain = 0;
+        UpdateTextField();
     }
 
     public void CounterIncrease()
     {
         enemiesSlain += 1;
+        UpdateTextField();
+    }
+
+    private void UpdateTextField()
+    {
         enemiesSlainText.text = "Enemies Slain\n" + enemiesSlain;
     }
 

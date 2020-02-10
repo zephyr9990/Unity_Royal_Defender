@@ -4770,6 +4770,7 @@ GameObject:
   - component: {fileID: 550521615}
   - component: {fileID: 550521614}
   - component: {fileID: 550521613}
+  - component: {fileID: 550521612}
   m_Layer: 5
   m_Name: TimeText
   m_TagString: TimerText
@@ -4796,6 +4797,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 112, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &550521612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550521610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecc4271a52489446bbd2d3f42e5e7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  killIncrease: 15
+  stoneIncrease: 60
+  killsBeenUpdated: 1
+  enemiesKilledCounter: 5
 --- !u!114 &550521613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5713,7 +5731,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 6.4285e-40}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -9179,7 +9197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d133e86c116f2449af9f0b70df9aadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesSlain: 0
   enemiesSlainText: {fileID: 988569226}
+  enemiesSlainCounter: 5
 --- !u!4 &991931282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4782824878747570, guid: 2c419a4d68bda8948a41d26abd8021e9,

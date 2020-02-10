@@ -7,14 +7,13 @@ using UnityEngine.UI;
 public class PointsManager : MonoBehaviour
 {
     public static int points;
-
+  
     public Text pointsText;
 
     void Awake()
     {
         pointsText = GetComponent <Text> ();
         points = 0;
-
     }
 
     public void IncreasePoints(int monsterPoints)
