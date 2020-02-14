@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Chrono Assault Rifle
-  damage: 3
+  damage: 4
   maxDurability: 210
   weaponMesh: {fileID: 6015537844263738433, guid: 143476da9ec27bb40a72649f32defcb6,
     type: 3}

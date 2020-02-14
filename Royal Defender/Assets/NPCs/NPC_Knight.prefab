@@ -1224,7 +1224,7 @@ MonoBehaviour:
   timeBetweenShots: 0.15
   timeBetweenSwings: 2
   range: 100
-  numberOfShotsPerBurst: 10
+  numberOfShotsPerBurst: 9
   timeBetweenBursts: 3
   rangedSocket: {fileID: 8618048716970381416}
 --- !u!114 &8618048715869313940
