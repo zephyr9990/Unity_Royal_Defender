@@ -100,16 +100,17 @@ public class EnemyController : MonoBehaviour
             _anim.SetBool("Walk", false);
             _nav.isStopped= true;
 
-            AttackTarget(); 
+            //AttackTarget(); 
             
             
         }
 
     }
 
-    void AttackTarget()
+    public void AttackTarget()
     {
-        if (target.CompareTag("Player") && this.GetComponent<EnemyHealth>().isAlive() && attackInterval <= 0)
+        // Removed the atteackInterval <= 0 from the if statement
+        if (target.CompareTag("Player") && this.GetComponent<EnemyHealth>().isAlive())
         {
             _anim.SetTrigger("Attack Trigger");
             //_anim.SetBool("Basic Attack", true);
