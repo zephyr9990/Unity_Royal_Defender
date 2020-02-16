@@ -8,6 +8,9 @@ public class EnemyManager : MonoBehaviour
     public GameObject enemy;
     public float spawnTime = 20f;
     public Transform[] spawnPoints;
+    public int maxEnemies = 5;
+    public int enemyCount = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +21,13 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Spawn()
     {
+        // to count the number of objects:
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        if (enemyCount < maxEnemies)
+        {
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            enemyCount++;
+        }
+       
     }
 }
