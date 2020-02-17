@@ -2,28 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class Dialogue : MonoBehaviour
 {
-    public Text Speaker;
-    public Text DialogueText;
+    public Text speaker;
+    public Text dialogueText;
+    public GameObject[] timelines;
+
     private DialogueTree dialogueTree;
+    private Animator animator;
 
-
+    private bool textIsDisplayed;
     private bool needToDisplayText;
+    private bool hasAdditionalDialogue;
     private string textToDisplay;
     private string currentScene;
     private int currentLetterIndex;
+    private int currentTimelineIndex;
     private float timer;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         dialogueTree = GetComponent<DialogueTree>();
+        textIsDisplayed = false;
         needToDisplayText = false;
+        hasAdditionalDialogue = false;  
         textToDisplay = null;
         currentScene = "prologue";
         currentLetterIndex = 0;
-        
+        currentTimelineIndex = 0;
+
         timer = 0f;
     }
 
@@ -31,40 +41,74 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (Input.GetButtonDown("ContinueText"))
+        if (textIsDisplayed)
         {
-            if (needToDisplayText)
+            if (Input.GetButtonDown("ContinueText"))
             {
-                DisplayWholeDialogue();
+                if (needToDisplayText)
+                {
+                    DisplayWholeDialogue();
+                }
+                else if (hasAdditionalDialogue)
+                {
+                    ContinueDialogue();
+                }
+                else if (!hasAdditionalDialogue)
+                {
+                    EndDialogue();
+                }
             }
-            else
-            {
-                ContinueDialogue();
-            }
-        }
 
-        if(needToDisplayText && timer >= Time.deltaTime * 3f)
-        {
-            AddNextLetter(currentLetterIndex);
+            if (needToDisplayText && timer >= Time.deltaTime * 3f)
+            {
+                AddNextLetter(currentLetterIndex);
+            }
         }
     }
 
-    public void ContinueDialogue()
+    public void StartDialogueEvent()
     {
-        DialogueText.text = "";
+        animator.SetBool("ShowDialogue", true);
+        ContinueDialogue(currentScene);
+        textIsDisplayed = true;
+    }
+
+    private void EndDialogue()
+    {
+        animator.SetBool("ShowDialogue", false);
+        textIsDisplayed = false;
+        PlayNextTimeline();
+    }
+
+    private void ContinueDialogue()
+    {
+        dialogueText.text = "";
         dialogueTree.GenerateNextDialogue(currentScene);
     }
 
-    public void ContinueDialogue(string scene)
+    private void ContinueDialogue(string scene)
     {
         currentScene = scene;
         dialogueTree.GenerateNextDialogue(scene);
     }
 
-    public void DisplayOnUI(string speaker, string dialogue)
+    private void PlayNextTimeline()
     {
-        Speaker.text = speaker;
+        if (currentTimelineIndex < timelines.Length)
+        {
+            PlayableDirector cutscene = timelines[currentTimelineIndex].GetComponent<PlayableDirector>();
+            cutscene.Play();
+
+            currentTimelineIndex++;
+        }
+    }
+
+    public void DisplayOnUI(string speaker, string dialogue, bool continueDialogueValue)
+    {
+        this.speaker.text = speaker;
         textToDisplay = dialogue;
+        hasAdditionalDialogue = continueDialogueValue;
+
         currentLetterIndex = 0;
         needToDisplayText = true;
     }
@@ -72,19 +116,19 @@ public class Dialogue : MonoBehaviour
     private void AddNextLetter(int letterIndex)
     {
         timer = 0f;
-        if (DialogueText.text.Length == textToDisplay.Length)
+        if (dialogueText.text.Length == textToDisplay.Length)
         {
             ResetDialogueToDisplay();
             return;
         }
 
-        DialogueText.text += textToDisplay[letterIndex];
+        dialogueText.text += textToDisplay[letterIndex];
         currentLetterIndex++;
     }
 
     private void DisplayWholeDialogue()
     {
-        DialogueText.text = textToDisplay;
+        dialogueText.text = textToDisplay;
         ResetDialogueToDisplay();
     }
 
