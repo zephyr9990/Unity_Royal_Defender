@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Introduction : MonoBehaviour
 {
     public Text title;
-    public Text name;
+    public Text characterName;
     private Animator animator;
 
     private void Awake()
     {
         title.text = "";
-        name.text = "";
+        characterName.text = "";
         animator = GetComponent<Animator>();
     }
 
@@ -23,7 +23,7 @@ public class Introduction : MonoBehaviour
 
     public void SetName(string name)
     {
-        this.name.text = name;
+        this.characterName.text = name;
     }
 
     public void PlayIntroduction()
