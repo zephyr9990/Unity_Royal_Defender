@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     {
         if (isStart)
         {
-            SceneManager.LoadScene("CastleTownScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("PrologueScene", LoadSceneMode.Single);
             SceneManager.UnloadScene("MainMenu");
         }
         if (isQuit)

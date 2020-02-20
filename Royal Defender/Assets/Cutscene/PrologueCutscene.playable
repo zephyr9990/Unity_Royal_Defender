@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 52.36666666666667
+  m_Time: 52.36666666666665
   m_Retroactive: 0
   m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: cdbc83ca55e38db45b424279fea7db52, type: 2}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -144404024570000273}
     m_Duration: 5.016666666666666
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.56666666666667
+    m_PreExtrapolationTime: 45.566666666666656
     m_DisplayName: Rifle Run (Edited)
   m_Markers:
     m_Objects: []
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 30.56895628031689
+    m_Start: 30.568956280316876
     m_ClipIn: 0
     m_Asset: {fileID: 6912100209053260654}
     m_Duration: 15
@@ -313,7 +313,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 30.56895628031689
+    m_PreExtrapolationTime: 30.568956280316876
     m_DisplayName: Recorded
   m_Markers:
     m_Objects: []
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: 7292995751875962969}
     m_Duration: 5.016666666666666
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -6935964525046381004}
     m_Duration: 5.016666666666666
@@ -516,7 +516,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.56666666666667
+    m_PreExtrapolationTime: 45.566666666666656
     m_DisplayName: Rifle Run (Edited)
   m_Markers:
     m_Objects: []
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 26.799999999999997
+  m_Time: 26.799999999999986
   m_Retroactive: 0
   m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: 5770b97dfca3b6c4d8e012aa216dbb4a, type: 2}
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -1008764359878936337}
     m_Duration: 5.016666666666666
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.58625231484919
+    m_Start: 45.58625231484918
     m_ClipIn: 0
     m_Asset: {fileID: -3514819264993268975}
     m_Duration: 4.997081018484145
@@ -787,7 +787,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.58625231484919
+    m_PreExtrapolationTime: 45.58625231484918
     m_DisplayName: Rifle Run (Edited)
   m_Markers:
     m_Objects: []
@@ -831,6 +831,22 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-3425698807638428555
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 1
+  m_Asset: {fileID: 11400000, guid: 710c9a4ac526b2f41b2c06b9b3a9dd04, type: 2}
 --- !u!114 &-2900641810461726140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -890,7 +906,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5
+    m_Start: 5.000000000000001
     m_ClipIn: 0
     m_Asset: {fileID: -377916453074792900}
     m_Duration: 7.183333333333334
@@ -956,7 +972,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam1
   - m_Version: 1
-    m_Start: 22.916666666666668
+    m_Start: 22.91666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -5879250010691030786}
     m_Duration: 4.85640257267902
@@ -964,8 +980,8 @@ MonoBehaviour:
     m_ParentTrack: {fileID: -2485355864956047269}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 2.4166666666666643
-    m_BlendOutDuration: 0.9730692393456906
+    m_BlendInDuration: 2.416666666666675
+    m_BlendOutDuration: 0.9730692393456941
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1025,7 +1041,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam4
   - m_Version: 1
-    m_Start: 12.183333333333334
+    m_Start: 12.183333333333337
     m_ClipIn: 0
     m_Asset: {fileID: 7897888087785519237}
     m_Duration: 13.149999999999999
@@ -1034,7 +1050,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 2.4166666666666643
+    m_BlendOutDuration: 2.416666666666675
     m_MixInCurve:
       serializedVersion: 2
       m_Curve: []
@@ -1076,7 +1092,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam3
   - m_Version: 1
-    m_Start: 26.799999999999997
+    m_Start: 26.799999999999986
     m_ClipIn: 0
     m_Asset: {fileID: 8057911008568502574}
     m_Duration: 3.786252314849172
@@ -1084,7 +1100,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: -2485355864956047269}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.9730692393456906
+    m_BlendInDuration: 0.9730692393456941
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -1127,7 +1143,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam5
   - m_Version: 1
-    m_Start: 30.586252314849183
+    m_Start: 30.58625231484917
     m_ClipIn: 0
     m_Asset: {fileID: -2735806279319337586}
     m_Duration: 15.000000000000004
@@ -1139,25 +1155,7 @@ MonoBehaviour:
     m_BlendOutDuration: 0.017296034532300553
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1196,7 +1194,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam6
   - m_Version: 1
-    m_Start: 45.56895628031689
+    m_Start: 45.568956280316876
     m_ClipIn: 0
     m_Asset: {fileID: -5354411768976840869}
     m_Duration: 5
@@ -1247,7 +1245,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam7
   - m_Version: 1
-    m_Start: 50.56895628031689
+    m_Start: 50.568956280316876
     m_ClipIn: 0
     m_Asset: {fileID: 1281366356987094653}
     m_Duration: 4.49771038634978
@@ -1348,7 +1346,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.33333333333333215
+    m_BlendOutDuration: 0.33333333333333925
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1408,7 +1406,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Rifle Walk (Edited)
   - m_Version: 1
-    m_Start: 14.55
+    m_Start: 14.549999999999994
     m_ClipIn: 0
     m_Asset: {fileID: -763895314741571581}
     m_Duration: 3.566666666666667
@@ -1416,7 +1414,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: -2301652376505199709}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.33333333333333215
+    m_BlendInDuration: 0.33333333333333925
     m_BlendOutDuration: 0.6500000000000021
     m_MixInCurve:
       serializedVersion: 2
@@ -1477,7 +1475,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Rifle Walk To Stop (Edited)
   - m_Version: 1
-    m_Start: 17.466666666666665
+    m_Start: 17.466666666666658
     m_ClipIn: 0
     m_Asset: {fileID: -5438584345105707247}
     m_Duration: 34.7
@@ -1486,7 +1484,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.6500000000000021
-    m_BlendOutDuration: 0.63333333333334
+    m_BlendOutDuration: 0.6333333333333329
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1546,7 +1544,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Rifle Idle (Edited
   - m_Version: 1
-    m_Start: 51.53333333333333
+    m_Start: 51.533333333333324
     m_ClipIn: 0
     m_Asset: {fileID: -2900641810461726140}
     m_Duration: 3.5333333333333385
@@ -1554,7 +1552,7 @@ MonoBehaviour:
     m_ParentTrack: {fileID: -2301652376505199709}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.63333333333334
+    m_BlendInDuration: 0.6333333333333329
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -1650,7 +1648,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.58625231484919
+    m_Start: 45.58625231484918
     m_ClipIn: 0
     m_Asset: {fileID: 6557878561501224054}
     m_Duration: 4.997081018484145
@@ -1716,7 +1714,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.58625231484919
+    m_PreExtrapolationTime: 45.58625231484918
     m_DisplayName: CoverIdle
   m_Markers:
     m_Objects: []
@@ -1791,7 +1789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 16.966666666666665
+  m_Time: 16.966666666666658
   m_Retroactive: 0
   m_EmitOnce: 1
   m_Asset: {fileID: 11400000, guid: 4f0cb9f85f4a883419a34cfcb0e0626f, type: 2}
@@ -1882,7 +1880,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: 5200613885310211378}
     m_Duration: 5.016666666666666
@@ -1948,7 +1946,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.56666666666667
+    m_PreExtrapolationTime: 45.566666666666656
     m_DisplayName: CoverIdle
   m_Markers:
     m_Objects: []
@@ -2087,7 +2085,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -2284540191319863309}
     m_Duration: 5.016666666666666
@@ -2241,7 +2239,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -8614115395115031364}
     m_Duration: 5.016666666666666
@@ -2453,7 +2451,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -2218351073399458713}
     m_Duration: 5.016666666666666
@@ -2619,7 +2617,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: -1941328979790148160}
     m_Duration: 5.016666666666666
@@ -2690,6 +2688,30 @@ MonoBehaviour:
   m_Markers:
     m_Objects: []
   m_PostPlaybackState: 0
+--- !u!114 &4975106692511969406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (2)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 5675646604069372583}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -3425698807638428555}
 --- !u!114 &5200613885310211378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2734,7 +2756,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.56666666666667
+    m_Start: 45.566666666666656
     m_ClipIn: 0
     m_Asset: {fileID: 9121487389810746141}
     m_Duration: 5.016666666666666
@@ -2800,7 +2822,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.56666666666667
+    m_PreExtrapolationTime: 45.566666666666656
     m_DisplayName: Rifle Run (Edited)
   m_Markers:
     m_Objects: []
@@ -2842,6 +2864,7 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children:
+  - {fileID: 4975106692511969406}
   - {fileID: -1514955281586097872}
   - {fileID: -9110155189632190348}
   m_Clips: []
@@ -2966,7 +2989,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 45.58625231484919
+    m_Start: 45.58625231484918
     m_ClipIn: 0
     m_Asset: {fileID: 2421169771504205353}
     m_Duration: 4.997081018484145
@@ -3032,7 +3055,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 45.58625231484919
+    m_PreExtrapolationTime: 45.58625231484918
     m_DisplayName: Rifle Run (Edited)
   m_Markers:
     m_Objects: []

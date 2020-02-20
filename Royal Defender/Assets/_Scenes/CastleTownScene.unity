@@ -14376,7 +14376,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 1160547094}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797141
 MonoBehaviour:
@@ -14394,7 +14394,7 @@ MonoBehaviour:
   spawnTime: 25
   spawnPoints:
   - {fileID: 1933599226}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797142
 MonoBehaviour:
@@ -14412,7 +14412,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 1539060981}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797143
 MonoBehaviour:
@@ -14430,7 +14430,7 @@ MonoBehaviour:
   spawnTime: 30
   spawnPoints:
   - {fileID: 1140190615}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797144
 MonoBehaviour:
@@ -14448,7 +14448,7 @@ MonoBehaviour:
   spawnTime: 60
   spawnPoints:
   - {fileID: 554370323}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797145
 MonoBehaviour:
@@ -14466,7 +14466,7 @@ MonoBehaviour:
   spawnTime: 50
   spawnPoints:
   - {fileID: 818543076}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797146
 MonoBehaviour:
@@ -14484,7 +14484,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 15685388}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797147
 MonoBehaviour:
@@ -14502,7 +14502,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 1110410145}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797148
 MonoBehaviour:
@@ -14520,7 +14520,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 1063871338}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!114 &1814797149
 MonoBehaviour:
@@ -14538,7 +14538,7 @@ MonoBehaviour:
   spawnTime: 20
   spawnPoints:
   - {fileID: 31678167}
-  maxEnemies: 5
+  maxEnemies: 10000
   enemyCount: 0
 --- !u!4 &1823621923 stripped
 Transform:
