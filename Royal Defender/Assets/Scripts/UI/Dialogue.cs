@@ -77,6 +77,7 @@ public class Dialogue : MonoBehaviour
     {
         animator.SetBool("ShowDialogue", false);
         textIsDisplayed = false;
+        dialogueText.text = "";
         PlayNextTimeline();
     }
 
@@ -103,11 +104,13 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void DisplayOnUI(string speaker, string dialogue, bool continueDialogueValue)
+    public void DisplayOnUI(DialogueInfo dialogue)
     {
-        this.speaker.text = speaker;
-        textToDisplay = dialogue;
-        hasAdditionalDialogue = continueDialogueValue;
+        speaker.color = dialogue.speakerColor;
+        speaker.text = dialogue.speaker;
+        dialogueText.color = dialogue.textColor;
+        textToDisplay = dialogue.text;
+        hasAdditionalDialogue = dialogue.hasContinuation;
 
         currentLetterIndex = 0;
         needToDisplayText = true;
