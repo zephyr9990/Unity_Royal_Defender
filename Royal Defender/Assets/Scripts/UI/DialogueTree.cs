@@ -29,7 +29,7 @@ public class DialogueTree : MonoBehaviour
         Color narratorTextColor = Color.green;
 
         string aegisName = "Aegis";
-        string serahName = "Serah";
+        string operatorName = "Serah";
         string narratorName = "Narrator";
 
         bool hasContinuation = true;
@@ -46,7 +46,7 @@ public class DialogueTree : MonoBehaviour
 
         dialogueInfo = new DialogueInfo(
             serahColor,
-            serahName,
+            operatorName,
             defaultTextColor,
             "Reading you loud and clear, Aegis. This is \noperator Serah. Give us your report.",
             hasContinuation
@@ -72,7 +72,7 @@ public class DialogueTree : MonoBehaviour
 
         dialogueInfo = new DialogueInfo(
             serahColor,
-            serahName,
+            operatorName,
             defaultTextColor,
             "...!",
             hasContinuation);
@@ -80,7 +80,7 @@ public class DialogueTree : MonoBehaviour
 
         dialogueInfo = new DialogueInfo(
             serahColor,
-            serahName,
+            operatorName,
             defaultTextColor,
             "We may yet have a chance to end this war.",
             hasContinuation);
@@ -88,7 +88,7 @@ public class DialogueTree : MonoBehaviour
 
         dialogueInfo = new DialogueInfo(
             serahColor,
-            serahName,
+            operatorName,
             defaultTextColor,
             "With the discovery of the Chrono crystal, \nthe commander has issued a new directive for designation Aegis.",
             hasContinuation);
@@ -104,7 +104,7 @@ public class DialogueTree : MonoBehaviour
 
         dialogueInfo = new DialogueInfo(
             serahColor,
-            serahName,
+            operatorName,
             defaultTextColor,
             "Paladin, designation Aegis, is to extract \nthe Chrono Crystal from the heart of the \nRuined City and return to base.",
             hasContinuation);
