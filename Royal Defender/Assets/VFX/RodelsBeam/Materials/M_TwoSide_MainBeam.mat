@@ -35,11 +35,11 @@ Material:
     m_Floats:
     - Boolean_35AB580A: 0
     - Boolean_BF14ABAB: 1
-    - Vector1_28553827: 0.7
+    - Vector1_28553827: 0.5
     - Vector1_3DE11F0D: 0.55
     - Vector1_87750D3C: 2
     m_Colors:
     - Color_3AB64412: {r: 2.3215685, g: 2.3215685, b: 2.3215685, a: 1}
     - Color_6ECF2EA0: {r: 0.012415428, g: 0.5411456, b: 0.8773585, a: 1}
-    - Color_A25B00F6: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
+    - Color_A25B00F6: {r: 0.6247775, g: 0.8424602, b: 0.9811321, a: 1}
     - Vector4_45E4B830: {r: 0.5, g: 2, b: 0, a: 0}

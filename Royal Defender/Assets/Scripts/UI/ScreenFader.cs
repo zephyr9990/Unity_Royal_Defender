@@ -9,6 +9,7 @@ public class ScreenFader : MonoBehaviour
     private RawImage faderImage;
     private bool fadingToBlack;
     private bool fadingToClear;
+    private bool fadingToWhite;
     private float fadeAmount;
     private float timer;
 
@@ -18,6 +19,7 @@ public class ScreenFader : MonoBehaviour
         faderImage.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
         fadingToBlack = false;
         fadingToClear = false;
+        fadingToWhite = false;
         fadeAmount = 0f;
         timer = 0f;
     }
@@ -35,6 +37,11 @@ public class ScreenFader : MonoBehaviour
        {
             ClearScreen();
        }
+
+       if (fadingToWhite && timer >= fadeSpeed)
+        {
+            BrightenScreen();
+        }
     }
 
     public void SetColorToWhite()
@@ -76,6 +83,20 @@ public class ScreenFader : MonoBehaviour
         }
 
         faderImage.color = Color.Lerp(faderImage.color, Color.black, fadeAmount);
+    }
+
+    private void BrightenScreen()
+    {
+        timer = 0f;
+        fadeAmount += Time.deltaTime;
+        if (faderImage.color.a == 1f)
+        {
+            fadeAmount = 0;
+            fadingToWhite = false;
+            return;
+        }
+
+        faderImage.color = Color.Lerp(faderImage.color, Color.white, fadeAmount);
     }
 
     private void ClearScreen()
