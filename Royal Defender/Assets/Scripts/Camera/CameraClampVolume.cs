@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CameraClampVolume : MonoBehaviour
 {
+    public GameObject CameraToClamp;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Camera.main.GetComponent<CameraFollow>().SetIsClamped(true);
+            CameraToClamp.GetComponent<CameraFollow>().SetIsClamped(true);
         }
     }
 
@@ -16,7 +18,7 @@ public class CameraClampVolume : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Camera.main.GetComponent<CameraFollow>().SetIsClamped(false);
+            CameraToClamp.GetComponent<CameraFollow>().SetIsClamped(false);
         }
     }
 }

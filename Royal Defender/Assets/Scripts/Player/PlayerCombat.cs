@@ -78,7 +78,7 @@ public class PlayerCombat : MonoBehaviour
             else
             {
                 // TODO make sure this is truly needed.
-                //StopAttackingAnimations();
+                StopAttackingAnimations();
             }
         }
 
