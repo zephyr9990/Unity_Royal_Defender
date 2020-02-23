@@ -254,7 +254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Project Manager/Lead Programmer:\n\n\n\nProgrammers:\n\n\n\nMenus:\n\n\n\nSpecial
+  m_Text: "Project Manager/Lead Programmer:\n\n\n\nProgrammers:\n\n\n\n\n\nMenus:\n\n\n\nSpecial
     Thanks:\n\n\n\nAsset names:\n\nRifle 8-way locomotion pack\r\n\n\nSword and Shield
     Animation Pack\r\n\n\nMedieval Stone Keep\r\n\n\n\nPA SciFi Warzone Environment\r\n\n\n\nPolylised
     - Medieval Desert City\r\n\n\n\nKY Magic Effects\r\n\n\n\nWar FX\r\n\n\nPSD Logo
@@ -633,6 +633,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &992070468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992070469}
+  - component: {fileID: 992070471}
+  - component: {fileID: 992070470}
+  m_Layer: 0
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &992070469
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992070468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1402468032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1129}
+  m_SizeDelta: {x: 1000, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &992070470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992070468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Royal Defender
+--- !u!222 &992070471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992070468}
+  m_CullTransparentMesh: 0
 --- !u!1 &1402468031
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +741,7 @@ Transform:
   m_Children:
   - {fileID: 652022289}
   - {fileID: 1504914009}
+  - {fileID: 992070469}
   m_Father: {fileID: 921927691}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -849,9 +927,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Rodel Aragon\n\n\n\nRodel Aragon, Joseph R. Cherubini Jr.,\nSteve Young,
-    Jesse Hartinger, Jasper Bryan Natag-Oy\n\nJoseph R. Cherubini Jr.\n\n\n\nClass
-    of CS4990, Professor Pollack, Baker College, AND YOU!\n\n\nAsset links:\n\nhttps://www.mixamo.com/#/?page=1&query=rifle+pack\r\n\nhttps://www.mixamo.com/#/?page=1&query=sword+and+shield\r\n\nhttps://assetstore.unity.com/packages/3d/environments/medieval-stone-keep-56596\r\n\nhttps://assetstore.unity.com/packages/3d/environments/pa-scifi-warzone-environment-29829\r\n\nhttps://assetstore.unity.com/packages/3d/environments/historic/polylised-medieval-desert-city-94557\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/spells/ky-magic-effects-free-21927#description\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/war-fx-5669\r\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/psd-logo-templates-103928\r\n\nhttps://hatchful.shopify.com/editor/customize-logo\r\n\nhttps://assetstore.unity.com/packages/essentials/game-jam-menu-template-40465\r\n\nhttps://assetstore.unity.com/packages/tools/gui/simple-menu-154642\r\n\nhttps://assetstore.unity.com/packages/3d/characters/creatures/dragon-the-soul-eater-and-dragon-boar-77121\r\n\nhttps://assetstore.unity.com/packages/3d/props/weapons/free-stylised-fantasy-weapons-77078\r\n\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/heavy-knight-pbr-hp-70891\r\n\nhttps://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-nature-props-pack-131853\r\n\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi-warrior-pbr-hp-106154\r\n\nhttps://www.free-stock-music.com/punch-deck-100-seconds.html\r\n\nhttps://www.free-stock-music.com/keys-of-moon-power-of-progress.html\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825\r\n\nhttps://assetstore.unity.com/packages/tools/particles-effects/hp-particles-21856\r\n\nhttps://assetstore.unity.com/packages/3d/simple-sky-cartoon-assets-42373\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/foley/blood-sfx-pack-16107\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/free-sound-effects-pack-155776#content\r\n\nhttps://assetstore.unity.com/packages/2d/textures-materials/floors/five-seamless-tileable-ground-textures-57060\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/voices/a-voice-over-for-game-over-132171\r\n\nN/A
+  m_Text: "Rodel Aragon\n\n\n\nRodel Aragon\nJoseph R. Cherubini Jr.\nSteve Young\nJesse
+    Hartinger\nJasper Bryan Natag-Oy\n\nJoseph R. Cherubini Jr.\n\n\n\nClass of CS4990,
+    Professor Pollack, Baker College, AND YOU!\n\n\nAsset links:\n\nhttps://www.mixamo.com/#/?page=1&query=rifle+pack\r\n\nhttps://www.mixamo.com/#/?page=1&query=sword+and+shield\r\n\nhttps://assetstore.unity.com/packages/3d/environments/medieval-stone-keep-56596\r\n\nhttps://assetstore.unity.com/packages/3d/environments/pa-scifi-warzone-environment-29829\r\n\nhttps://assetstore.unity.com/packages/3d/environments/historic/polylised-medieval-desert-city-94557\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/spells/ky-magic-effects-free-21927#description\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/war-fx-5669\r\n\nhttps://assetstore.unity.com/packages/2d/gui/icons/psd-logo-templates-103928\r\n\nhttps://hatchful.shopify.com/editor/customize-logo\r\n\nhttps://assetstore.unity.com/packages/essentials/game-jam-menu-template-40465\r\n\nhttps://assetstore.unity.com/packages/tools/gui/simple-menu-154642\r\n\nhttps://assetstore.unity.com/packages/3d/characters/creatures/dragon-the-soul-eater-and-dragon-boar-77121\r\n\nhttps://assetstore.unity.com/packages/3d/props/weapons/free-stylised-fantasy-weapons-77078\r\n\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/heavy-knight-pbr-hp-70891\r\n\nhttps://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-nature-props-pack-131853\r\n\nhttps://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi-warrior-pbr-hp-106154\r\n\nhttps://www.free-stock-music.com/punch-deck-100-seconds.html\r\n\nhttps://www.free-stock-music.com/keys-of-moon-power-of-progress.html\r\n\nhttps://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825\r\n\nhttps://assetstore.unity.com/packages/tools/particles-effects/hp-particles-21856\r\n\nhttps://assetstore.unity.com/packages/3d/simple-sky-cartoon-assets-42373\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/foley/blood-sfx-pack-16107\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/free-sound-effects-pack-155776#content\r\n\nhttps://assetstore.unity.com/packages/2d/textures-materials/floors/five-seamless-tileable-ground-textures-57060\r\n\nhttps://assetstore.unity.com/packages/audio/sound-fx/voices/a-voice-over-for-game-over-132171\r\n\nN/A
     (own dev voices being used).\r\n\nhttps://assetstore.unity.com/packages/3d/props/weapons/bloody-axe-with-pbr-textures-100927\r\n\nhttps://assetstore.unity.com/packages/3d/props/weapons/dragonblade-pbr-fantasy-sword-96982\r\n\nhttps://assetstore.unity.com/packages/3d/props/weapons/rpg-swords-7056\r\n\nhttps://opengameart.org/content/3td-fantasy-ruins-pack\r\n\nhttps://opengameart.org/content/andreass-darkness\r\n\nhttps://www.bensound.com/royalty-free-music/track/memories\r"
 --- !u!222 &1504914011
 CanvasRenderer:

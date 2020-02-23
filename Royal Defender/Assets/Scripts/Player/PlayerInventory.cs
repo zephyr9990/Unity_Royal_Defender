@@ -29,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
     private ArrayList rangedWeapons;
     private ArrayList meleeWeapons;
     private ArrayList currentWeaponList;
+    private bool inventoryControlEnabled;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class PlayerInventory : MonoBehaviour
         rangedWeapons = new ArrayList();
         meleeWeapons = new ArrayList();
         listSwitched = false;
-
+        inventoryControlEnabled = false;
     }
 
     // Start is called before the first frame update
@@ -50,10 +51,19 @@ public class PlayerInventory : MonoBehaviour
         currentAmmo = startingAmmo;
         RangedWeaponsText.text = "Ranged Weapons 0/0";
         MeleeWeaponsText.text = "Melee Weapons 0/0";
+        EnableInventoryControl(false);
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (inventoryControlEnabled)
+        {
+            ListenForButtons();
+        }
+    }
+
+    private void ListenForButtons()
     {
         if (Input.GetButtonDown("SwitchWeaponType"))
         {
@@ -81,6 +91,11 @@ public class PlayerInventory : MonoBehaviour
             SwitchWeapon(currentWeaponList, direction);
             UpdateWeaponTextUI();
         }
+    }
+
+    public void EnableInventoryControl(bool value)
+    {
+        inventoryControlEnabled = value;
     }
 
     public void AddWeapon(WeaponInfo weapon)

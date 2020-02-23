@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ScreenFader : MonoBehaviour
 {
     public float fadeSpeed = 3f;
+    public RawImage frontMostFaderImage;
     private RawImage faderImage;
     private bool fadingToBlack;
     private bool fadingToClear;
@@ -111,5 +112,11 @@ public class ScreenFader : MonoBehaviour
         }
 
         faderImage.color = Color.Lerp(faderImage.color, Color.clear, fadeAmount);
+    }
+
+    public void SkipScene()
+    {
+        faderImage = frontMostFaderImage;
+        FadeToBlack();
     }
 }

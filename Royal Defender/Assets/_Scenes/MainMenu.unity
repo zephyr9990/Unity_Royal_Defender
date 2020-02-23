@@ -754,17 +754,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Basic controls:\n\nShift ------------------------------Sprint\r\nWASD keys
-    -------------------- movement\r\nCTRL ----------------------------Ready Ranged
-    Weapon\r\nSpacebar -------------------------Attack/Fire\r\nArrow Keys --------------------
-    Swap Weapons\r\nG--------------------------------- Give Weapon to knight\r\nR---------------------------------
-    (hold) Revive knight\r\n\nObjectives:\n\r\nAs the hero of our story, you must
-    overcome the horde of monsters before you. \r\nYour goal is threefold:\r\n\u2022\tSurvive\r\n\u2022\tProtect
-    the Chronocrystal (The cube-like structure in the middle)\r\n\to\tThe Chronocrystal\u2019s
+  m_Text: "Basic controls:\n\nShift ---------------------- Sprint\r\nWASD keys ------------
+    Movement\r\nCaps Lock/L ----------- Ready Ranged Weapon\r\nSpacebar --------------
+    \ Attack/Fire\r\nArrow Keys ------------ Swap Weapons\r\nG -------------------------
+    Give Weapon to knight\r\nR ------------------------- (hold) Revive knight\r\nP
+    ------------------------- Pause\n\nObjectives:\nAs the hero of our story, you
+    must overcome the horde of monsters before you. \r\nYour goal is threefold:\r\n\u2022\tSurvive\r\n\u2022\tProtect
+    the Chronocrystal (The cube-like structure in the middle)\r\n\t-\tThe Chronocrystal\u2019s
     health has not been coded yet, but the health of the Chronocrystal will be damageable
-    after a certain amount of time has passed.\r\n\u2022\tDon\u2019t run out of time\r\n\to\tTime
+    after a certain amount of time has passed.\r\n\u2022\tDon\u2019t run out of time\r\n\t-\tTime
     is increased by 15 seconds every 5 enemies slain. These include enemies killed
-    by the knights.\r\n\to\tObtain chrono fragments which help to increase your current
+    by the knights.\r\n\t-\tObtain chrono fragments which help to increase your current
     time.\r"
 --- !u!222 &498486797
 CanvasRenderer:

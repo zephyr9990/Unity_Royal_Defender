@@ -24,6 +24,11 @@ public class SceneLoader : MonoBehaviour
         timeButtonHeldDown = 0f;
     }
 
+    private void Start()
+    {
+        ShowSkipText();
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -47,7 +52,9 @@ public class SceneLoader : MonoBehaviour
             }
         }
 
-        if (skipTextShowing && timer >= timeSkipTextVisible)
+        if (!skipButtonIsHeldDown 
+            && skipTextShowing 
+            && timer >= timeSkipTextVisible)
         {
             HideSkipText();
         }
@@ -80,8 +87,8 @@ public class SceneLoader : MonoBehaviour
 
     private void SkipScene()
     {
-        screenFader.FadeToBlack();
-        Invoke("LoadNextScene", 2f);
+        screenFader.SkipScene();
+        Invoke("LoadNextScene", 4f);
     }
 
     private void LoadNextScene()
