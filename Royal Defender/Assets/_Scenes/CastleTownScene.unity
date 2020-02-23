@@ -9688,7 +9688,7 @@ PrefabInstance:
     - target: {fileID: 3519551767741434423, guid: 0668dbcd8d35e924580fd0a5c0535eb6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4628036
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 3519551767741434423, guid: 0668dbcd8d35e924580fd0a5c0535eb6,
         type: 3}
@@ -9698,7 +9698,7 @@ PrefabInstance:
     - target: {fileID: 3519551767741434423, guid: 0668dbcd8d35e924580fd0a5c0535eb6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.544585
+      value: -2.88
       objectReference: {fileID: 0}
     - target: {fileID: 3519551767741434423, guid: 0668dbcd8d35e924580fd0a5c0535eb6,
         type: 3}
@@ -15635,7 +15635,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 25
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -15660,8 +15660,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.081024, y: 5.997139, z: 19.179457}
+  m_LocalRotation: {x: 0.043619405, y: -0, z: -0, w: 0.9990483}
+  m_LocalPosition: {x: 14.081024, y: 10.997139, z: -40.07054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 212665044}
@@ -16374,6 +16374,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7894432468882945021}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1057588848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7894432469839672721, guid: ddcf054b12f1f4c42b743dad19d1d122,
+    type: 3}
+  m_PrefabInstance: {fileID: 7894432468882945021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057588840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8f49e9fa1b1e349b44fbb06375d0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1057588850 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7894432469839672719, guid: ddcf054b12f1f4c42b743dad19d1d122,
@@ -16400,6 +16412,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1057588841}
           m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1057588848}
+          m_MethodName: EnableInventoryControl
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
