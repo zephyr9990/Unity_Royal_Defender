@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 
 public class Dialogue : MonoBehaviour
 {
+    public float textSpeed = 2f;
     public Text speaker;
     public Text dialogueText;
     public GameObject[] timelines;
@@ -59,7 +60,7 @@ public class Dialogue : MonoBehaviour
                 }
             }
 
-            if (needToDisplayText && timer >= Time.deltaTime * 3f)
+            if (needToDisplayText && timer >= Time.deltaTime * textSpeed)
             {
                 AddNextLetter(currentLetterIndex);
             }

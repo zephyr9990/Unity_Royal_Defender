@@ -106,7 +106,7 @@ public class DialogueTree : MonoBehaviour
             serahColor,
             operatorName,
             defaultTextColor,
-            "Paladin, designation Aegis, is to extract \nthe Chrono Crystal from the heart of the \nRuined City and return to base.",
+            "\"Paladin, designation Aegis, is to extract \nthe Chrono Crystal from the heart of the \nRuined City and return to base.\"",
             hasContinuation);
         AddDialogue(dialogueInfo);
 
@@ -147,7 +147,7 @@ public class DialogueTree : MonoBehaviour
             narratorColor,
             narratorName,
             narratorTextColor,
-            "With quick reflexes and precise aim, Aegis neutralized foe after foe.",
+            "With quick reflexes and precise aim, Aegis deftly dispatched foe after foe.",
             hasContinuation);
         AddDialogue(dialogueInfo);
 
@@ -172,7 +172,15 @@ public class DialogueTree : MonoBehaviour
             narratorColor,
             narratorName,
             narratorTextColor,
-            "chose to deploy their trump card....",
+            "chose to deploy their trump card.",
+            hasContinuation);
+        AddDialogue(dialogueInfo);
+
+        dialogueInfo = new DialogueInfo(
+            narratorColor,
+            narratorName,
+            narratorTextColor,
+            "Aegis was blindsided....",
             hasNoContinuation);
         AddDialogue(dialogueInfo);
     }
