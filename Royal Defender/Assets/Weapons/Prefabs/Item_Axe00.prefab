@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Executioner's Axe
   damage: 30
-  maxDurability: 20
+  maxDurability: 30
   weaponMesh: {fileID: 174004, guid: 6478e3e782a118f45a402645660f05ef, type: 3}
   weaponIcon: {fileID: 2800000, guid: 1929341cb9bd7ac49817b013f48dbbc9, type: 3}
   type: 2

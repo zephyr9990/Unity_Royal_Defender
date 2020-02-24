@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Knight's Longsword
   damage: 25
-  maxDurability: 20
+  maxDurability: 30
   weaponMesh: {fileID: 181888, guid: 7a5e006e65541cd44b30f759e5a1a1de, type: 3}
   weaponIcon: {fileID: 2800000, guid: f96a654a00543c74bb7b2ce9532b9349, type: 3}
   type: 2
