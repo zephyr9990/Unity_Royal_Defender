@@ -24161,6 +24161,7 @@ GameObject:
   - component: {fileID: 1814797146}
   - component: {fileID: 1814797149}
   - component: {fileID: 1814797148}
+  - component: {fileID: 1814797150}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -24372,6 +24373,22 @@ MonoBehaviour:
   - {fileID: 31678167}
   maxEnemies: 10000
   enemyCount: 0
+--- !u!114 &1814797150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814797138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c0dd82006b0954f833fba99d46e5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 60
+  spawnRateDropSpeed: 0.001
+  spawnRateDeceleration: 0.001
+  minSpawnRate: 1
 --- !u!4 &1823621923 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4611873614480982, guid: f09328c8b25128e408553616636c2226,
