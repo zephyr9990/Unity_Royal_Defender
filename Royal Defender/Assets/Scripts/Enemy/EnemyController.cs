@@ -92,7 +92,7 @@ public class EnemyController : MonoBehaviour
         {
             _nav.isStopped = false;
             _nav.SetDestination(target.transform.position);
-            //_anim.SetBool("Basic Attack", false);
+            _anim.SetBool("Basic Attack", false);
             _anim.SetBool("Walk", true);
         }
         else
@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour
             _anim.SetBool("Walk", false);
             _nav.isStopped= true;
 
-            //AttackTarget(); 
+            AttackTarget(); 
             
             
         }
@@ -110,10 +110,10 @@ public class EnemyController : MonoBehaviour
     public void AttackTarget()
     {
         // Removed the atteackInterval <= 0 from the if statement
-        if (target.CompareTag("Player") && this.GetComponent<EnemyHealth>().isAlive())
+        if (target.CompareTag("Player") && this.GetComponent<EnemyHealth>().isAlive()&& attackInterval <= 0)
         {
             _anim.SetTrigger("Attack Trigger");
-            //_anim.SetBool("Basic Attack", true);
+            _anim.SetBool("Basic Attack", true);
             target.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             _audio.Play();
             Debug.Log("Attacking Player");
@@ -122,7 +122,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             _anim.SetTrigger("Attack Trigger");
-            //_anim.SetBool("Basic Attack", false);
+           _anim.SetBool("Basic Attack", false);
             attackInterval -= Time.deltaTime;
         }
     }
