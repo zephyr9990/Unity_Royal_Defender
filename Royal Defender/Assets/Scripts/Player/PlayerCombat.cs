@@ -5,15 +5,11 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public float timeBetweenShots = 0.15f;
-    public float timeBetweenSwings = .6f;
     public float range = 100.0f;
     public GameObject gunSocket;
 
-    private float effectsDisplayTime = .2f;
     private float timer = 0;
 
-    private PlayerInventory playerInventory;
     private Animator animator;
     private PlayerEquippedWeapon equippedWeapon;
     private LockOnScript lockOn;
@@ -22,7 +18,6 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        playerInventory = GetComponent<PlayerInventory>();
         equippedWeapon = GetComponent<PlayerEquippedWeapon>();
         lockOn = GetComponentInChildren<LockOnScript>();
     }
@@ -41,15 +36,15 @@ public class PlayerCombat : MonoBehaviour
 
         if (currentWeapon.type == WeaponType.Ranged)
         {
-            CheckIfPlayerWantsToShoot();
+            CheckIfPlayerWantsToShoot(currentWeapon);
         }
         else // player has melee weapon
         {
-            CheckIfPlayerWantsToSwing();
+            CheckIfPlayerWantsToSwing(currentWeapon);
         }
     }
 
-    private void CheckIfPlayerWantsToSwing()
+    private void CheckIfPlayerWantsToSwing(WeaponInfo weapon)
     {
         if (Input.GetButtonDown("Attack"))
         {
@@ -57,7 +52,7 @@ public class PlayerCombat : MonoBehaviour
             if (isSprinting)
                 return; // cannot swing weapon if sprinting;
 
-            if (timer > timeBetweenSwings)
+            if (timer > weapon.attackDelay)
             {
                 timer = 0f;
                 animator.SetBool("IsSwinging", false);
@@ -66,11 +61,11 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    private void CheckIfPlayerWantsToShoot()
+    private void CheckIfPlayerWantsToShoot(WeaponInfo weapon)
     {
         if (Input.GetButton("Attack"))
         {
-            if (timer > timeBetweenShots
+            if (timer > weapon.attackDelay
                 && animator.GetBool("LockOnToggled"))
             {
                 Shoot();
@@ -82,11 +77,6 @@ public class PlayerCombat : MonoBehaviour
             }
         }
 
-        if (timer >= timeBetweenShots * effectsDisplayTime)
-        {
-            StopEffects();
-        }
-
         if (Input.GetButtonUp("Attack"))
         {
             StopShooting();
@@ -96,18 +86,13 @@ public class PlayerCombat : MonoBehaviour
     private void Shoot()
     {
         timer = 0.0f;
-        animator.SetBool("IsShooting", true);
-
+        
         // Player can change weapons, so must be actively called for different weapons
-        AudioSource gunAudio = gunSocket.GetComponentInChildren<AudioSource>();
-        ParticleSystem muzzleFlash = gunSocket.transform.GetChild(0).GetComponentInChildren<ParticleSystem>();
-        Light muzzleLight = gunSocket.transform.GetChild(0).GetComponentInChildren<Light>();
+        IRangedWeapon rangedWeapon = gunSocket.transform.GetChild(0).GetComponent<IRangedWeapon>();
+        rangedWeapon.Fire(animator);
 
-        muzzleFlash.Play();
-        muzzleLight.enabled = true;
-
-        gunAudio.pitch = UnityEngine.Random.Range(.99f, 1.01f);
-        gunAudio.Play();
+        if (rangedWeapon is SpecialWeapon)
+            return;  // special weapons deal damage at end of cutscene.
 
         // Damage enemy that is currently locked on.
         GameObject enemy = lockOn.GetCurrentTarget();
@@ -119,19 +104,11 @@ public class PlayerCombat : MonoBehaviour
 
     private void StopShooting()
     {
-        Light muzzleLight = gunSocket.transform.GetChild(0).GetComponentInChildren<Light>();
-        muzzleLight.enabled = false;
         animator.SetBool("IsShooting", false);
     }
 
     public void StopAttackingAnimations()
     {
         animator.SetBool("IsShooting", false);
-    }
-
-    private void StopEffects()
-    {
-        Light muzzleLight = gunSocket.transform.GetChild(0).GetComponentInChildren<Light>();
-        muzzleLight.enabled = false;
     }
 }

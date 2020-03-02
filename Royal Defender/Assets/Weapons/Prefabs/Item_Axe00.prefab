@@ -78,6 +78,8 @@ MonoBehaviour:
   weaponMesh: {fileID: 174004, guid: 6478e3e782a118f45a402645660f05ef, type: 3}
   weaponIcon: {fileID: 2800000, guid: 1929341cb9bd7ac49817b013f48dbbc9, type: 3}
   type: 2
+  attackDelay: 0.5
+  npcAttackDelay: 3
 --- !u!114 &922306074427134155
 MonoBehaviour:
   m_ObjectHideFlags: 0

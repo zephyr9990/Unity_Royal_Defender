@@ -9,6 +9,8 @@ public class WeaponInfo
     public int maxDurability;
     public GameObject mesh;
     public Texture2D icon;
+    public float attackDelay;
+    public float npcAttackDelay;
     private int currentDurability;
     public WeaponType type;
 
@@ -21,14 +23,16 @@ public class WeaponInfo
         currentDurability = maxDurability;
         icon = weaponProperties.weaponIcon;
         type = weaponProperties.type;
+        attackDelay = weaponProperties.attackDelay;
+        npcAttackDelay = weaponProperties.npcAttackDelay;
     }
 
-    public float getDurabilityPercent()
+    public float GetDurabilityPercent()
     {
         return (float)currentDurability / maxDurability;
     }
 
-    public int getCurrentDurability()
+    public int GetCurrentDurability()
     {
         return currentDurability;
     }

@@ -165,6 +165,11 @@ public class LockOnScript : MonoBehaviour
         enemies.Remove(enemy);
     }
 
+    public ArrayList GetEnemiesInRange()
+    {
+        return enemies;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

@@ -119,7 +119,7 @@ public class PlayerInventory : MonoBehaviour
         UpdateWeaponTextUI();
     }
 
-    public int getCurrentAmmo() 
+    public int GetCurrentAmmo() 
     {
         return currentAmmo;
     }
@@ -212,7 +212,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public WeaponType getCurrentType()
+    public WeaponType GetCurrentType()
     {
         return currentType;
     }

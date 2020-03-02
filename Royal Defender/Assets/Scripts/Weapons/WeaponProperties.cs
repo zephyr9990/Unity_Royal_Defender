@@ -10,4 +10,6 @@ public class WeaponProperties : MonoBehaviour
     public GameObject weaponMesh;
     public Texture2D weaponIcon;
     public WeaponType type;
+    public float attackDelay;
+    public float npcAttackDelay;
 }

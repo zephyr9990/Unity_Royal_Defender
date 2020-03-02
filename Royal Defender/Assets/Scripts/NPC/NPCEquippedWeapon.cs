@@ -20,8 +20,6 @@ public class NPCEquippedWeapon : MonoBehaviour
     // components
     private WeaponInfo equippedWeapon;
     private Animator animator;
-    private WeaponSwingOverlap weaponCollider;
-    private NPCMovement npcMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +33,6 @@ public class NPCEquippedWeapon : MonoBehaviour
         meleeParticleEffect = meleeSocket.GetComponent<ParticleSystem>();
         meleeLightEffect = meleeSocket.GetComponent<Light>();
         animator = GetComponent<Animator>();
-        npcMovement = GetComponent<NPCMovement>();
     }
 
     // Update is called once per frame

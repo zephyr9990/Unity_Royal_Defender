@@ -94,6 +94,8 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         _anim.SetTrigger("Die");
+
+        if (_nav.enabled == true)
         _nav.isStopped = true;
 
         bIsAlive = false;

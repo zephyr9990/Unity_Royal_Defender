@@ -87,7 +87,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
     {
         if (equippedWeapon == null)
         {   
-            SetUnarmedValues(playerInventory.getCurrentType());
+            SetUnarmedValues(playerInventory.GetCurrentType());
             return;
         }
 
@@ -159,7 +159,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
             MeleeWeaponName.text = weapon.name;
             MeleeWeaponDamage.text = weapon.damage + " DMG";
             MeleeWeaponSlider.gameObject.SetActive(true);
-            MeleeWeaponSlider.value = weapon.getDurabilityPercent();
+            MeleeWeaponSlider.value = weapon.GetDurabilityPercent();
         }
         else // ranged
         {
@@ -167,7 +167,7 @@ public class PlayerEquippedWeapon : MonoBehaviour
             RangedWeaponName.text = weapon.name;
             RangedWeaponDamage.text = weapon.damage + " DMG";
             RangedWeaponSlider.gameObject.SetActive(true);
-            RangedWeaponSlider.value = weapon.getDurabilityPercent();
+            RangedWeaponSlider.value = weapon.GetDurabilityPercent();
         }
     }
 
@@ -196,13 +196,13 @@ public class PlayerEquippedWeapon : MonoBehaviour
     private void DecreaseDurability(int amount)
     {
         equippedWeapon.DecreaseDurability(amount);
-        if (equippedWeapon.getCurrentDurability() <= 0)
+        if (equippedWeapon.GetCurrentDurability() <= 0)
         {
             DestroyWeapon();
         }
     }
 
-    private void DestroyWeapon()
+    public void DestroyWeapon()
     {
           playerInventory.DiscardWeapon(equippedWeapon.type);
           UnequipWeapon();

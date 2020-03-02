@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IAIController
 {
     private GameObject player; //The Player object
     private GameObject cube; // the goal 
@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private float NPCRange = 20;
     private Animator _anim;
     private AudioSource _audio;
+    private bool movementStopped;
 
     public float SD = 5; // Initially set to 5 needs to be adjusted to find right ditance and then set private
     public int attackDamage = 10;
@@ -30,12 +31,14 @@ public class EnemyController : MonoBehaviour
         FindTargets();
         _nav.stoppingDistance = SD;
         attackInterval = 0;
+        movementStopped = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (movementStopped)
+            return;
         // Debug.Log(enemyTargets.Count);
 
         SelectTarget();
@@ -133,5 +136,19 @@ public class EnemyController : MonoBehaviour
         //Instantiate(Weapons[randInt], transform.position);
         Instantiate(Weapons[randInt], transform.position, Quaternion.identity);
 
+    }
+
+    public void StopMovement()
+    {
+        movementStopped = true;
+        _nav.speed = 0f;
+        _nav.enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        _nav.speed = 3.5f;
+        _nav.enabled = true;
+        movementStopped = false;
     }
 }

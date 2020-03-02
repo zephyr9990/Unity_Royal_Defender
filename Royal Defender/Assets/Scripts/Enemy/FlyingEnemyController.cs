@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FlyingEnemyController : MonoBehaviour
+public class FlyingEnemyController : MonoBehaviour, IAIController
 {
     private GameObject player; //The Player object
     private GameObject cube; // the goal 
@@ -14,7 +14,7 @@ public class FlyingEnemyController : MonoBehaviour
 
     private float PlayerRange = 30;
     private float NPCRange = 20;
-
+    private bool movementStopped;
     private Animator _anim;
 
     public GameObject[] Weapons;
@@ -25,6 +25,7 @@ public class FlyingEnemyController : MonoBehaviour
         //setting up the navAgent
         _nav = GetComponent<NavMeshAgent>();
         _anim = GetComponent<Animator>();
+        movementStopped = false;
 
         FindTargets();
         _nav.stoppingDistance = SD;
@@ -33,7 +34,8 @@ public class FlyingEnemyController : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-
+        if (movementStopped)
+            return;
         // Debug.Log(enemyTargets.Count);
 
         SelectTarget();
@@ -111,5 +113,20 @@ public class FlyingEnemyController : MonoBehaviour
         int randInt = UnityEngine.Random.Range(0, Weapons.Length);
         //Instantiate(Weapons[randInt], transform.position);
         Instantiate(Weapons[randInt], transform.position, Quaternion.identity);
+    }
+
+    public void StopMovement()
+    {
+        movementStopped = true;
+        _nav.speed = 0f;
+        _nav.enabled = false;
+        //enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        movementStopped = false;
+        _nav.speed = 3.5f;
+        _nav.enabled = true;
     }
 }
