@@ -31821,13 +31821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< HEAD
   m_IsActive: 1
---- !u!224 &1997608800
-RectTransform:
-=======
-  m_IsActive: 0
---- !u!4 &1814797139
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31961,12 +31955,10 @@ MonoBehaviour:
   enemyCount: 0
 --- !u!114 &1814797146
 MonoBehaviour:
->>>>>>> 45bc4e2d86e40b411b3049160e95c2564eeb2374
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1997608799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -31981,21 +31973,6 @@ MonoBehaviour:
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997608801
-=======
-  m_GameObject: {fileID: 1814797138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 113038, guid: 907325ec940ecbf409d1505976f5fcd5, type: 3}
-  spawnTime: 60
-  spawnPoints:
-  - {fileID: 15685388}
-  maxEnemies: 10000
-  enemyCount: 0
---- !u!114 &1814797147
->>>>>>> 45bc4e2d86e40b411b3049160e95c2564eeb2374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32006,8 +31983,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-<<<<<<< HEAD
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.8039216}
   m_RaycastTarget: 1
@@ -32026,46 +32002,18 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1997608802
 CanvasRenderer:
-=======
-  enemy: {fileID: 107872, guid: 7add1d5b90ab7234d92b5feb2d77c953, type: 3}
-  spawnTime: 30
-  spawnPoints:
-  - {fileID: 1110410145}
-  maxEnemies: 10000
-  enemyCount: 0
---- !u!114 &1814797148
-MonoBehaviour:
->>>>>>> 45bc4e2d86e40b411b3049160e95c2564eeb2374
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1997608799}
   m_CullTransparentMesh: 0
 --- !u!1 &2008325205
 GameObject:
-=======
-  m_GameObject: {fileID: 1814797138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 107872, guid: 7add1d5b90ab7234d92b5feb2d77c953, type: 3}
-  spawnTime: 50
-  spawnPoints:
-  - {fileID: 1063871338}
-  maxEnemies: 10000
-  enemyCount: 0
---- !u!114 &1814797149
-MonoBehaviour:
->>>>>>> 45bc4e2d86e40b411b3049160e95c2564eeb2374
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008325206}
@@ -32078,22 +32026,6 @@ MonoBehaviour:
   m_IsActive: 1
 --- !u!4 &2008325206
 Transform:
-=======
-  m_GameObject: {fileID: 1814797138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 134b32c1ef2fce54eaeb1d495b229987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 177538, guid: 83187382e7bb7844da2964a6fec3b29b, type: 3}
-  spawnTime: 40
-  spawnPoints:
-  - {fileID: 31678167}
-  maxEnemies: 10000
-  enemyCount: 0
---- !u!114 &1814797150
-MonoBehaviour:
->>>>>>> 45bc4e2d86e40b411b3049160e95c2564eeb2374
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
