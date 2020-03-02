@@ -18,11 +18,12 @@ public class EnemyManager : MonoBehaviour
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
-    // Update is called once per frame
+
     void Spawn()
     {
         // to count the number of objects:
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+
         if (enemyCount < maxEnemies)
         {
             Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
