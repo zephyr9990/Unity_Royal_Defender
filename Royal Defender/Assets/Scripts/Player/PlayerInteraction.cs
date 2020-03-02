@@ -75,7 +75,8 @@ public class PlayerInteraction : MonoBehaviour
         WeaponInfo NPCWeapon = NPCEquippedWeapon.GetWeaponInfo();
         WeaponInfo playerWeapon = playerEquippedWeapon.GetWeaponInfo();
 
-        if (NPCEquippedWeapon.enabled == false || playerWeapon == null && NPCWeapon == null)
+        if (NPCEquippedWeapon.enabled == false || playerWeapon == null && NPCWeapon == null
+            || playerWeapon.name == "Rail Gun")
             return; // nothing to exchange or npc incapacitated.
 
         //NPCEquippedWeapon.UnequipWeapon();
